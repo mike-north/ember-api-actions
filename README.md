@@ -75,7 +75,13 @@ myRecord.ripen({
 
 ember-api-actions generates URLs and ajax configuration via ember-data adapters. It will identify the appropriate adapter, and call the `buildURL` and `ajaxOptions` methods to send a JSON request similar to way conventional ember-data usage works. 
 
-Customizing your adapter should customize requests sent out via this library, along with any other ember-data requests.
+Customizing your adapter should customize requests sent out via this library, along with any other ember-data requests. 
+
+**ember-api-actions uses the following methods on DS.Adapter**
+
+* [buildURL](http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_buildURL) - for generating an action's URL
+* [ajaxOptions](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L928-L950) (private) - so that consumers may customize ajax options (i.e., `xhrFields`) in a single place
+* [ajax](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L836-L859) (private) - to actually make the API request and return a promise
 
 ## Installation
 

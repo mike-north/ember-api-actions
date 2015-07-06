@@ -4,6 +4,7 @@
 [![Dependency Status](https://david-dm.org/truenorth/ember-api-actions.svg)](https://david-dm.org/truenorth/ember-api-actions)
 [![devDependency Status](https://david-dm.org/truenorth/ember-api-actions/dev-status.svg)](https://david-dm.org/truenorth/ember-api-actions#info=devDependencies)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-api-actions.svg)](http://emberobserver.com/addons/ember-api-actions)
+[![npm version](https://badge.fury.io/js/ember-api-actions.svg)](http://badge.fury.io/js/ember-api-actions)
 
 Trigger "remote" actions on ember-data resources that don't fit into typical CRUD RESTful API design.
 

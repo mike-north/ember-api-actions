@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import ajax from 'ic-ajax';
 
 const buildOperationUrl = function buildOperationUrl(record, opPath, requestType, intance=true) {
   Ember.assert('You must provide a path for instanceOp', opPath);
@@ -13,28 +12,22 @@ const buildOperationUrl = function buildOperationUrl(record, opPath, requestType
 export const instanceOp = function instanceOp(options) {
   return function(payload) {
     let requestType = options.type || 'PUT';
+    let modelName = this.constructor.modelName;
+    let adapter = this.store.adapterFor(modelName);
     let fullUrl = buildOperationUrl(this, options.path, requestType);
-    return ajax(Ember.$.extend(options.ajaxOptions || {}, {
-      type: requestType,
-      url: fullUrl,
-      contentType: 'application/json',
-      dataType: 'json',
-      data: JSON.stringify(payload)
-    }));
+    let ajaxOptions = adapter.ajaxOptions(fullUrl, requestType, { data: payload });
+    return adapter.ajax(fullUrl, requestType, Ember.$.extend(options.ajaxOptions || {}, ajaxOptions));
   };
 };
 
 export const classOp = function instanceOp(options) {
   return function(payload) {
     let requestType = options.type || 'PUT';
+    let modelName = this.constructor.modelName;
+    let adapter = this.store.adapterFor(modelName);
     let fullUrl = buildOperationUrl(this, options.path, requestType, false);
-    return ajax(Ember.$.extend(options.ajaxOptions || {}, {
-      type: requestType,
-      url: fullUrl,
-      contentType: 'application/json',
-      dataType: 'json',
-      data: JSON.stringify(payload)
-    }));
+    let ajaxOptions = adapter.ajaxOptions(fullUrl, requestType, { data: payload });
+    return adapter.ajax(fullUrl, requestType, Ember.$.extend(options.ajaxOptions || {}, ajaxOptions));
   };
 };
 

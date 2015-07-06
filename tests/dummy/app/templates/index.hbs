@@ -1,0 +1,23 @@
+<h3>API actions on an individual resource</h3>
+{{#each content as |fruit|}}
+<p>
+{{fruit.id}} {{fruit.name}}
+<button class='btn ripen-instance-button' {{action 'ripenFruit' fruit}}>Ripen</button> - calls <code>fruit.ripen()</code>
+</p>
+
+{{/each}}
+<h3>API action on a collection of resources</h3>
+<p>
+  {{content.constructor.modelName}}
+  <button class='btn ripen-type-button' {{action 'ripenAllFruit' content.firstObject}}>Ripen All</button> - calls <code>fruit.ripenAll()</code>
+</p>
+
+
+{{code-snippet name='fruit-model.js'}}
+
+<h5>Outgoing API Requests:</h5>
+<ul>
+{{#each requests as |req|}}
+  <li> <code>{{req.url}}</code> <code class='payload'>{{json-string req.data}}</code></li>
+{{/each}}
+</ul>

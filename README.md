@@ -1,6 +1,71 @@
 # Ember-api-actions
 
-This README outlines the details of collaborating on this Ember addon.
+Trigger "remote" actions on ember-data resources that don't fit into typical CRUD RESTful API design.
+
+For example, if you have restful API endpoints like
+
+```
+GET     /fruits
+POST    /fruits
+GET     /fruits/123
+PUT     /fruits/123
+DELETE  /fruits/123
+```
+
+What happens if you want an intuitive API endpoint like this:
+
+```
+PUT    /fruits/123/ripen
+```
+
+This is not immediately intuitive with ember-data. This library aims to make it easy.
+
+
+## Use
+```sh
+# ember-cli >= 0.2.3
+ember install ember-api-actions
+
+# ember-cli < 0.2.3
+ember install:addon ember-api-actions
+
+```
+
+You can then add these "actions" (not to be confused with client-side ember.js actions) to your ember-data model
+
+
+**app/models/fruit.js**
+```js
+
+import DS from 'ember-data';
+import { instanceOp, classOp } from 'ember-api-actions';
+
+const { attr } = DS;
+
+export default DS.Model.extend({
+  name: attr('string'),
+
+  // /fruits/123/doRipen
+  ripen: instanceOp({ path: 'doRipen' }),
+
+  // /fruits/ripenEverything
+  ripenAll: classOp({ path: 'ripenEverything' })
+});
+
+```
+
+you can then call these functions, and they will initiate API requests and return you the promise
+
+```js
+
+// Pass data in, it will be sent in the POST or PUT request payload
+myRecord.ripen({
+  someData: 'abc'
+}).then(response => {
+  // do something when the API returns a response
+});
+
+```
 
 ## Installation
 

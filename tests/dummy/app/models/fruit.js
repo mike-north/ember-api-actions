@@ -1,12 +1,12 @@
 // BEGIN-SNIPPET fruit-model
 import DS from 'ember-data';
-import { instanceOp, classOp } from 'ember-api-actions';
+import { memberAction, collectionAction } from 'ember-api-actions';
 
 const { attr } = DS;
 
 export default DS.Model.extend({
-  name: attr('string'),
-  ripen: instanceOp({ path: 'doRipen' }),
-  ripenAll: classOp({ path: 'ripenEverything' })
+  name:     attr('string'),
+  ripen:    memberAction(    { path: 'doRipen' }),
+  ripenAll: collectionAction({ path: 'ripenEverything' })
 });
 // END-SNIPPET

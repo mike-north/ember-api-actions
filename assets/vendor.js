@@ -85058,7 +85058,7 @@ module.exports = function(hljs) {
   });
 });
 
-define('ember-api-actions/index', ['exports', 'ember', 'ic-ajax'], function (exports, Ember, ajax) {
+define('ember-api-actions/index', ['exports', 'ember'], function (exports, Ember) {
 
   'use strict';
 
@@ -85076,28 +85076,22 @@ define('ember-api-actions/index', ['exports', 'ember', 'ic-ajax'], function (exp
   var instanceOp = function instanceOp(options) {
     return function (payload) {
       var requestType = options.type || 'PUT';
+      var modelName = this.constructor.modelName;
+      var adapter = this.store.adapterFor(modelName);
       var fullUrl = buildOperationUrl(this, options.path, requestType);
-      return ajax['default'](Ember['default'].$.extend(options.ajaxOptions || {}, {
-        type: requestType,
-        url: fullUrl,
-        contentType: 'application/json',
-        dataType: 'json',
-        data: JSON.stringify(payload)
-      }));
+      var ajaxOptions = adapter.ajaxOptions(fullUrl, requestType, { data: payload });
+      return adapter.ajax(fullUrl, requestType, Ember['default'].$.extend(options.ajaxOptions || {}, ajaxOptions));
     };
   };
 
   var classOp = function instanceOp(options) {
     return function (payload) {
       var requestType = options.type || 'PUT';
+      var modelName = this.constructor.modelName;
+      var adapter = this.store.adapterFor(modelName);
       var fullUrl = buildOperationUrl(this, options.path, requestType, false);
-      return ajax['default'](Ember['default'].$.extend(options.ajaxOptions || {}, {
-        type: requestType,
-        url: fullUrl,
-        contentType: 'application/json',
-        dataType: 'json',
-        data: JSON.stringify(payload)
-      }));
+      var ajaxOptions = adapter.ajaxOptions(fullUrl, requestType, { data: payload });
+      return adapter.ajax(fullUrl, requestType, Ember['default'].$.extend(options.ajaxOptions || {}, ajaxOptions));
     };
   };
 

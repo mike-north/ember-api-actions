@@ -93,6 +93,7 @@ define('dummy/controllers/index', ['exports', 'ember'], function (exports, Ember
       this._super.apply(this, arguments);
       this.set('requests', Ember['default'].A());
     },
+    // BEGIN-SNIPPET controller
     actions: {
       ripenFruit: function ripenFruit(fruit) {
         fruit.ripen({
@@ -105,6 +106,7 @@ define('dummy/controllers/index', ['exports', 'ember'], function (exports, Ember
         });
       }
     }
+    // END-SNIPPET
   });
 
 });
@@ -277,6 +279,7 @@ define('dummy/snippets', ['exports'], function (exports) {
   'use strict';
 
   exports['default'] = {
+    "controller.js": "  actions: {\n    ripenFruit(fruit) {\n      fruit.ripen({\n        startTime: (new Date()).toString()\n      });\n    },\n    ripenAllFruit(fruit) {\n      fruit.ripenAll({\n        startTime: (new Date()).toString()\n      });\n    }\n  }",
     "fruit-model.js": "import DS from 'ember-data';\nimport { instanceOp, classOp } from 'ember-api-actions';\n\nconst { attr } = DS;\n\nexport default DS.Model.extend({\n  name: attr('string'),\n  ripen: instanceOp({ path: 'doRipen' }),\n  ripenAll: classOp({ path: 'ripenEverything' })\n});"
   };
 
@@ -300,12 +303,42 @@ define('dummy/templates/application', ['exports'], function (exports) {
         dom.setAttribute(el1,"class","container");
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h2");
-        dom.setAttribute(el2,"id","title");
-        var el3 = dom.createTextNode("Ember api actions");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2,"class","row");
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("div");
+        dom.setAttribute(el3,"class","col m8 s12");
+        var el4 = dom.createTextNode("\n    ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("h2");
+        dom.setAttribute(el4,"id","title");
+        var el5 = dom.createTextNode("Ember api actions");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n  ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("div");
+        dom.setAttribute(el3,"class","col m4 s12");
+        var el4 = dom.createTextNode("\n    ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4,"href","https://github.com/truenorth/ember-api-actions");
+        dom.setAttribute(el4,"class","btn btn-flat black white-text m-t-40");
+        dom.setAttribute(el4,"target","_blank");
+        var el5 = dom.createTextNode("Go to Github");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n  ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
+        var el2 = dom.createTextNode("\n\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -406,33 +439,35 @@ define('dummy/templates/index', ['exports'], function (exports) {
         hasRendered: false,
         build: function build(dom) {
           var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
           var el1 = dom.createElement("p");
           dom.setAttribute(el1,"class","fruit-thing");
-          var el2 = dom.createTextNode("\n");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode(" ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n");
+          var el2 = dom.createTextNode("\n      ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("button");
           dom.setAttribute(el2,"class","btn ripen-instance-button");
           var el3 = dom.createTextNode("Ripen");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode(" - calls ");
+          var el2 = dom.createTextNode("\n      ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode(" (id = ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode(")\n      - calls ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("code");
           var el3 = dom.createTextNode("fruit.ripen()");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n");
+          var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n\n");
+          var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
@@ -456,15 +491,15 @@ define('dummy/templates/index', ['exports'], function (exports) {
           } else {
             fragment = this.build(dom);
           }
-          var element1 = dom.childAt(fragment, [0]);
-          var element2 = dom.childAt(element1, [5]);
-          var morph0 = dom.createMorphAt(element1,1,1);
-          var morph1 = dom.createMorphAt(element1,3,3);
+          var element0 = dom.childAt(fragment, [1]);
+          var element1 = dom.childAt(element0, [1]);
+          var morph0 = dom.createMorphAt(element0,3,3);
+          var morph1 = dom.createMorphAt(element0,5,5);
           set(env, context, "fruit", blockArguments[0]);
-          element(env, element1, context, "bind-attr", [], {"id": get(env, context, "fruit.name")});
-          content(env, morph0, context, "fruit.id");
-          content(env, morph1, context, "fruit.name");
-          element(env, element2, context, "action", ["ripenFruit", get(env, context, "fruit")], {});
+          element(env, element0, context, "bind-attr", [], {"id": get(env, context, "fruit.name")});
+          element(env, element1, context, "action", ["ripenFruit", get(env, context, "fruit")], {});
+          content(env, morph0, context, "fruit.name");
+          content(env, morph1, context, "fruit.id");
           return fragment;
         }
       };
@@ -478,7 +513,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
         hasRendered: false,
         build: function build(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("  ");
+          var el1 = dom.createTextNode("      ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("li");
           var el2 = dom.createTextNode(" ");
@@ -489,11 +524,6 @@ define('dummy/templates/index', ['exports'], function (exports) {
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode(" ");
           dom.appendChild(el1, el2);
-          var el2 = dom.createElement("code");
-          dom.setAttribute(el2,"class","payload");
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
@@ -501,7 +531,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
         },
         render: function render(context, env, contextualElement, blockArguments) {
           var dom = env.dom;
-          var hooks = env.hooks, set = hooks.set, content = hooks.content, get = hooks.get, inline = hooks.inline;
+          var hooks = env.hooks, set = hooks.set, content = hooks.content;
           dom.detectNamespace(contextualElement);
           var fragment;
           if (env.useFragmentCache && dom.canClone) {
@@ -519,12 +549,9 @@ define('dummy/templates/index', ['exports'], function (exports) {
           } else {
             fragment = this.build(dom);
           }
-          var element0 = dom.childAt(fragment, [1]);
-          var morph0 = dom.createMorphAt(dom.childAt(element0, [1]),0,0);
-          var morph1 = dom.createMorphAt(dom.childAt(element0, [3]),0,0);
+          var morph0 = dom.createMorphAt(dom.childAt(fragment, [1, 1]),0,0);
           set(env, context, "req", blockArguments[0]);
           content(env, morph0, context, "req.url");
-          inline(env, morph1, context, "json-string", [get(env, context, "req.data")], {});
           return fragment;
         }
       };
@@ -537,58 +564,113 @@ define('dummy/templates/index', ['exports'], function (exports) {
       hasRendered: false,
       build: function build(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h3");
-        var el2 = dom.createTextNode("API actions on an individual resource");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("h3");
-        var el2 = dom.createTextNode("API action on a collection of resources");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        dom.setAttribute(el1,"class","all-fruit");
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1,"class","row");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("button");
-        dom.setAttribute(el2,"class","btn ripen-type-button");
-        var el3 = dom.createTextNode("Ripen All");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2,"class","col m6 s12");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("API actions on an individual resource");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("API action on a collection of resources");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("p");
+        dom.setAttribute(el3,"class","all-fruit");
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("button");
+        dom.setAttribute(el4,"class","btn ripen-type-button");
+        var el5 = dom.createTextNode("Ripen All");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode(" - calls ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("code");
+        var el5 = dom.createTextNode("fruit.ripenAll()");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n    ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode(" - calls ");
+        var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("code");
-        var el3 = dom.createTextNode("fruit.ripenAll()");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2,"class","col m6 s12");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h4");
+        var el4 = dom.createTextNode("Outgoing API Requests:");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("ul");
+        var el4 = dom.createTextNode("\n");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("    ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("h5");
-        var el2 = dom.createTextNode("Outgoing API Requests:");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("ul");
-        var el2 = dom.createTextNode("\n");
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1,"class","row");
+        var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2,"class","col s12");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("b");
+        var el4 = dom.createTextNode("app/models/fruit.js");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("b");
+        var el4 = dom.createTextNode("app/controllers/index.js");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         return el0;
@@ -613,17 +695,22 @@ define('dummy/templates/index', ['exports'], function (exports) {
         } else {
           fragment = this.build(dom);
         }
-        var element3 = dom.childAt(fragment, [5]);
-        var element4 = dom.childAt(element3, [3]);
-        var morph0 = dom.createMorphAt(fragment,2,2,contextualElement);
-        var morph1 = dom.createMorphAt(element3,1,1);
-        var morph2 = dom.createMorphAt(fragment,7,7,contextualElement);
-        var morph3 = dom.createMorphAt(dom.childAt(fragment, [11]),1,1);
+        var element2 = dom.childAt(fragment, [0]);
+        var element3 = dom.childAt(element2, [1]);
+        var element4 = dom.childAt(element3, [7]);
+        var element5 = dom.childAt(element4, [3]);
+        var element6 = dom.childAt(fragment, [2, 1]);
+        var morph0 = dom.createMorphAt(element3,3,3);
+        var morph1 = dom.createMorphAt(element4,1,1);
+        var morph2 = dom.createMorphAt(dom.childAt(element2, [3, 3]),1,1);
+        var morph3 = dom.createMorphAt(element6,3,3);
+        var morph4 = dom.createMorphAt(element6,7,7);
         block(env, morph0, context, "each", [get(env, context, "content")], {}, child0, null);
         content(env, morph1, context, "content.constructor.modelName");
-        element(env, element4, context, "action", ["ripenAllFruit", get(env, context, "content.firstObject")], {});
-        inline(env, morph2, context, "code-snippet", [], {"name": "fruit-model.js"});
-        block(env, morph3, context, "each", [get(env, context, "requests")], {}, child1, null);
+        element(env, element5, context, "action", ["ripenAllFruit", get(env, context, "content.firstObject")], {});
+        block(env, morph2, context, "each", [get(env, context, "requests")], {}, child1, null);
+        inline(env, morph3, context, "code-snippet", [], {"name": "fruit-model.js"});
+        inline(env, morph4, context, "code-snippet", [], {"name": "controller.js"});
         return fragment;
       }
     };
@@ -844,7 +931,7 @@ catch(err) {
 if (runningTests) {
   require("dummy/tests/test-helper");
 } else {
-  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.1.148c34de"});
+  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.2.e57ff68b"});
 }
 
 /* jshint ignore:end */

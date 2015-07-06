@@ -11,11 +11,12 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/truenorth/ember-api-actions.git",
+  "homepage": "https://github.com/truenorth/ember-api-actions",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Mike North <michael.l.north@gmail.com> (http://mike.works)",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -44,6 +45,7 @@
     "ember-cli-babel": "^5.0.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://mike.works/ember-api-actions"
   }
 }

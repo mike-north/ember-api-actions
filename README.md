@@ -1,5 +1,9 @@
 # Ember-api-actions
 
+[![Build Status](https://travis-ci.org/truenorth/ember-api-actions.svg?branch=master)](https://travis-ci.org/truenorth/ember-api-actions)
+[![Dependency Status](https://david-dm.org/truenorth/ember-api-actions.svg)](https://david-dm.org/truenorth/ember-api-actions)
+[![devDependency Status](https://david-dm.org/truenorth/ember-api-actions/dev-status.svg)](https://david-dm.org/truenorth/ember-api-actions#info=devDependencies)
+
 Trigger "remote" actions on ember-data resources that don't fit into typical CRUD RESTful API design.
 
 For example, if you have restful API endpoints like

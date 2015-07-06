@@ -19,7 +19,6 @@ export default Ember.Route.extend({
   },
   deactivate() {
     this._super(...arguments);
-    debugger;
   },
   _setupPretender() {
     let server = new Pretender();

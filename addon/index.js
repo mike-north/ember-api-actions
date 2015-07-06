@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import ajax from 'ic-ajax';
 
 const buildOperationUrl = function buildOperationUrl(record, opPath, requestType, intance=true) {

@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     this._super(...arguments);
     this.set('requests', Ember.A());
   },
+  // BEGIN-SNIPPET controller
   actions: {
     ripenFruit(fruit) {
       fruit.ripen({
@@ -17,4 +18,5 @@ export default Ember.Controller.extend({
       });
     }
   }
+  // END-SNIPPET
 });

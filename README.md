@@ -18,13 +18,36 @@ PUT     /fruits/123
 DELETE  /fruits/123
 ```
 
-What happens if you want an API endpoint like this:
+What happens if you want to consume API endpoints like these:
 
 ```
 PUT    /fruits/123/ripen
+GET    /fruits/citrus
 ```
 
+Example Rails API routes:
+
+**config/routes.rb**
+
+```rb
+Rails.application.routes.draw do
+
+  resources :fruits do
+    member do
+      put 'ripen' to: 'fruits#ripen'
+    end
+    collection do
+      get 'citrus' to: 'fruits#citrus_index'
+    end
+  end
+
+end
+
+```
+
+
 This is not immediately intuitive with ember-data, and these kinds of API endpoints can be found [in widely-used RESTful APIs](https://developer.github.com/v3/gists/#star-a-gist). This library aims to make it easy. 
+
 
 
 ## Use
@@ -42,20 +65,17 @@ You can then add these "actions" (not to be confused with client-side ember.js a
 
 **app/models/fruit.js**
 ```js
-
 import DS from 'ember-data';
-import { instanceOp, classOp } from 'ember-api-actions';
+import { memberAction, collectionAction } from 'ember-api-actions';
 
 const { attr } = DS;
 
 export default DS.Model.extend({
-  name: attr('string'),
-
-  // /fruits/123/doRipen
-  ripen: instanceOp({ path: 'doRipen' }),
-
-  // /fruits/ripenEverything
-  ripenAll: classOp({ path: 'ripenEverything' })
+  name:     attr('string'),
+  // /fruits/123/ripen
+  ripen:        memberAction(    { path: 'ripen' }),
+  // /fruits/citrus
+  getAllCitrus: collectionAction({ path: 'citrus' })
 });
 
 ```
@@ -65,9 +85,7 @@ you can then call these functions, and they will initiate API requests and retur
 ```js
 
 // Pass data in, it will be sent in the POST or PUT request payload
-myRecord.ripen({
-  someData: 'abc'
-}).then(response => {
+myRecord.ripen({someData: 'abc'}).then(response => {
   // do something when the API returns a response
 });
 
@@ -82,8 +100,8 @@ Customizing your adapter should customize requests sent out via this library, al
 **ember-api-actions uses the following methods on DS.Adapter**
 
 * [buildURL](http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_buildURL) - for generating an action's URL
-* [ajaxOptions](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L928-L950) (private) - so that consumers may customize ajax options (i.e., `xhrFields`) in a single place
 * [ajax](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L836-L859) (private) - to actually make the API request and return a promise
+
 
 ## Installation
 

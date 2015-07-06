@@ -8,14 +8,12 @@ export default Ember.Controller.extend({
   // BEGIN-SNIPPET controller
   actions: {
     ripenFruit(fruit) {
-      fruit.ripen({
-        startTime: (new Date()).toString()
-      });
+      fruit.ripen(
+        fruit.getProperties(['id', 'name'])
+      );
     },
     ripenAllFruit(fruit) {
-      fruit.ripenAll({
-        startTime: (new Date()).toString()
-      });
+      fruit.ripenAll({test: 'ok'});
     }
   }
   // END-SNIPPET

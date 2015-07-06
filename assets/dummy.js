@@ -772,7 +772,7 @@ catch(err) {
 if (runningTests) {
   require("dummy/tests/test-helper");
 } else {
-  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.1.fd4527ef"});
+  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.1.049bd6f4"});
 }
 
 /* jshint ignore:end */

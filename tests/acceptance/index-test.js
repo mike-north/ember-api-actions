@@ -21,7 +21,7 @@ module('Acceptance | index', {
 
 test('visiting /', function(assert) {
   visit('/');
-  assert.expect(3);
+  assert.expect(2);
   server.put('/fruits/:id/doRipen', function (request) {
     assert.equal(request.url, '/fruits/1/doRipen', 'request was made to "doRipen"');
     return [200, {}, '{"status": "ok"}'];
@@ -34,7 +34,6 @@ test('visiting /', function(assert) {
 
   andThen(function() {
     click('#apple .ripen-instance-button');
-    assert.equal(currentURL(), '');
   });
 
   andThen(function() {

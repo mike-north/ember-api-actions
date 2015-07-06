@@ -46,10 +46,10 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  // if (environment === 'development') {
-  //   ENV.locationType = 'hash';
-  //   ENV.baseURL = 'ember-api-actions/';
-  // }
+  if (environment === 'development') {
+    ENV.locationType = 'hash';
+    ENV.baseURL = 'ember-api-actions/';
+  }
 
   return ENV;
 };

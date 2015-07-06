@@ -16,7 +16,7 @@ PUT     /fruits/123
 DELETE  /fruits/123
 ```
 
-What happens if you want an intuitive API endpoint like this:
+What happens if you want an API endpoint like this:
 
 ```
 PUT    /fruits/123/ripen

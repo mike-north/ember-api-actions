@@ -18,7 +18,7 @@ What happens if you want an intuitive API endpoint like this:
 PUT    /fruits/123/ripen
 ```
 
-This is not immediately intuitive with ember-data. This library aims to make it easy.
+This is not immediately intuitive with ember-data, and these kinds of API endpoints can be found [in widely-used RESTful APIs](https://developer.github.com/v3/gists/#star-a-gist). This library aims to make it easy. 
 
 
 ## Use

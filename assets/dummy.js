@@ -121,7 +121,7 @@ define('dummy/ember-api-actions/tests/modules/ember-api-actions/index.jshint', f
 
   module('JSHint - modules/ember-api-actions');
   test('modules/ember-api-actions/index.js should pass jshint', function () {
-    ok(false, 'modules/ember-api-actions/index.js should pass jshint.\nmodules/ember-api-actions/index.js: line 4, col 3, \'Ember\' is not defined.\nmodules/ember-api-actions/index.js: line 16, col 17, \'Ember\' is not defined.\nmodules/ember-api-actions/index.js: line 30, col 17, \'Ember\' is not defined.\n\n3 errors');
+    ok(true, 'modules/ember-api-actions/index.js should pass jshint.');
   });
 
 });
@@ -214,10 +214,23 @@ define('dummy/routes/index', ['exports', 'ember', 'pretender'], function (export
 
   exports['default'] = Ember['default'].Route.extend({
     model: function model() {
-      return Ember['default'].A(this.store.pushMany('fruit', [{ id: 1, name: 'apple' }, { id: 2, name: 'pear' }, { id: 3, name: 'orange' }, { id: 4, name: 'grape' }]));
+      return Ember['default'].A(this.store.pushMany('fruit', [{
+        id: 1,
+        name: 'apple'
+      }, {
+        id: 2,
+        name: 'pear'
+      }, {
+        id: 3,
+        name: 'orange'
+      }, {
+        id: 4,
+        name: 'grape'
+      }]));
+      // return this.get('store').findAll('fruit');
     },
 
-    activate: function activate() {
+    beforeModel: function beforeModel() {
       this._super.apply(this, arguments);
       if (!Ember['default'].testing) {
         this._setupPretender();
@@ -225,12 +238,16 @@ define('dummy/routes/index', ['exports', 'ember', 'pretender'], function (export
     },
     deactivate: function deactivate() {
       this._super.apply(this, arguments);
-      debugger;
     },
     _setupPretender: function _setupPretender() {
       var _this = this;
 
       var server = new Pretender['default']();
+      // server.get('/fruits', request => {
+      //   return [200, {}, JSON.stringify({
+      //     fruits:
+      //   })];
+      // });
       server.put('/fruits/:id/doRipen', function (request) {
         var controller = _this.get('controller');
         controller.get('requests').addObject({
@@ -390,6 +407,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
         build: function build(dom) {
           var el0 = dom.createDocumentFragment();
           var el1 = dom.createElement("p");
+          dom.setAttribute(el1,"class","fruit-thing");
           var el2 = dom.createTextNode("\n");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
@@ -420,7 +438,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
         },
         render: function render(context, env, contextualElement, blockArguments) {
           var dom = env.dom;
-          var hooks = env.hooks, set = hooks.set, content = hooks.content, get = hooks.get, element = hooks.element;
+          var hooks = env.hooks, set = hooks.set, get = hooks.get, element = hooks.element, content = hooks.content;
           dom.detectNamespace(contextualElement);
           var fragment;
           if (env.useFragmentCache && dom.canClone) {
@@ -443,6 +461,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
           var morph0 = dom.createMorphAt(element1,1,1);
           var morph1 = dom.createMorphAt(element1,3,3);
           set(env, context, "fruit", blockArguments[0]);
+          element(env, element1, context, "bind-attr", [], {"id": get(env, context, "fruit.name")});
           content(env, morph0, context, "fruit.id");
           content(env, morph1, context, "fruit.name");
           element(env, element2, context, "action", ["ripenFruit", get(env, context, "fruit")], {});
@@ -533,6 +552,7 @@ define('dummy/templates/index', ['exports'], function (exports) {
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("p");
+        dom.setAttribute(el1,"class","all-fruit");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
@@ -608,6 +628,58 @@ define('dummy/templates/index', ['exports'], function (exports) {
       }
     };
   }()));
+
+});
+define('dummy/tests/acceptance/index-test', ['ember', 'qunit', 'dummy/tests/helpers/start-app', 'pretender'], function (Ember, qunit, startApp, Pretender) {
+
+  'use strict';
+
+  var application = undefined;
+  var server = undefined;
+
+  qunit.module('Acceptance | index', {
+    beforeEach: function beforeEach() {
+      application = startApp['default']();
+      server = new Pretender['default']();
+    },
+
+    afterEach: function afterEach() {
+      Ember['default'].run(application, 'destroy');
+      server.shutdown();
+    }
+  });
+
+  qunit.test('visiting /', function (assert) {
+    visit('/');
+    assert.expect(2);
+    server.put('/fruits/:id/doRipen', function (request) {
+      assert.equal(request.url, '/fruits/1/doRipen', 'request was made to "doRipen"');
+      return [200, {}, '{"status": "ok"}'];
+    });
+
+    server.put('/fruits/ripenEverything', function (request) {
+      assert.ok(true, 'request was made to "ripenEverything"');
+      return [200, {}, '{"status": "ok"}'];
+    });
+
+    andThen(function () {
+      click('#apple .ripen-instance-button');
+    });
+
+    andThen(function () {
+      click('.all-fruit .ripen-type-button');
+    });
+  });
+
+});
+define('dummy/tests/acceptance/index-test.jshint', function () {
+
+  'use strict';
+
+  module('JSHint - acceptance');
+  test('acceptance/index-test.js should pass jshint', function() { 
+    ok(true, 'acceptance/index-test.js should pass jshint.'); 
+  });
 
 });
 define('dummy/tests/app.jshint', function () {
@@ -723,7 +795,7 @@ define('dummy/tests/routes/index.jshint', function () {
 
   module('JSHint - routes');
   test('routes/index.js should pass jshint', function() { 
-    ok(false, 'routes/index.js should pass jshint.\nroutes/index.js: line 22, col 5, Forgotten \'debugger\' statement?\n\n1 error'); 
+    ok(true, 'routes/index.js should pass jshint.'); 
   });
 
 });
@@ -772,7 +844,7 @@ catch(err) {
 if (runningTests) {
   require("dummy/tests/test-helper");
 } else {
-  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.1.049bd6f4"});
+  require("dummy/app")["default"].create({"name":"ember-api-actions","version":"0.0.1.148c34de"});
 }
 
 /* jshint ignore:end */

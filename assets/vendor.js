@@ -85058,14 +85058,14 @@ module.exports = function(hljs) {
   });
 });
 
-define('ember-api-actions/index', ['exports', 'ic-ajax'], function (exports, ajax) {
+define('ember-api-actions/index', ['exports', 'ember', 'ic-ajax'], function (exports, Ember, ajax) {
 
   'use strict';
 
   var buildOperationUrl = function buildOperationUrl(record, opPath, requestType) {
     var intance = arguments[3] === undefined ? true : arguments[3];
 
-    Ember.assert('You must provide a path for instanceOp', opPath);
+    Ember['default'].assert('You must provide a path for instanceOp', opPath);
     var modelName = record.constructor.modelName;
     var adapter = record.store.adapterFor(modelName);
     var path = opPath;
@@ -85077,7 +85077,7 @@ define('ember-api-actions/index', ['exports', 'ic-ajax'], function (exports, aja
     return function (payload) {
       var requestType = options.type || 'PUT';
       var fullUrl = buildOperationUrl(this, options.path, requestType);
-      return ajax['default'](Ember.$.extend(options.ajaxOptions || {}, {
+      return ajax['default'](Ember['default'].$.extend(options.ajaxOptions || {}, {
         type: requestType,
         url: fullUrl,
         contentType: 'application/json',
@@ -85091,7 +85091,7 @@ define('ember-api-actions/index', ['exports', 'ic-ajax'], function (exports, aja
     return function (payload) {
       var requestType = options.type || 'PUT';
       var fullUrl = buildOperationUrl(this, options.path, requestType, false);
-      return ajax['default'](Ember.$.extend(options.ajaxOptions || {}, {
+      return ajax['default'](Ember['default'].$.extend(options.ajaxOptions || {}, {
         type: requestType,
         url: fullUrl,
         contentType: 'application/json',

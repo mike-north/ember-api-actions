@@ -6,5 +6,10 @@ export default function buildOperationUrl(record, opPath, requestType, intance=t
   let adapter = record.store.adapterFor(modelName);
   let path = opPath;
   let baseUrl = adapter.buildURL(modelName, intance ? record.get('id') : null, requestType);
-  return `${baseUrl}/${path}`;
+  
+  if (baseUrl.charAt(baseUrl.length-1) === '/') {
+    return `${baseUrl}${path}`;
+  } else {
+    return `${baseUrl}/${path}`;
+  }
 }

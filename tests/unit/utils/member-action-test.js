@@ -1,6 +1,5 @@
 import memberAction from 'ember-api-actions/utils/member-action';
 import { module, test } from 'qunit';
-import Pretender from 'pretender';
 
 module('Unit | Utility | member action');
 

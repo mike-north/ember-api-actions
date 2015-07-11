@@ -1,6 +1,6 @@
 {
   "name": "ember-api-actions",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Trigger remote actions that don't fit into CRUD, in your Ember.js apps",
   "directories": {
     "doc": "doc",
@@ -20,13 +20,13 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
-    "ember-cli": "0.2.7",
-    "ember-cli-app-version": "0.3.3",
+    "ember-cli": "1.13.1",
+    "ember-cli-app-version": "0.3.5",
     "ember-cli-content-security-policy": "0.4.0",
     "ember-cli-dependency-checker": "^1.0.0",
     "ember-cli-github-pages": "0.0.6",
-    "ember-cli-htmlbars": "0.7.6",
-    "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-htmlbars": "0.7.9",
+    "ember-cli-ic-ajax": "0.2.1",
     "ember-cli-inject-live-reload": "^1.3.0",
     "ember-cli-pretender": "0.3.2",
     "ember-cli-qunit": "0.3.13",

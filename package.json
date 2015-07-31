@@ -11,8 +11,8 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/truenorth/ember-api-actions.git",
-  "homepage": "https://github.com/truenorth/ember-api-actions",
+  "repository": "https://github.com/mike-north/ember-api-actions.git",
+  "homepage": "https://github.com/mike-north/ember-api-actions",
   "engines": {
     "node": ">= 0.10.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "ember-api-actions",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Trigger remote actions that don't fit into CRUD, in your Ember.js apps",
   "directories": {
     "doc": "doc",
@@ -11,8 +11,8 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/truenorth/ember-api-actions.git",
-  "homepage": "https://github.com/truenorth/ember-api-actions",
+  "repository": "https://github.com/mike-north/ember-api-actions.git",
+  "homepage": "https://github.com/mike-north/ember-api-actions",
   "engines": {
     "node": ">= 0.10.0"
   },

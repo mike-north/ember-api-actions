@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
       );
     },
     ripenAllFruit(fruit) {
-      fruit.ripenAll({test: 'ok'});
+      fruit.ripenAll({ test: 'ok' });
     }
   }
   // END-SNIPPET

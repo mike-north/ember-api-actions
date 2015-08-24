@@ -32,21 +32,23 @@ module.exports = {
       }
     },
     {
-      name: 'ember-release',
+      name: 'ember-1.13',
       dependencies: {
-        'ember': 'components/ember#release'
+        'ember': '~1.13.0'
       },
       resolutions: {
-        'ember': 'release'
+        'ember': '~1.13.0'
       }
     },
     {
       name: 'ember-release',
       dependencies: {
-        'ember': 'components/ember#release'
+        'ember': 'components/ember#release',
+        'ember-data': 'components/ember-data#release'
       },
       resolutions: {
-        'ember': 'release'
+        'ember': 'release',
+        'ember-data': 'release'
       }
     },
     {

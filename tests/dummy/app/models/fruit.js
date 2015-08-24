@@ -6,7 +6,7 @@ const { attr } = DS;
 
 export default DS.Model.extend({
   name:     attr('string'),
-  ripen:    memberAction(    { path: 'doRipen' }),
+  ripen:    memberAction({ path: 'doRipen' }),
   ripenAll: collectionAction({ path: 'ripenEverything' })
 });
 // END-SNIPPET

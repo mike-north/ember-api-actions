@@ -35,6 +35,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV.EmberENV.RAISE_ON_DEPRECATION = !process.env['ALLOW_DEPRECATIONS'];
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';

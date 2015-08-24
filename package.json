@@ -21,7 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.1.2",
     "ember-cli": "1.13.8",
-    "ember-cli-app-version": "0.5.1",
+    "ember-cli-app-version": "0.5.0",
     "ember-cli-content-security-policy": "0.4.0",
     "ember-cli-dependency-checker": "^1.0.1",
     "ember-cli-github-pages": "0.0.6",
@@ -35,7 +35,7 @@
     "ember-data": "1.0.0-beta.19",
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
-    "ember-export-application-global": "^1.0.3",
+    "ember-export-application-global": "^1.0.4",
     "ember-suave": "1.0.0",
     "ember-try": "0.0.8"
   },

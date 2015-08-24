@@ -1,10 +1,9 @@
 import Ember from 'ember';
 import Pretender from 'pretender';
 
-export default Ember.Route.extend({
-
-  model() {
-    return Ember.A(this.store.pushMany('fruit', [{
+const LEGACY_PAYLOAD = {
+  'fruit': [
+    {
       id: 1,
       name: 'apple'
     }, {
@@ -16,7 +15,43 @@ export default Ember.Route.extend({
     }, {
       id: 4,
       name: 'grape'
-    }]));
+    }
+  ]
+};
+
+const PAYLOAD = {
+  data: [{
+    type: 'fruit',
+    id: 1,
+    attributes: {
+      name: 'apple'
+    }
+  }, {
+    type: 'fruit',
+    id: 2,
+    attributes: {
+      name: 'pear'
+    }
+  }, {
+    type: 'fruit',
+    id: 3,
+    attributes: {
+      name: 'orange'
+    }
+  }, {
+    type: 'fruit',
+    id: 4,
+    attributes: {
+      name: 'grape'
+    }
+  }]
+};
+
+export default Ember.Route.extend({
+
+  model() {
+    this.store.pushPayload('fruit', this.store.pushMany ? LEGACY_PAYLOAD : PAYLOAD);
+    return Ember.A(this.store.pushMany ? [1, 2, 3, 4].map(id => this.store.getById('fruit', id)) : this.store.peekAll('fruit'));
     // return this.get('store').findAll('fruit');
   },
 

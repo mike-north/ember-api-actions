@@ -51,7 +51,13 @@ export default Ember.Route.extend({
 
   model() {
     this.store.pushPayload('fruit', this.store.pushMany ? LEGACY_PAYLOAD : PAYLOAD);
-    return Ember.A(this.store.pushMany ? [1, 2, 3, 4].map(id => this.store.getById('fruit', id)) : this.store.peekAll('fruit'));
+    let arr = [];
+    if (!this.store.peekAll) {
+      arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
+    } else {
+      arr = this.store.peekAll('fruit');
+    }
+    return Ember.A(arr);
     // return this.get('store').findAll('fruit');
   },
 

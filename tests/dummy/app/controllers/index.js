@@ -12,8 +12,8 @@ export default Ember.Controller.extend({
         fruit.getProperties(['id', 'name'])
       );
     },
-    ripenAllFruit(fruit) {
-      fruit.ripenAll({ test: 'ok' });
+    ripenAllFruit() {
+      this.store.collectionAction('fruit', 'ripenAll', { test: 'ok' });
     }
   }
   // END-SNIPPET

@@ -5,6 +5,17 @@ module.exports = {
       dependencies: { }
     },
     {
+      name: 'ember-1.11-ember-data-beta.16',
+      dependencies: {
+        'ember': '~1.11.0',
+        'ember-data': '1.0.0-beta.16.1'
+      },
+      resolutions: {
+        'ember': '~1.11.0',
+        'ember-data': '1.0.0-beta.16.1'
+      }
+    },
+    {
       name: 'ember-1.11',
       dependencies: {
         'ember': '~1.11.0'

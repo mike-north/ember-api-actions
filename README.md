@@ -120,6 +120,9 @@ Customizing your adapter should customize requests sent out via this library, al
 * `ember test`
 * `ember test --server`
 
+Make sure to set `ALLOW_DEPRECATIONS=true` or the tests will raise
+errors on deprecation
+
 ## Building
 
 * `ember build`

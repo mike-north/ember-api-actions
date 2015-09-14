@@ -50,8 +50,8 @@ const PAYLOAD = {
 export default Ember.Route.extend({
 
   model() {
-    this.store.pushPayload('fruit', this.store.pushMany ? LEGACY_PAYLOAD : PAYLOAD);
     let arr = [];
+    this.store.pushPayload('fruit', !this.store.peekAll ? LEGACY_PAYLOAD : PAYLOAD);
     if (!this.store.peekAll) {
       arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
     } else {

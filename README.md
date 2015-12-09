@@ -90,6 +90,9 @@ myRecord.ripen({someData: 'abc'}).then(response => {
   // do something when the API returns a response
 });
 
+// Call collection actions through the store
+this.store.collectionAction('fruit', 'getAllCitrus', {someData: 'abc'})
+
 ```
 
 ## Customization

@@ -1,42 +1,79 @@
 # Change Log
 
-## [v0.0.6](https://github.com/truenorth/ember-api-actions/tree/v0.0.6) (2015-07-28)
+## [Unreleased](https://github.com/mike-north/ember-api-actions/tree/HEAD)
 
-[Full Changelog](https://github.com/truenorth/ember-api-actions/compare/v0.0.5...v0.0.6)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.11...HEAD)
 
-## [v0.0.5](https://github.com/truenorth/ember-api-actions/tree/v0.0.5) (2015-07-11)
 
-[Full Changelog](https://github.com/truenorth/ember-api-actions/compare/v0.0.4...v0.0.5)
-
-**Merged pull requests:**
-
-- Update to ember-cli 1.13 [\#5](https://github.com/truenorth/ember-api-actions/pull/5) ([truenorth](https://github.com/truenorth))
-
-## [v0.0.4](https://github.com/truenorth/ember-api-actions/tree/v0.0.4) (2015-07-07)
-
-[Full Changelog](https://github.com/truenorth/ember-api-actions/compare/v0.0.3...v0.0.4)
+## [v0.0.11](https://github.com/mike-north/ember-api-actions/tree/v0.0.11) (2015-12-09)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.10...v0.0.11)
 
 **Merged pull requests:**
 
-- Fixes issue with URLs that already end in a '/' character [\#4](https://github.com/truenorth/ember-api-actions/pull/4) ([jmurphyau](https://github.com/jmurphyau))
+- Update ember cli to 1.13.13 [\#15](https://github.com/mike-north/ember-api-actions/pull/15) ([mike-north](https://github.com/mike-north))
+- Fix buildURL to match ember-data signature. [\#13](https://github.com/mike-north/ember-api-actions/pull/13) ([richmolj](https://github.com/richmolj))
 
-## [v0.0.3](https://github.com/truenorth/ember-api-actions/tree/v0.0.3) (2015-07-06)
+## [v0.0.10](https://github.com/mike-north/ember-api-actions/tree/v0.0.10) (2015-09-14)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.9...v0.0.10)
 
-[Full Changelog](https://github.com/truenorth/ember-api-actions/compare/v0.0.2...v0.0.3)
+**Fixed bugs:**
+
+- should note versions of ember-data this addon is compatible with [\#6](https://github.com/mike-north/ember-api-actions/issues/6)
+
+**Merged pull requests:**
+
+- Support for ember-data 1.0.0-beta.16 [\#12](https://github.com/mike-north/ember-api-actions/pull/12) ([mike-north](https://github.com/mike-north))
+
+## [v0.0.9](https://github.com/mike-north/ember-api-actions/tree/v0.0.9) (2015-09-14)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.8...v0.0.9)
+
+**Merged pull requests:**
+
+- Remove brocfile, get ember-1.13 working in CI again [\#11](https://github.com/mike-north/ember-api-actions/pull/11) ([mike-north](https://github.com/mike-north))
+- Add note on testing to readme [\#10](https://github.com/mike-north/ember-api-actions/pull/10) ([richmolj](https://github.com/richmolj))
+
+## [v0.0.8](https://github.com/mike-north/ember-api-actions/tree/v0.0.8) (2015-08-24)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.7...v0.0.8)
 
 **Closed issues:**
 
-- Ember Data and ajaxOptions [\#2](https://github.com/truenorth/ember-api-actions/issues/2)
+- collectionAction is not a function [\#7](https://github.com/mike-north/ember-api-actions/issues/7)
+
+## [v0.0.7](https://github.com/mike-north/ember-api-actions/tree/v0.0.7) (2015-07-31)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.6...v0.0.7)
+
+## [v0.0.6](https://github.com/mike-north/ember-api-actions/tree/v0.0.6) (2015-07-28)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.5...v0.0.6)
+
+## [v0.0.5](https://github.com/mike-north/ember-api-actions/tree/v0.0.5) (2015-07-11)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.4...v0.0.5)
 
 **Merged pull requests:**
 
-- Refactoring, and relying on Adapter\#ajax and not Adapter\#ajaxOptions [\#3](https://github.com/truenorth/ember-api-actions/pull/3) ([truenorth](https://github.com/truenorth))
+- Update to ember-cli 1.13 [\#5](https://github.com/mike-north/ember-api-actions/pull/5) ([mike-north](https://github.com/mike-north))
 
-## [v0.0.2](https://github.com/truenorth/ember-api-actions/tree/v0.0.2) (2015-07-06)
+## [v0.0.4](https://github.com/mike-north/ember-api-actions/tree/v0.0.4) (2015-07-07)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.3...v0.0.4)
 
 **Merged pull requests:**
 
-- Use ember-data adapter for ajaxOptions and ajax [\#1](https://github.com/truenorth/ember-api-actions/pull/1) ([truenorth](https://github.com/truenorth))
+- Fixes issue with URLs that already end in a '/' character [\#4](https://github.com/mike-north/ember-api-actions/pull/4) ([jmurphyau](https://github.com/jmurphyau))
+
+## [v0.0.3](https://github.com/mike-north/ember-api-actions/tree/v0.0.3) (2015-07-06)
+[Full Changelog](https://github.com/mike-north/ember-api-actions/compare/v0.0.2...v0.0.3)
+
+**Closed issues:**
+
+- Ember Data and ajaxOptions [\#2](https://github.com/mike-north/ember-api-actions/issues/2)
+
+**Merged pull requests:**
+
+- Refactoring, and relying on Adapter\#ajax and not Adapter\#ajaxOptions [\#3](https://github.com/mike-north/ember-api-actions/pull/3) ([mike-north](https://github.com/mike-north))
+
+## [v0.0.2](https://github.com/mike-north/ember-api-actions/tree/v0.0.2) (2015-07-06)
+**Merged pull requests:**
+
+- Use ember-data adapter for ajaxOptions and ajax [\#1](https://github.com/mike-north/ember-api-actions/pull/1) ([mike-north](https://github.com/mike-north))
 
 
 

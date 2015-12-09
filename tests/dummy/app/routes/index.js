@@ -53,7 +53,7 @@ export default Ember.Route.extend({
     let arr = [];
     this.store.pushPayload('fruit', !this.store.peekAll ? LEGACY_PAYLOAD : PAYLOAD);
     if (!this.store.peekAll) {
-      arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
+      arr = [1, 2, 3, 4].map((id) => this.store.getById('fruit', id));
     } else {
       arr = this.store.peekAll('fruit');
     }
@@ -77,7 +77,7 @@ export default Ember.Route.extend({
     //     fruits:
     //   })];
     // });
-    server.put('/fruits/:id/doRipen', request => {
+    server.put('/fruits/:id/doRipen', (request) => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
@@ -85,7 +85,7 @@ export default Ember.Route.extend({
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.put('/fruits/ripenEverything', request => {
+    server.put('/fruits/ripenEverything', (request) => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,

@@ -92,7 +92,7 @@ module.exports = {
       }
     }
   }, {
-    name: 'ember-release',
+    name: 'ember-2.2',
     bower: {
       dependencies: {
         'ember': 'components/ember#release',
@@ -113,6 +113,17 @@ module.exports = {
       },
       resolutions: {
         'ember': 'release'
+      }
+    }
+  }, {
+    name: 'ember-beta',
+    bower: {
+      dependencies: {
+        'ember': 'components/ember#beta',
+        'ember-data': '~2.3.0'
+      },
+      resolutions: {
+        'ember': 'beta'
       }
     }
   }]

@@ -4,4 +4,12 @@ export function jsonString(params/*, hash*/) {
   return JSON.stringify(params[0]);
 }
 
-export default Ember.HTMLBars.makeBoundHelper(jsonString);
+let forExport = null;
+
+if (Ember.Helper) {
+  forExport = Ember.Helper.helper(jsonString);
+} else if (Ember.HTMLBars.makeBoundHelper) {
+  forExport = Ember.HTMLBars.makeBoundHelper(jsonString);
+}
+
+export default forExport;

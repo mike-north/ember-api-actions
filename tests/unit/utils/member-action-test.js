@@ -5,6 +5,6 @@ module('Unit | Utility | member action');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  const result = memberAction();
+  let result = memberAction();
   assert.ok(result);
 });

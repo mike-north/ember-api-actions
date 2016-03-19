@@ -5,24 +5,6 @@ module.exports = {
       dependencies: {}
     }
   }, {
-    name: 'ember-1.11-ember-data-beta.16',
-    npm: {
-      dependencies: {
-        'ember-data': '1.0.0-beta.16.1'
-      }
-    },
-    bower: {
-      dependencies: {
-        'ember': '~1.11.0',
-        'ember-data': '1.0.0-beta.16.1',
-        'ember-cli-shims': '~0.0.6'
-      },
-      resolutions: {
-        'ember': '~1.11.0',
-        'ember-data': '1.0.0-beta.16.1'
-      }
-    }
-  }, {
     name: 'ember-1.11',
     npm: {
       'ember-data': '~1.13.0'

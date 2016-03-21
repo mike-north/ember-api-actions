@@ -67,16 +67,16 @@ You can then add these "actions" (not to be confused with client-side ember.js a
 **app/models/fruit.js**
 ```js
 import DS from 'ember-data';
-import { memberAction, collectionAction } from 'ember-api-actions';
+import { instanceOp, classOp } from 'ember-api-actions';
 
 const { attr } = DS;
 
 export default DS.Model.extend({
-  name:     attr('string'),
-  // /fruits/123/ripen
-  ripen:        memberAction(    { path: 'ripen' }),
-  // /fruits/citrus
-  getAllCitrus: collectionAction({ path: 'citrus' })
+  name:           attr('string'),
+                  // /fruits/123/ripen
+  ripen:          instanceOp(    { path: 'ripen' }),
+                  // /fruits/citrus
+  getAllCitrus:   classOp({ path: 'citrus' })
 });
 
 ```

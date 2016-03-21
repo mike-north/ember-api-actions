@@ -7,6 +7,6 @@ export default function instanceOp(options) {
     let requestType = options.type || 'PUT';
     let adapter = this.store.adapterFor(modelName);
     let fullUrl = buildOperationUrl(this, options.path, requestType, false);
-    return adapter.ajax(fullUrl, requestType, Ember.$.extend(options.ajaxOptions || {}, { data: payload }));
+    return adapter.ajax(fullUrl, requestType, Ember.$.extend({}, options.ajaxOptions, { data: payload }));
   };
 }

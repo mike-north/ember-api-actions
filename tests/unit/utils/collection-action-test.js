@@ -5,6 +5,6 @@ module('Unit | Utility | collection action');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  const result = collectionAction();
+  let result = collectionAction();
   assert.ok(result);
 });

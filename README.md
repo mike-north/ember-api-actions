@@ -76,7 +76,11 @@ export default DS.Model.extend({
   // /fruits/123/ripen
   ripen:        memberAction(    { path: 'ripen' }),
   // /fruits/citrus
-  getAllCitrus: collectionAction({ path: 'citrus' })
+  getAllCitrus: collectionAction({
+    path: 'citrus',
+    type: 'post', // HTTP POST request
+    urlType: 'findRecord' // Base of the URL that's generated for the action
+  })
 });
 
 ```

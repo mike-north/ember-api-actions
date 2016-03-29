@@ -4,7 +4,7 @@ const { assert } = Ember;
 
 export default function buildOperationUrl(record, opPath, urlType, instance=true) {
   assert('You must provide a path for instanceOp', opPath);
-  const modelName = record.constructor.modelName || record.constructor.typeKey;
+  let modelName = record.constructor.modelName || record.constructor.typeKey;
   let adapter = record.store.adapterFor(modelName);
   let path = opPath;
   let snapshot = record._createSnapshot();

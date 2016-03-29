@@ -98,6 +98,28 @@ module.exports = {
       }
     }
   }, {
+    name: 'ember-release-ed-2.4',
+    bower: {
+      dependencies: {
+        'ember': 'components/ember#release',
+        'ember-data': '~2.4.0'
+      },
+      resolutions: {
+        'ember': 'release'
+      }
+    }
+  }, {
+    name: 'ember-release-ed-2.5',
+    bower: {
+      dependencies: {
+        'ember': 'components/ember#release',
+        'ember-data': '~2.5.0-beta.3'
+      },
+      resolutions: {
+        'ember': 'release'
+      }
+    }
+  }, {
     name: 'ember-beta',
     bower: {
       dependencies: {

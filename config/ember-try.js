@@ -77,21 +77,62 @@ module.exports = {
     name: 'ember-2.2',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.2.0',
+        'ember': '~2.2.0',
         'ember-cli-shims': '~0.0.6'
       },
       resolutions: {
-        'ember': 'release',
+        'ember': '~2.2.0'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.2.0'
+      },
+      resolutions: {
+        'ember-data': '~2.2.0'
+      }
+    }
+  }, {
+    name: 'ember-2.3',
+    bower: {
+      dependencies: {
+        'ember': '~2.3.0'
+      },
+      resolutions: {
+        'ember': '~2.3.0'
+      }
+    },
+    npm: {
+      dependencies: {
+        'ember-data': '~2.3.0'
+      },
+      resolutions: {
+        'ember-data': '~2.3.0'
+      }
+    }
+  }, {
+    name: 'ember-2.4',
+    bower: {
+      dependencies: {
+        'ember': '~2.4.0'
+      },
+      resolutions: {
+        'ember': '~2.4.0'
+      }
+    },
+    npm: {
+      dependencies: {
+        'ember-data': '~2.4.0'
+      },
+      resolutions: {
+        'ember-data': '~2.4.0'
       }
     }
   }, {
     name: 'ember-release',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.3.0'
+        'ember': 'components/ember#release'
       },
       resolutions: {
         'ember': 'release'
@@ -101,33 +142,56 @@ module.exports = {
     name: 'ember-release-ed-2.4',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.4.0'
+        'ember': 'components/ember#release'
       },
       resolutions: {
         'ember': 'release'
+      }
+    },
+    npm: {
+      dependencies: {
+        'ember-data': '~2.4.0'
+      },
+      resolutions: {
+        'ember-data': '~2.4.0'
       }
     }
   }, {
     name: 'ember-release-ed-2.5',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.5.0-beta.3'
+        'ember': 'components/ember#release'
       },
       resolutions: {
         'ember': 'release'
+      }
+    },
+    npm: {
+      dependencies: {
+        'ember-data': '~2.5.0'
+      },
+      resolutions: {
+        'ember-data': '~2.5.0'
       }
     }
   }, {
     name: 'ember-beta',
     bower: {
       dependencies: {
-        'ember': 'components/ember#beta',
-        'ember-data': '~2.3.0'
+        'ember': 'components/ember#beta'
       },
       resolutions: {
         'ember': 'beta'
+      }
+    }
+  }, {
+    name: 'ember-canary',
+    bower: {
+      dependencies: {
+        'ember': 'components/ember#canary'
+      },
+      resolutions: {
+        'ember': 'canary'
       }
     }
   }]

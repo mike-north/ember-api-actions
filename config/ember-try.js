@@ -77,19 +77,10 @@ module.exports = {
     name: 'ember-2.2',
     bower: {
       dependencies: {
-        'ember': '~2.2.0',
-        'ember-cli-shims': '~0.0.6'
+        'ember': '~2.2.0'
       },
       resolutions: {
         'ember': '~2.2.0'
-      }
-    },
-    npm: {
-      dependencies: {
-        'ember-data': '~2.2.0'
-      },
-      resolutions: {
-        'ember-data': '~2.2.0'
       }
     }
   }, {
@@ -182,6 +173,14 @@ module.exports = {
       },
       resolutions: {
         'ember': 'beta'
+      }
+    },
+    npm: {
+      dependencies: {
+        'ember-data': 'components/ember-data#beta'
+      },
+      resolutions: {
+        'ember-data': 'components/ember-data#beta'
       }
     }
   }, {

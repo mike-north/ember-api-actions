@@ -72,9 +72,9 @@ import { memberAction, collectionAction } from 'ember-api-actions';
 const { attr } = DS;
 
 export default DS.Model.extend({
-  name:     attr('string'),
+  name: attr('string'),
   // /fruits/123/ripen
-  ripen:        memberAction(    { path: 'ripen' }),
+  ripen: memberAction({ path: 'ripen' }),
   // /fruits/citrus
   getAllCitrus: collectionAction({
     path: 'citrus',
@@ -82,18 +82,15 @@ export default DS.Model.extend({
     urlType: 'findRecord' // Base of the URL that's generated for the action
   })
 });
-
 ```
 
 you can then call these functions, and they will initiate API requests and return you the promise
 
 ```js
-
 // Pass data in, it will be sent in the POST or PUT request payload
 myRecord.ripen({someData: 'abc'}).then(response => {
   // do something when the API returns a response
 });
-
 ```
 
 ## Customization

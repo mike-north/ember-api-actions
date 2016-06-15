@@ -47,7 +47,9 @@ const PAYLOAD = {
   }]
 };
 
-export default Ember.Route.extend({
+const { Route, A } = Ember;
+
+export default Route.extend({
 
   model() {
     let arr = [];
@@ -57,13 +59,15 @@ export default Ember.Route.extend({
     } else {
       arr = this.store.peekAll('fruit');
     }
-    return Ember.A(arr);
+    return A(arr);
     // return this.get('store').findAll('fruit');
   },
 
   beforeModel() {
     this._super(...arguments);
+    // jscs:disable disallowDirectPropertyAccess
     if (!Ember.testing) {
+      // jscs:enable disallowDirectPropertyAccess
       this._setupPretender();
     }
   },

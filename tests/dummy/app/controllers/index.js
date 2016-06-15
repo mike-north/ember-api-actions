@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+const { Controller, A } = Ember;
+
+export default Controller.extend({
   init() {
     this._super(...arguments);
-    this.set('requests', Ember.A());
+    this.set('requests', A());
   },
   // BEGIN-SNIPPET controller
   actions: {

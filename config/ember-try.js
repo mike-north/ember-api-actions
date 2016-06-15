@@ -87,44 +87,58 @@ module.exports = {
       }
     }
   }, {
-    name: 'ember-release',
+    name: 'ember-2.6-ed-2.4',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.3.0'
-      },
-      resolutions: {
-        'ember': 'release'
-      }
-    }
-  }, {
-    name: 'ember-release-ed-2.4',
-    bower: {
-      dependencies: {
-        'ember': 'components/ember#release',
+        'ember': '~2.6.0',
         'ember-data': '~2.4.0'
       },
       resolutions: {
-        'ember': 'release'
+        'ember': '~2.6.0'
       }
     }
   }, {
-    name: 'ember-release-ed-2.5',
+    name: 'ember-2.6-ed-2.5',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
-        'ember-data': '~2.5.0-beta.3'
+        'ember': '~2.6.0',
+        'ember-data': '~2.5.0'
       },
       resolutions: {
-        'ember': 'release'
+        'ember': '~2.6.0',
+        'ember-data': '~2.5.0'
       }
     }
   }, {
-    name: 'ember-beta',
+    name: 'ember-2.6-ed-2.6',
+    bower: {
+      dependencies: {
+        'ember': '~2.6.0',
+        'ember-data': '~2.6.0'
+      },
+      resolutions: {
+        'ember': '~2.6.0',
+        'ember-data': '~2.6.0'
+      }
+    }
+  }, {
+    name: 'ember-2.7-ed-2.6',
     bower: {
       dependencies: {
         'ember': 'components/ember#beta',
-        'ember-data': '~2.3.0'
+        'ember-data': '~2.7.0-beta.1'
+      },
+      resolutions: {
+        'ember': 'beta',
+        'ember-data': '~2.7.0-beta.1'
+      }
+    }
+  }, {
+    name: 'ember-2.7-ed-2.7',
+    bower: {
+      dependencies: {
+        'ember': 'components/ember#beta',
+        'ember-data': '~2.6.0-beta.1'
       },
       resolutions: {
         'ember': 'beta'

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import Pretender from 'pretender';
 
+const { Route, testing, A } = Ember;
+
 const LEGACY_PAYLOAD = {
   'fruit': [
     {
@@ -47,7 +49,7 @@ const PAYLOAD = {
   }]
 };
 
-export default Ember.Route.extend({
+export default Route.extend({
 
   model() {
     let arr = [];
@@ -57,13 +59,13 @@ export default Ember.Route.extend({
     } else {
       arr = this.store.peekAll('fruit');
     }
-    return Ember.A(arr);
+    return A(arr);
     // return this.get('store').findAll('fruit');
   },
 
   beforeModel() {
     this._super(...arguments);
-    if (!Ember.testing) {
+    if (!testing) {
       this._setupPretender();
     }
   },

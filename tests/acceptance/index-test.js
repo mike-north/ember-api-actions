@@ -16,7 +16,8 @@ moduleForAcceptance('Acceptance | index', {
 
 test('visiting /', function(assert) {
   visit('/');
-  assert.expect(4);
+  assert.expect(8);
+
   server.put('/fruits/:id/doRipen', (request) => {
     let data = JSON.parse(request.requestBody);
     assert.deepEqual(data, { id: '1', name: 'apple' }, 'member action - request payload is correct');
@@ -31,12 +32,32 @@ test('visiting /', function(assert) {
     return [200, { }, '{"status": "ok"}'];
   });
 
+  server.get('/fruits/:id/info', (request) => {
+    assert.equal(request.url, `/fruits/1/info?fruitId=1`);
+    assert.ok(true, 'request was made to "ripenEverything"');
+    return [200, { }, '{"status": "ok"}'];
+  });
+
+  server.get('/fruits/fresh', (request) => {
+    assert.equal(request.url, `/fruits/fresh?month=July`);
+    assert.ok(true, 'request was made to "ripenEverything"');
+    return [200, { }, '{"status": "ok"}'];
+  });
+
   andThen(function() {
     click('#apple .ripen-instance-button');
   });
 
   andThen(function() {
     click('.all-fruit .ripen-type-button');
+  });
+
+  andThen(function() {
+    click('#apple .info-instance-button');
+  });
+
+  andThen(function() {
+    click('.all-fruit .fresh-type-button');
   });
 
 });

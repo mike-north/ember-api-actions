@@ -95,6 +95,21 @@ export default Route.extend({
       });
       return [200, {}, '{"status": "ok"}'];
     });
+    server.get('/fruits/:id/info', (request) => {
+      let controller = this.get('controller');
+      controller.get('requests').addObject({
+        url: request.url
+      });
+      return [200, { }, '{"status": "ok"}'];
+    });
+
+    server.get('/fruits/fresh', (request) => {
+      let controller = this.get('controller');
+      controller.get('requests').addObject({
+        url: request.url
+      });
+      return [200, { }, '{"status": "ok"}'];
+    });
     this.set('server', server);
   },
   _teardownPretender() {

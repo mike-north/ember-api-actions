@@ -7,6 +7,8 @@ const { attr, Model } = DS;
 export default Model.extend({
   name:     attr('string'),
   ripen:    memberAction({ path: 'doRipen' }),
-  ripenAll: collectionAction({ path: 'ripenEverything' })
+  info:     memberAction({ path: 'info', type: 'get' }),
+  ripenAll: collectionAction({ path: 'ripenEverything' }),
+  getFresh: collectionAction({ path: 'fresh', type: 'get' })
 });
 // END-SNIPPET

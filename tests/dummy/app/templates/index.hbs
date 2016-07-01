@@ -4,14 +4,15 @@
     {{#each content as |fruit|}}
     <p class='fruit-thing' id='{{fruit.name}}'>
       <button class='btn ripen-instance-button' {{action 'ripenFruit' fruit}}>Ripen</button>
-      {{fruit.name}} (id = {{fruit.id}})
-      - calls <code>fruit.ripen()</code>
+      <button class='btn info-instance-button indigo' {{action 'fruitInfo' fruit}}>Info</button>
+      {{fruit.name}}
     </p>
     {{/each}}
     <h4>API action on a collection of resources</h4>
     <p class='all-fruit'>
       {{content.constructor.modelName}}
-      <button class='btn ripen-type-button' {{action 'ripenAllFruit' content.firstObject}}>Ripen All</button> - calls <code>fruit.ripenAll()</code>
+      <button class='btn ripen-type-button' {{action 'ripenAllFruit' content.firstObject}}>Ripen All</button> 
+      <button class='btn fresh-type-button indigo' {{action 'getAllFreshFruit' content.firstObject}}>Get Fresh</button> 
     </p>
   </div>
   <div class="col m6 s12">

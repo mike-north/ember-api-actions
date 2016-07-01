@@ -14,8 +14,15 @@ export default Controller.extend({
         fruit.getProperties(['id', 'name'])
       );
     },
+    fruitInfo(fruit) {
+      let { id } = fruit.getProperties(['id', 'name']);
+      fruit.info({ fruitId: id });
+    },
     ripenAllFruit(fruit) {
       fruit.ripenAll({ test: 'ok' });
+    },
+    getAllFreshFruit(fruit) {
+      fruit.getFresh({ month: 'July' });
     }
   }
   // END-SNIPPET

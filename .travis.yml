@@ -13,20 +13,16 @@ env:
   - EMBER_TRY_SCENARIO=ember-1.11
   - EMBER_TRY_SCENARIO=ember-1.12
   - EMBER_TRY_SCENARIO=ember-1.13
-  - EMBER_TRY_SCENARIO=ember-2.0
-  - EMBER_TRY_SCENARIO=ember-2.1
-  - EMBER_TRY_SCENARIO=ember-2.2
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.4
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.5
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.6
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.6
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.7
+  - EMBER_TRY_SCENARIO=ember-2.4
+  - EMBER_TRY_SCENARIO=ember-release
+  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-beta
+  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-canary
 
 matrix:
   fast_finish: true
   allow_failures:
-   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.6
-   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.7
+   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-beta
+   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
   - npm config set spin false

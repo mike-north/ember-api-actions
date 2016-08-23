@@ -60,7 +60,6 @@ export default Route.extend({
       arr = this.store.peekAll('fruit');
     }
     return A(arr);
-    // return this.get('store').findAll('fruit');
   },
 
   beforeModel() {
@@ -69,9 +68,18 @@ export default Route.extend({
       this._setupPretender();
     }
   },
+
   deactivate() {
     this._super(...arguments);
   },
+
+  willDestroy() {
+    this._super(...arguments);
+    if (!this.get('currentModel').constructor) {
+      this.get('currentModel').constructor = {};
+    }
+  },
+
   _setupPretender() {
     let server = new Pretender();
     // server.get('/fruits', request => {
@@ -112,6 +120,7 @@ export default Route.extend({
     });
     this.set('server', server);
   },
+
   _teardownPretender() {
     this.get('server').shutdown();
   }

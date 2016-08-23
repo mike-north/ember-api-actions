@@ -122,11 +122,12 @@ Ember.js | Ember-data
 
 ## Running
 
-* `ember server`
+* `ember serve`
 * Visit your app at http://localhost:4200.
 
 ## Running Tests
 
+* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
@@ -137,6 +138,6 @@ errors on deprecation
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
 ![Analytics](https://ga-beacon.appspot.com/UA-66610985-1/mike-north/ember-api-actions/readme)

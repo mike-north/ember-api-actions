@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "0.12"
+  - "4"
 
 sudo: false
 
@@ -10,36 +10,30 @@ cache:
     - node_modules
 
 env:
-  - EMBER_TRY_SCENARIO=ember-1.11
-  - EMBER_TRY_SCENARIO=ember-1.12
+  # - EMBER_TRY_SCENARIO=ember-1.11
+  # - EMBER_TRY_SCENARIO=ember-1.12
   - EMBER_TRY_SCENARIO=ember-1.13
-  - EMBER_TRY_SCENARIO=ember-2.0
-  - EMBER_TRY_SCENARIO=ember-2.1
-  - EMBER_TRY_SCENARIO=ember-2.2
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.4
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.5
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.6-ed-2.6
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.6
-  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.7
+  - EMBER_TRY_SCENARIO=ember-2.4
+  - EMBER_TRY_SCENARIO=ember-release
+  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-beta
+  - ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-canary
 
 matrix:
   fast_finish: true
   allow_failures:
-   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.6
-   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-2.7-ed-2.7
+   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-beta
+   - env: ALLOW_DEPRECATIONS=true EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-  - mkdir travis-phantomjs
-  - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
-  - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
-  - export PATH=$PWD/travis-phantomjs:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
+  - npm config set spin false
+  - npm install -g bower
+  - bower --version
+  - npm install phantomjs-prebuilt
+  - phantomjs --version
 
 install:
-  - npm install -g bower
   - npm install
   - bower install
 
 script:
-  - ember try $EMBER_TRY_SCENARIO test --skip-cleanup
+  - ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup

@@ -77,11 +77,17 @@ module.exports = {
     name: 'ember-2.4',
     bower: {
       dependencies: {
-        'ember': '~2.4.0',
+        'ember': '~2.4.0'
+      },
+      resolutions: {
+        'ember': '~2.4.0'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.4.0'
       },
       resolutions: {
-        'ember': '~2.4.0',
         'ember-data': '~2.4.0'
       }
     }
@@ -89,11 +95,17 @@ module.exports = {
     name: 'ember-2.7',
     bower: {
       dependencies: {
-        'ember': '~2.7.0',
+        'ember': '~2.7.0'
+      },
+      resolutions: {
+        'ember': '~2.7.0'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.7.0'
       },
       resolutions: {
-        'ember': '~2.7.0',
         'ember-data': '~2.7.0'
       }
     }
@@ -101,11 +113,17 @@ module.exports = {
     name: 'ember-release',
     bower: {
       dependencies: {
-        'ember': 'components/ember#release',
+        'ember': 'components/ember#release'
+      },
+      resolutions: {
+        'ember': 'release'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.7.0'
       },
       resolutions: {
-        'ember': 'components/ember#release',
         'ember-data': '~2.7.0'
       }
     }
@@ -113,11 +131,17 @@ module.exports = {
     name: 'ember-beta',
     bower: {
       dependencies: {
-        'ember': 'components/ember#beta',
+        'ember': 'components/ember#beta'
+      },
+      resolutions: {
+        'ember': 'beta'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.7.0'
       },
       resolutions: {
-        'ember': 'components/ember#beta',
         'ember-data': '~2.7.0'
       }
     }
@@ -125,11 +149,17 @@ module.exports = {
     name: 'ember-canary',
     bower: {
       dependencies: {
-        'ember': 'components/ember#canary',
+        'ember': 'components/ember#canary'
+      },
+      resolutions: {
+        'ember': 'canary'
+      }
+    },
+    npm: {
+      dependencies: {
         'ember-data': '~2.7.0'
       },
       resolutions: {
-        'ember': 'components/ember#canary',
         'ember-data': '~2.7.0'
       }
     }

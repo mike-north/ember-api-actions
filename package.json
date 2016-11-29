@@ -24,7 +24,7 @@
     "ember-cli": "2.7.0",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-github-pages": "0.1.2",
-    "ember-cli-htmlbars": "^1.1.0",
+    "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.5",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-pretender": "0.7.0",

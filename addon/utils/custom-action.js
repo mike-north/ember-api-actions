@@ -26,6 +26,6 @@ export default function(model, options, payload, instance) {
   let data = ajaxData(config, payload);
 
   return adapter.ajax(url, requestType, data).then((response) => {
-    return config.pushToStore ? serializer.pushPayload(model.store, response) : response;
+    return config.pushToStore && response.data ? serializer.pushPayload(model.store, response) : response;
   });
 }

@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.6",
-    "ember-ajax": "2.5.1",
+    "ember-ajax": "2.5.3",
     "ember-cli": "2.7.0",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-github-pages": "0.1.2",

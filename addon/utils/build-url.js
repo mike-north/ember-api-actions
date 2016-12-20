@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
+/* global UriTemplate */
 const { assert } = Ember;
 
 export function buildOperationUrl(record, opPath, urlType, instance=true) {
@@ -9,12 +10,20 @@ export function buildOperationUrl(record, opPath, urlType, instance=true) {
   let path = opPath;
   let snapshot = record._createSnapshot();
   let baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType);
-
+  let url = "";
   if (baseUrl.charAt(baseUrl.length - 1) === '/') {
-    return `${baseUrl}${path}`;
+    url = `${baseUrl}${path}`;
   } else {
-    return `${baseUrl}/${path}`;
+    url = `${baseUrl}/${path}`;
   }
+  let template = new UriTemplate(url);
+  let templateResolver = snapshot;
+
+  return template.fill(function(name){
+    var result = record.get(name);
+
+    return result;
+  });
 }
 
 export default buildOperationUrl;

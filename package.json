@@ -26,7 +26,7 @@
     "ember-cli-github-pages": "0.1.2",
     "ember-cli-htmlbars": "^1.1.0",
     "ember-cli-htmlbars-inline-precompile": "^0.3.5",
-    "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-cli-inject-live-reload": "^1.6.0",
     "ember-cli-pretender": "0.7.0",
     "ember-cli-jshint": "^1.0.5",
     "ember-cli-qunit": "^3.0.0",

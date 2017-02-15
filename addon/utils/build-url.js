@@ -6,13 +6,17 @@ export function buildOperationUrl(record, opPath, urlType, instance = true) {
   let baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType);
 
   if (path) {
-    if (baseUrl.charAt(baseUrl.length - 1) === '/') {
-      return `${baseUrl}${path}`;
-    } else {
-      return `${baseUrl}/${path}`;
-    }
+    return _joinUrl(baseUrl, path);
   } else {
     return baseUrl;
+  }
+}
+
+function _joinUrl(baseUrl, path) {
+  if (baseUrl.charAt(baseUrl.length - 1) === '/') {
+    return `${baseUrl}${path}`;
+  } else {
+    return `${baseUrl}/${path}`;
   }
 }
 

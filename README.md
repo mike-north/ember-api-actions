@@ -1,5 +1,7 @@
 # ember-api-actions
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mike-north/ember-api-actions.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/mike-north/ember-api-actions.svg?branch=master)](https://travis-ci.org/mike-north/ember-api-actions)
 [![Dependency Status](https://david-dm.org/mike-north/ember-api-actions.svg)](https://david-dm.org/mike-north/ember-api-actions)
 [![devDependency Status](https://david-dm.org/mike-north/ember-api-actions/dev-status.svg)](https://david-dm.org/mike-north/ember-api-actions#info=devDependencies)

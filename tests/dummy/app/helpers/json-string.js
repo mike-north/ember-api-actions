@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { Helper, HTMLBars } = Ember;
 
-export function jsonString(params/*, hash*/) {
+export function jsonString(params/* , hash*/) {
   return JSON.stringify(params[0]);
 }
 

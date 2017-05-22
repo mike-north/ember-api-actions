@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { assert } = Ember;
 
-export function buildOperationUrl(record, opPath, urlType, instance=true) {
+export function buildOperationUrl(record, opPath, urlType, instance = true) {
   assert('You must provide a path for instanceOp', opPath);
   let modelName = record.constructor.modelName || record.constructor.typeKey;
   let adapter = record.store.adapterFor(modelName);

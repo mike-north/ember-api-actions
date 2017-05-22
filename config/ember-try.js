@@ -2,101 +2,106 @@
 module.exports = {
   scenarios: [
     {
-      name: "ember-1.13",
+      name: 'ember-1.13',
       bower: {
         dependencies: {
-          ember: "~1.13.0",
-          "ember-data": "~1.13.0",
-          "ember-cli-shims": "~0.0.6"
+          ember: '~1.13.0',
+          'ember-data': '~1.13.0',
+          'ember-cli-shims': '~0.0.6'
         },
         resolutions: {
-          ember: "~1.13.0",
-          "ember-data": "~1.13.0"
-        }
-      }
-    },
-    {
-      name: "ember-lts-2.4",
-      bower: {
-        dependencies: {
-          ember: "components/ember#lts-2-4"
-        },
-        resolutions: {
-          ember: "lts-2-4"
+          ember: '~1.13.0',
+          'ember-data': '~1.13.0'
         }
       },
       npm: {
         devDependencies: {
-          "ember-source": null
+          'ember-source': null
         }
       }
     },
     {
-      name: "ember-lts-2.8",
+      name: 'ember-lts-2.4',
       bower: {
         dependencies: {
-          ember: "components/ember#lts-2-8"
+          ember: 'components/ember#lts-2-4'
         },
         resolutions: {
-          ember: "lts-2-8"
+          ember: 'lts-2-4'
         }
       },
       npm: {
         devDependencies: {
-          "ember-source": null
+          'ember-source': null
         }
       }
     },
     {
-      name: "ember-release",
+      name: 'ember-lts-2.8',
       bower: {
         dependencies: {
-          ember: "components/ember#release"
+          ember: 'components/ember#lts-2-8'
         },
         resolutions: {
-          ember: "release"
+          ember: 'lts-2-8'
         }
       },
       npm: {
         devDependencies: {
-          "ember-source": null
+          'ember-source': null
         }
       }
     },
     {
-      name: "ember-beta",
+      name: 'ember-release',
       bower: {
         dependencies: {
-          ember: "components/ember#beta"
+          ember: 'components/ember#release'
         },
         resolutions: {
-          ember: "beta"
+          ember: 'release'
         }
       },
       npm: {
         devDependencies: {
-          "ember-source": null
+          'ember-source': null
         }
       }
     },
     {
-      name: "ember-canary",
+      name: 'ember-beta',
       bower: {
         dependencies: {
-          ember: "components/ember#canary"
+          ember: 'components/ember#beta'
         },
         resolutions: {
-          ember: "canary"
+          ember: 'beta'
         }
       },
       npm: {
         devDependencies: {
-          "ember-source": null
+          'ember-source': null
         }
       }
     },
     {
-      name: "ember-default",
+      name: 'ember-canary',
+      bower: {
+        dependencies: {
+          ember: 'components/ember#canary'
+        },
+        resolutions: {
+          ember: 'canary'
+        }
+      },
+      npm: {
+        devDependencies: {
+          'ember-source': null
+        }
+      }
+    },
+    {
+      name: 'ember-default',
       npm: {
         devDependencies: {}
       }

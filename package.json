@@ -41,6 +41,7 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
     "eslint-plugin-ember-suave": "^1.0.0",
+    "greenkeeper-lockfile": "^1.2.1",
     "loader.js": "^4.2.3"
   },
   "keywords": [

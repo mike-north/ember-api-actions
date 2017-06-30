@@ -10,7 +10,7 @@ export default function instanceOp(options) {
     let urlType = options.urlType || requestType;
     let adapter = this.store.adapterFor(modelName);
     let { path } = options;
-    if(addToPath) {
+    if (addToPath) {
       path = `${path}/${addToPath}`;
     }
     let fullUrl = buildOperationUrl(this, path, urlType, false);

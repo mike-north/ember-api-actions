@@ -11,16 +11,18 @@ export default function instanceOp(options) {
         let adapter = this.store.adapterFor(modelName);
         let fullUrl = buildOperationUrl(this, options.path, urlType);
         let extract = options.extract;
-        return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: payload })).then(function(response) {
-            if (extract) {
-                if (response && response[extract] !== null) {
-                    return Ember.RSVP.resolve(response[extract]);
+        return new Ember.RSVP.Promise(function(resolve, reject) {
+            return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: payload })).then(function(response) {
+                if (extract) {
+                    if (response && response[extract] !== null) {
+                        return resolve(response[extract]);
+                    } else {
+                        return reject(new Error('Response malformed'));
+                    }
                 } else {
-                    return Ember.RSVP.reject(new Error('Response malformed'));
+                    return resolve(response);
                 }
-            } else {
-                return Ember.RSVP.resolve(response);
-            }
+            }).catch(reject);
         });
     };
 }

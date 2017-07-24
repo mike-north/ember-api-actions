@@ -14,12 +14,12 @@ export default function instanceOp(options) {
         return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: payload })).then(function(response) {
             if (extract) {
                 if (response && response[extract] !== null) {
-                    return Ember.RSVP.response(response[extract]);
+                    return Ember.RSVP.resolve(response[extract]);
                 } else {
                     return Ember.RSVP.reject(new Error('Response malformed'));
                 }
             } else {
-                return Ember.RSVP.response(response);
+                return Ember.RSVP.resolve(response);
             }
         });
     };

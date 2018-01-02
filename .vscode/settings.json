@@ -1,3 +1,4 @@
 {
-  "javascript.implicitProjectConfig.checkJs": true
+  "javascript.implicitProjectConfig.checkJs": true,
+  "editor.formatOnSave": true
 }

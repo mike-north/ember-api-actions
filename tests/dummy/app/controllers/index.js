@@ -1,6 +1,5 @@
-import Ember from 'ember';
-
-const { Controller, A } = Ember;
+import { A } from '@ember/array';
+import Controller from '@ember/controller';
 
 export default Controller.extend({
   init() {
@@ -10,9 +9,7 @@ export default Controller.extend({
   // BEGIN-SNIPPET controller
   actions: {
     ripenFruit(fruit) {
-      fruit.ripen(
-        fruit.getProperties(['id', 'name'])
-      );
+      fruit.ripen(fruit.getProperties(['id', 'name']));
     },
     fruitInfo(fruit) {
       let { id } = fruit.getProperties(['id', 'name']);

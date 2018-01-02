@@ -1,6 +1,4 @@
-import Ember from 'ember';
-
-const { assert } = Ember;
+import { assert } from '@ember/debug';
 
 export function buildOperationUrl(record, opPath, urlType, instance = true) {
   assert('You must provide a path for instanceOp', opPath);

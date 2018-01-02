@@ -1,20 +1,25 @@
 import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { A } from '@ember/array';
 import Pretender from 'pretender';
 
-const { Route, testing, A } = Ember;
+const { testing } = Ember;
 
 const LEGACY_PAYLOAD = {
-  'fruit': [
+  fruit: [
     {
       id: 1,
       name: 'apple'
-    }, {
+    },
+    {
       id: 2,
       name: 'pear'
-    }, {
+    },
+    {
       id: 3,
       name: 'orange'
-    }, {
+    },
+    {
       id: 4,
       name: 'grape'
     }
@@ -22,40 +27,44 @@ const LEGACY_PAYLOAD = {
 };
 
 const PAYLOAD = {
-  data: [{
-    type: 'fruit',
-    id: 1,
-    attributes: {
-      name: 'apple'
+  data: [
+    {
+      type: 'fruit',
+      id: 1,
+      attributes: {
+        name: 'apple'
+      }
+    },
+    {
+      type: 'fruit',
+      id: 2,
+      attributes: {
+        name: 'pear'
+      }
+    },
+    {
+      type: 'fruit',
+      id: 3,
+      attributes: {
+        name: 'orange'
+      }
+    },
+    {
+      type: 'fruit',
+      id: 4,
+      attributes: {
+        name: 'grape'
+      }
     }
-  }, {
-    type: 'fruit',
-    id: 2,
-    attributes: {
-      name: 'pear'
-    }
-  }, {
-    type: 'fruit',
-    id: 3,
-    attributes: {
-      name: 'orange'
-    }
-  }, {
-    type: 'fruit',
-    id: 4,
-    attributes: {
-      name: 'grape'
-    }
-  }]
+  ]
 };
 
 export default Route.extend({
-
   model() {
     let arr = [];
     this.store.pushPayload('fruit', !this.store.peekAll ? LEGACY_PAYLOAD : PAYLOAD);
     if (!this.store.peekAll) {
-      arr = [1, 2, 3, 4].map((id) => this.store.getById('fruit', id));
+      arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
     } else {
       arr = this.store.peekAll('fruit');
     }
@@ -87,7 +96,7 @@ export default Route.extend({
     //     fruits:
     //   })];
     // });
-    server.put('/fruits/:id/doRipen', (request) => {
+    server.put('/fruits/:id/doRipen', request => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
@@ -95,7 +104,7 @@ export default Route.extend({
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.put('/fruits/ripenEverything', (request) => {
+    server.put('/fruits/ripenEverything', request => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
@@ -103,20 +112,20 @@ export default Route.extend({
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.get('/fruits/:id/info', (request) => {
+    server.get('/fruits/:id/info', request => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });
-      return [200, { }, '{"status": "ok"}'];
+      return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/fresh', (request) => {
+    server.get('/fruits/fresh', request => {
       let controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });
-      return [200, { }, '{"status": "ok"}'];
+      return [200, {}, '{"status": "ok"}'];
     });
     this.set('server', server);
   },

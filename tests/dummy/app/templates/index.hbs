@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col m6 s12">
     <h4>API actions on an individual resource</h4>
-    {{#each content as |fruit|}}
+    {{#each model as |fruit|}}
     <p class='fruit-thing' id='{{fruit.name}}'>
       {{#x-btn class='ripen-instance-button yellow' click=(action 'ripenFruit' fruit)}}Ripen{{/x-btn}}
       {{#x-btn class='info-instance-button indigo white-text' click=(action 'fruitInfo' fruit)}}Info{{/x-btn}}

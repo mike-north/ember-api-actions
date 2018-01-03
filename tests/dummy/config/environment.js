@@ -1,23 +1,20 @@
-/* eslint-env node */
-
+'use strict';
+// eslint-disable-next-line
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
-    },
-    contentSecurityPolicy: {
-      'img-src': '*',
-      'connect-src': '*',
-      'font-src': '*',
-      'script-src': '\'unsafe-inline\' *',
-      'style-src': '\'unsafe-inline\' *'
     },
 
     APP: {
@@ -35,7 +32,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.EmberENV.RAISE_ON_DEPRECATION = !process.env['ALLOW_DEPRECATIONS'];
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -44,12 +40,12 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
-  // if (environment === 'development') {
-  //   ENV.locationType = 'hash';
-  //   ENV.baseURL = 'ember-api-actions/';
-  // }
+  if (environment === 'production') {
+    // here you can enable a production-specific feature
+  }
 
   return ENV;
 };

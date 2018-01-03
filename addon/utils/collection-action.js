@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import { merge } from '@ember/polyfills';
 import { buildOperationUrl } from './build-url';
-
-const { merge } = Ember;
 
 export default function instanceOp(options) {
   return function(payload) {

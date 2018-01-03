@@ -1,6 +1,6 @@
 {
   "name": "ember-api-actions",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "Trigger remote actions that don't fit into CRUD, in your Ember.js apps",
   "directories": {
     "doc": "doc",

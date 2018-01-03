@@ -46,7 +46,14 @@
     "eslint-plugin-node": "^5.2.1",
     "loader.js": "^4.2.3"
   },
-  "keywords": ["ember-addon", "api", "data", "request", "ajax", "model"],
+  "keywords": [
+    "ember-addon",
+    "api",
+    "data",
+    "request",
+    "ajax",
+    "model"
+  ],
   "dependencies": {
     "ember-cli-babel": "^6.0.0"
   },

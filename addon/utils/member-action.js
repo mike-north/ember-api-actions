@@ -7,7 +7,7 @@ export default function instanceOp(options) {
     let requestType = (options.type || 'PUT').toUpperCase();
     let urlType = options.urlType || requestType;
     let adapter = this.store.adapterFor(modelName);
-    let fullUrl = buildOperationUrl(this, options.path, urlType);
+    let fullUrl = buildOperationUrl(this, options.path, urlType, true, payload);
     return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: payload }));
   };
 }

@@ -33,13 +33,13 @@ test('visiting /', function(assert) {
   });
 
   server.get('/fruits/:id/info', request => {
-    assert.equal(request.url, '/fruits/1/info?fruitId=1');
+    assert.equal(request.url, '/fruits/1/info?fruitId=1&harvest=true');
     assert.ok(true, 'request was made to "ripenEverything"');
     return [200, {}, '{"status": "ok"}'];
   });
 
   server.get('/fruits/fresh', request => {
-    assert.equal(request.url, '/fruits/fresh?month=July');
+    assert.equal(request.url, '/fruits/fresh?month=July&harvest=true');
     assert.ok(true, 'request was made to "ripenEverything"');
     return [200, {}, '{"status": "ok"}'];
   });

@@ -13,13 +13,13 @@ export default Controller.extend({
     },
     fruitInfo(fruit) {
       let { id } = fruit.getProperties(['id', 'name']);
-      fruit.info({ fruitId: id });
+      fruit.info({ fruitId: id, harvest: 'yes' });
     },
     ripenAllFruit(fruit) {
       fruit.ripenAll({ test: 'ok' });
     },
     getAllFreshFruit(fruit) {
-      fruit.getFresh({ month: 'July' });
+      fruit.getFresh({ month: 'July', harvest: 'yes' });
     }
   }
   // END-SNIPPET

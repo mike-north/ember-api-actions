@@ -1,3 +1,17 @@
+## [0.1.9](https://github.com/mike-north/ember-api-actions/compare/v0.1.8...v0.1.9) (2018-09-02)
+
+
+### Bug Fixes
+
+* bump dependencies ([915f13d](https://github.com/mike-north/ember-api-actions/commit/915f13d))
+* cut npm release only after ember-try cleanup ([d8e261e](https://github.com/mike-north/ember-api-actions/commit/d8e261e))
+* install regenerator for async/await in tests ([ca062d3](https://github.com/mike-north/ember-api-actions/commit/ca062d3))
+* linting ([ce539bf](https://github.com/mike-north/ember-api-actions/commit/ce539bf))
+* readme badges ([e27d3f6](https://github.com/mike-north/ember-api-actions/commit/e27d3f6))
+* semantic-release ([365ed29](https://github.com/mike-north/ember-api-actions/commit/365ed29))
+* semantic-release as optional dependency ([dd36367](https://github.com/mike-north/ember-api-actions/commit/dd36367))
+* update tests to RFC 232 style ([76c5142](https://github.com/mike-north/ember-api-actions/commit/76c5142))
+
 # Change Log
 
 ## [Unreleased](https://github.com/mike-north/ember-api-actions/tree/HEAD)

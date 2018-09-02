@@ -1,10 +1,8 @@
 language: node_js
 node_js:
-  # we recommend testing addons with the same minimum supported node version as Ember CLI
-  # so that your addon works for all apps
   - stable
 
-sudo: false
+sudo: required
 dist: trusty
 
 addons:
@@ -31,6 +29,10 @@ matrix:
   fast_finish: true
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
+
+before_script:
+  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
+  - sudo chown root /opt/google/chrome/chrome-sandbox
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash

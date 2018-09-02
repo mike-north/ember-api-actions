@@ -1,6 +1,6 @@
 {
   "name": "ember-api-actions",
-  "version": "0.1.8",
+  "version": "0.0.0-development",
   "description": "Trigger remote actions that don't fit into CRUD, in your Ember.js apps",
   "directories": {
     "doc": "doc",
@@ -10,7 +10,9 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "repository": "https://github.com/mike-north/ember-api-actions.git",
   "homepage": "https://github.com/mike-north/ember-api-actions",
@@ -44,7 +46,9 @@
     "ember-try": "^1.0.0",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "travis-deploy-once": "^5.0.7",
+    "semantic-release": "^15.9.12"
   },
   "keywords": [
     "ember-addon",

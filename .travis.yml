@@ -50,3 +50,6 @@ after_success:
   - nvm use 10
   - npm install
   - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

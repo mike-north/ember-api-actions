@@ -22,7 +22,6 @@
   "author": "Mike North <michael.l.north@gmail.com> (http://mike.works)",
   "license": "MIT",
   "devDependencies": {
-    "@mike-north/js-lib-semantic-release-config": "^0.0.0-development",
     "broccoli-asset-rev": "^2.4.6",
     "ember-cli": "^3.3.0",
     "ember-cli-dependency-checker": "^2.1.0",
@@ -47,8 +46,11 @@
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
     "loader.js": "^4.2.3",
-    "travis-deploy-once": "^5.0.7",
-    "semantic-release": "^15.9.12"
+    "travis-deploy-once": "^5.0.7"
+  },
+  "optionalDependencies": {
+    "semantic-release": "^15.9.12",
+    "@mike-north/js-lib-semantic-release-config": "^0.0.0-development"
   },
   "keywords": [
     "ember-addon",

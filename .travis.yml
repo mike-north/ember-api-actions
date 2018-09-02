@@ -2,7 +2,7 @@ language: node_js
 node_js:
   # we recommend testing addons with the same minimum supported node version as Ember CLI
   # so that your addon works for all apps
-  - '6'
+  - stable
 
 sudo: false
 dist: trusty
@@ -37,7 +37,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 
 install:
-  - yarn install --no-lockfile --non-interactive
+  - yarn install --no-lockfile --non-interactive --skip-optional
 
 script:
   - yarn lint:js
@@ -48,8 +48,8 @@ script:
 after_success:
   - nvm install 10
   - nvm use 10
-  - npm install
-  - npm run travis-deploy-once "npm run semantic-release"
+  - yarn install --no-lockfile --non-interactive
+  - yarn travis-deploy-once "npm run semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

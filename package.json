@@ -46,7 +46,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-resolver": "^4.0.0",
+    "ember-resolver": "^5.0.1",
     "ember-source": "~3.4.0",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^1.0.0",

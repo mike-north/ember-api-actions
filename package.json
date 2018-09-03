@@ -69,7 +69,7 @@
     "model"
   ],
   "dependencies": {
-    "ember-cli-babel": "^6.6.0"
+    "ember-cli-babel": "^7.1.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",

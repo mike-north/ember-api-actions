@@ -762,8 +762,8 @@
     "@types/rsvp" "*"
 
 "@types/ember__test-helpers@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@types/ember__test-helpers/-/ember__test-helpers-0.7.0.tgz#0c0e86cb39dbe5e97bb4f09a898dcde0f5c1966a"
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__test-helpers/-/ember__test-helpers-0.7.1.tgz#8f042e5e578925c48fa594ea96b6a553b356cf30"
   dependencies:
     "@types/ember" "*"
     "@types/htmlbars-inline-precompile" "*"

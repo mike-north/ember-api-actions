@@ -3558,8 +3558,8 @@ ember-compatibility-helpers@^1.0.0:
     semver "^5.4.1"
 
 ember-data@~3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.4.0.tgz#d303057d560b0002f5b1490a7c24c4bfb74cd2fa"
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.4.2.tgz#675cc4f1be8df1f5c0bfe4191afa6986377721c0"
   dependencies:
     "@ember/ordered-set" "^2.0.0"
     babel-plugin-feature-flags "^0.3.1"

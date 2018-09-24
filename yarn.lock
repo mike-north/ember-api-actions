@@ -753,13 +753,48 @@
     "@types/jquery" "*"
     "@types/rsvp" "*"
 
-"@types/ember@*", "@types/ember@^2.8.32":
-  version "2.8.32"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-2.8.32.tgz#258bac52403b68baabfa3fff422cd2bb73f7d77d"
+"@types/ember@*", "@types/ember@^3.0.19":
+  version "3.0.19"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.0.19.tgz#25488d30de13c59a95c978874a8687f5a05068c5"
   dependencies:
+    "@types/ember__array" "*"
+    "@types/ember__debug" "*"
+    "@types/ember__engine" "*"
+    "@types/ember__object" "*"
+    "@types/ember__polyfills" "*"
+    "@types/ember__string" "*"
+    "@types/ember__utils" "*"
     "@types/handlebars" "*"
     "@types/jquery" "*"
     "@types/rsvp" "*"
+
+"@types/ember__array@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ember__array/-/ember__array-3.0.2.tgz#4f61ba9e6bb12dd4c8b0abaefd5220b4f6579f1d"
+
+"@types/ember__debug@*":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__debug/-/ember__debug-3.0.1.tgz#ee7ab2edf8619e2a26a0d6ecf509536f97b3c00e"
+
+"@types/ember__engine@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ember__engine/-/ember__engine-3.0.2.tgz#4e0bcabc71d9ae92124d5e15ce176ef8f8c45654"
+
+"@types/ember__object@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ember__object/-/ember__object-3.0.2.tgz#9a2b6b8a7f0cb7490e56c4b010b320fd04b9b1d3"
+  dependencies:
+    "@types/rsvp" "*"
+
+"@types/ember__polyfills@*":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__polyfills/-/ember__polyfills-3.0.1.tgz#efe630c9449f4faf3e4d5f450036d37ec85d1cd9"
+
+"@types/ember__string@*":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__string/-/ember__string-3.0.1.tgz#d17c4e1716bd2a6b5fbc2d787da4bf732d5611fb"
+  dependencies:
+    "@types/handlebars" "*"
 
 "@types/ember__test-helpers@^0.7.0":
   version "0.7.1"
@@ -767,6 +802,10 @@
   dependencies:
     "@types/ember" "*"
     "@types/htmlbars-inline-precompile" "*"
+
+"@types/ember__utils@*":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__utils/-/ember__utils-3.0.1.tgz#f08aa24920515400fec869cbf29df69c4773f6d0"
 
 "@types/estree@*":
   version "0.0.39"

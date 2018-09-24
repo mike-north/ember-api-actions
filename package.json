@@ -23,7 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "@ember/test-helpers": "^0.7.25",
-    "@types/ember": "^2.8.32",
+    "@types/ember": "^3.0.19",
     "@types/ember-data": "^2.14.18",
     "@types/ember-qunit": "^3.0.3",
     "@types/ember__test-helpers": "^0.7.0",

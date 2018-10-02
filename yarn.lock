@@ -836,10 +836,11 @@
     "@types/handlebars" "*"
 
 "@types/ember__test-helpers@^0.7.0":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@types/ember__test-helpers/-/ember__test-helpers-0.7.1.tgz#8f042e5e578925c48fa594ea96b6a553b356cf30"
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@types/ember__test-helpers/-/ember__test-helpers-0.7.5.tgz#219305edc96875995114952a3b7902a8fbe754a1"
   dependencies:
     "@types/ember" "*"
+    "@types/ember__error" "*"
     "@types/htmlbars-inline-precompile" "*"
 
 "@types/ember__test@*":

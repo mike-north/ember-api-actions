@@ -51,7 +51,7 @@
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^1.0.0",
     "eslint-plugin-ember": "^5.0.0",
-    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-node": "^7.0.1",
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.8.0",
     "travis-deploy-once": "^5.0.7"

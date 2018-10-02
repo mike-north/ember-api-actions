@@ -754,23 +754,46 @@
     "@types/rsvp" "*"
 
 "@types/ember@*", "@types/ember@^3.0.19":
-  version "3.0.19"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.0.19.tgz#25488d30de13c59a95c978874a8687f5a05068c5"
+  version "3.0.23"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.0.23.tgz#fc5b45b17d41247bf40f4ab7e99fdd8d898b3452"
   dependencies:
+    "@types/ember__application" "*"
     "@types/ember__array" "*"
+    "@types/ember__component" "*"
+    "@types/ember__controller" "*"
     "@types/ember__debug" "*"
     "@types/ember__engine" "*"
+    "@types/ember__error" "*"
     "@types/ember__object" "*"
     "@types/ember__polyfills" "*"
+    "@types/ember__routing" "*"
+    "@types/ember__runloop" "*"
+    "@types/ember__service" "*"
     "@types/ember__string" "*"
+    "@types/ember__test" "*"
     "@types/ember__utils" "*"
     "@types/handlebars" "*"
+    "@types/htmlbars-inline-precompile" "*"
     "@types/jquery" "*"
     "@types/rsvp" "*"
+
+"@types/ember__application@*":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/ember__application/-/ember__application-3.0.4.tgz#2b92d68949c6d37eca35ceff2050101970062ef4"
 
 "@types/ember__array@*":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@types/ember__array/-/ember__array-3.0.2.tgz#4f61ba9e6bb12dd4c8b0abaefd5220b4f6579f1d"
+
+"@types/ember__component@*":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/ember__component/-/ember__component-3.0.4.tgz#e671213269bbf974445fb9fdd600d52ef0ae1e2a"
+  dependencies:
+    "@types/jquery" "*"
+
+"@types/ember__controller@*":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/ember__controller/-/ember__controller-3.0.3.tgz#622440d41ce0ae46f2610ed22670be9088cc9c2b"
 
 "@types/ember__debug@*":
   version "3.0.1"
@@ -779,6 +802,10 @@
 "@types/ember__engine@*":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@types/ember__engine/-/ember__engine-3.0.2.tgz#4e0bcabc71d9ae92124d5e15ce176ef8f8c45654"
+
+"@types/ember__error@*":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ember__error/-/ember__error-3.0.1.tgz#1e915599d8d72cc4cf35473ee8a22d9cab036824"
 
 "@types/ember__object@*":
   version "3.0.2"
@@ -789,6 +816,18 @@
 "@types/ember__polyfills@*":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/ember__polyfills/-/ember__polyfills-3.0.1.tgz#efe630c9449f4faf3e4d5f450036d37ec85d1cd9"
+
+"@types/ember__routing@*":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/ember__routing/-/ember__routing-3.0.5.tgz#9b193178a1cc29560992c57b04fd7d83a70f831d"
+
+"@types/ember__runloop@*":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/ember__runloop/-/ember__runloop-3.0.3.tgz#c23c9d4327ca811482422505a1f5bf1c48458f53"
+
+"@types/ember__service@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ember__service/-/ember__service-3.0.2.tgz#8265c94a599c865f633361b0e3b1efbeef393d7d"
 
 "@types/ember__string@*":
   version "3.0.1"
@@ -802,6 +841,10 @@
   dependencies:
     "@types/ember" "*"
     "@types/htmlbars-inline-precompile" "*"
+
+"@types/ember__test@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/ember__test/-/ember__test-3.0.2.tgz#9f97d4cda07cb47f2b51718467b3070669566d72"
 
 "@types/ember__utils@*":
   version "3.0.1"

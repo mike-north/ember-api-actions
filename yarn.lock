@@ -738,8 +738,8 @@
     "@types/rsvp" "*"
 
 "@types/ember-qunit@^3.0.3":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.1.tgz#38e534a3259d8d9d3d32bc2b4ef0c5918293b450"
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.2.tgz#90a81afca9c5baada588f44a71919ee6cad5901f"
   dependencies:
     "@types/ember" "*"
     "@types/ember-test-helpers" "*"

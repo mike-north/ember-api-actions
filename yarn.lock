@@ -754,8 +754,8 @@
     "@types/rsvp" "*"
 
 "@types/ember@*", "@types/ember@^3.0.19":
-  version "3.0.23"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.0.23.tgz#fc5b45b17d41247bf40f4ab7e99fdd8d898b3452"
+  version "3.0.24"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.0.24.tgz#426811f8479311f791154d6fad2d6a23a61f7a62"
   dependencies:
     "@types/ember__application" "*"
     "@types/ember__array" "*"

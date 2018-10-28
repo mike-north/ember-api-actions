@@ -1,6 +1,6 @@
 // BEGIN-SNIPPET fruit-model
 import DS from 'ember-data';
-import { memberAction, collectionAction } from 'ember-api-actions';
+import { memberAction, collectionAction, serializeAndPush } from 'ember-api-actions';
 import { assign } from '@ember/polyfills';
 
 const { attr, Model } = DS;
@@ -19,10 +19,12 @@ export default Model.extend({
   getFresh: collectionAction({ path: 'fresh', type: 'get' }),
   eat: memberAction({
     path: 'doEat',
-    before: mergeAttributes
+    before: mergeAttributes,
+    after: serializeAndPush
   }),
   eatAll: collectionAction({
     path: 'doEatAll',
-    before: mergeAttributes })
+    before: mergeAttributes,
+    after: serializeAndPush })
 });
 // END-SNIPPET

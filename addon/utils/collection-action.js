@@ -9,6 +9,13 @@ export default function instanceOp(options) {
     let adapter = this.store.adapterFor(modelName);
     let fullUrl = buildOperationUrl(this, options.path, urlType, false);
     let serializedPayload = (options.before && options.before.call(this, payload)) || payload;
-    return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: serializedPayload }));
+    return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: serializedPayload }))
+    .then(response => {
+      if (options.after && this.isDestroyed) {
+        return options.after.call(this, options, response);
+      }
+      
+      return response;
+    });
   };
 }

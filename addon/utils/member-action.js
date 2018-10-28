@@ -8,6 +8,7 @@ export default function instanceOp(options) {
     let urlType = options.urlType || requestType;
     let adapter = this.store.adapterFor(modelName);
     let fullUrl = buildOperationUrl(this, options.path, urlType);
-    return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: payload }));
+    let serializedPayload = (options.before && options.before.call(this, payload)) || payload;
+    return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data: serializedPayload }));
   };
 }

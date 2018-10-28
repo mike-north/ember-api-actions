@@ -51,4 +51,68 @@ module('Acceptance | index2', function(hooks) {
 
     await click('.all-fruit .fresh-type-button');
   });
+
+  test('before hook', async function(assert) {
+    await visit('/');
+    assert.expect(4);
+
+    server.put('/fruits/:id/doEat', request => {
+      let data = JSON.parse(request.requestBody);
+
+      let expectedData = {
+        data: {
+          type: 'fruits',
+          attributes: {
+            name: 'apple',
+            was_eaten: true
+          }
+        }
+      };
+
+      assert.deepEqual(data, expectedData, 'collection action - request payload run through serialize function');
+      assert.equal(request.url, '/fruits/1/doEat', 'request was made to "doEat"');
+      const response = {
+        data: {
+          id: 1,
+          type: 'fruit',
+          attributes: {
+            name: 'apple'
+          }
+        }
+      };
+      return [200, {}, JSON.stringify(response)];
+    });
+    
+    server.put('/fruits/doEatAll', request => {
+      let data = JSON.parse(request.requestBody);
+
+      let expectedData = {
+        data: {
+          type: 'fruits',
+          attributes: {
+            name: 'apple',
+            was_eaten: true
+          }
+        }
+      };
+
+      assert.deepEqual(data, expectedData, 'collection action - request payload run through serialize function');
+      assert.equal(request.url, '/fruits/doEatAll', 'request was made to "doEatAll"');
+
+      const response = {
+        data: [{
+          id: 1,
+          type: 'fruit',
+          attributes: {
+            name: 'Completely Eaten apple'
+          }
+        }]
+      };
+      return [200, {}, JSON.stringify(response)];
+    });
+
+    await click('#apple .eat-instance-button');
+
+    await click('.all-fruit .eat-all-button');
+  });
 });

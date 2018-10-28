@@ -52,9 +52,9 @@ module('Acceptance | index2', function(hooks) {
     await click('.all-fruit .fresh-type-button');
   });
 
-  test('before hook', async function(assert) {
+  test('before/after hooks and serializeAndPush helper', async function(assert) {
     await visit('/');
-    assert.expect(4);
+    assert.expect(7);
 
     server.put('/fruits/:id/doEat', request => {
       let data = JSON.parse(request.requestBody);
@@ -76,7 +76,7 @@ module('Acceptance | index2', function(hooks) {
           id: 1,
           type: 'fruit',
           attributes: {
-            name: 'apple'
+            name: 'Eaten apple'
           }
         }
       };
@@ -90,7 +90,7 @@ module('Acceptance | index2', function(hooks) {
         data: {
           type: 'fruits',
           attributes: {
-            name: 'apple',
+            name: 'Eaten apple',
             was_eaten: true
           }
         }
@@ -111,8 +111,14 @@ module('Acceptance | index2', function(hooks) {
       return [200, {}, JSON.stringify(response)];
     });
 
+    assert.dom(`[data-test-fruit-name="apple"]`).exists();
+    
     await click('#apple .eat-instance-button');
 
+    assert.dom(`[data-test-fruit-name="Eaten apple"]`).exists();
+
     await click('.all-fruit .eat-all-button');
+
+    assert.dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
   });
 });

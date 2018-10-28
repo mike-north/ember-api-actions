@@ -20,6 +20,12 @@ export default Controller.extend({
     },
     getAllFreshFruit(fruit) {
       fruit.getFresh({ month: 'July' });
+    },
+    eatFruit(fruit) {
+      fruit.eat({ was_eaten: true });
+    },
+    eatAll(fruit) {
+      fruit.eatAll({ was_eaten: true });
     }
   }
   // END-SNIPPET

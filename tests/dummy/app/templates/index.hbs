@@ -4,14 +4,23 @@
     {{#each model as |fruit|}}
     <p class='fruit-thing' id='{{fruit.name}}'>
       {{#x-btn class='ripen-instance-button yellow' click=(action 'ripenFruit' fruit)}}Ripen{{/x-btn}} {{#x-btn class='info-instance-button
-      indigo white-text' click=(action 'fruitInfo' fruit)}}Info{{/x-btn}} {{fruit.name}}
-    </p>
+                                                                                                          indigo white-text' click=(action 'fruitInfo' fruit)}}Info{{/x-btn}}
+
+      <div data-test-fruit-name={{fruit.name}}>
+        {{fruit.name}}
+      </div>
+
+      {{#x-btn class='eat-instance-button yellow' click=(action 'eatFruit' fruit)}}Eat{{/x-btn}}
+</p>
     {{/each}}
     <h4>API action on a collection of resources</h4>
     <p class='all-fruit'>
       {{content.constructor.modelName}} {{#x-btn class='ripen-type-button yellow' click=(action 'ripenAllFruit' (first-in-array
       (or content model)))}}Ripen All{{/x-btn}} {{#x-btn class='fresh-type-button indigo white-text' click=(action 'getAllFreshFruit'
-      (first-in-array (or content model))) }}Get Fresh{{/x-btn}}
+  (first-in-array (or content model))) }}Get Fresh{{/x-btn}}
+
+      {{#x-btn class='eat-all-button indigo white-text' click=(action 'eatAll'
+      (first-in-array (or content model))) }}Eat all{{/x-btn}}
     </p>
   </div>
   <div class="col m6 s12">

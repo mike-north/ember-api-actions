@@ -1,10 +1,12 @@
 import { isArray } from '@ember/array';
+import { _getModelClass, _getModelName, _getStoreFromRecord } from './build-url';
 
-export default function(options, response) {
-  let modelName = this.constructor.modelName || this.constructor.typeKey;
-  let modelClass = this.store.modelFor(modelName);
-  let serializer = this.store.serializerFor(modelName);
-  let normalized = isArray(response.data) ? serializer.normalizeArrayResponse(this.store, modelClass, response) :
-      serializer.normalizeSingleResponse(this.store, modelClass, response);
+export default function serializeAndPush(options, response) {  
+  const recordClass = _getModelClass(this);
+  const modelName = _getModelName(recordClass);
+  const store = _getStoreFromRecord(this);
+  const serializer = store.serializerFor(modelName);
+  const normalized = isArray(response.data) ? serializer.normalizeArrayResponse(store, recordClass, response) :
+      serializer.normalizeSingleResponse(store, recordClass, response);
   return this.store.push(normalized);
 }

@@ -72,6 +72,7 @@ module('Acceptance | index2', function(hooks) {
       assert.deepEqual(data, expectedData, 'collection action - request payload run through serialize function');
       assert.equal(request.url, '/fruits/1/doEat', 'request was made to "doEat"');
       const response = {
+        jsonapi: { version: '1.0' },
         data: {
           id: 1,
           type: 'fruit',
@@ -100,6 +101,7 @@ module('Acceptance | index2', function(hooks) {
       assert.equal(request.url, '/fruits/doEatAll', 'request was made to "doEatAll"');
 
       const response = {
+        jsonapi: { version: '1.0' },
         data: [{
           id: 1,
           type: 'fruit',

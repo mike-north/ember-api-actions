@@ -13,7 +13,7 @@ export default function instanceOp(options) {
     const data = (options.before && options.before.call(this, payload)) || payload;
     return adapter.ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data })).then(response => {
       if (options.after && !this.isDestroyed) {
-        return options.after.call(this, options, response);
+        return options.after.call(this, response);
       }
 
       return response;

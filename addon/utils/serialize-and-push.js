@@ -1,7 +1,7 @@
 import { isArray } from '@ember/array';
 import { _getModelClass, _getModelName, _getStoreFromRecord } from './build-url';
 
-export default function serializeAndPush(options, response) {
+export default function serializeAndPush(response) {
   const isJsonApi = response.jsonapi && response.jsonapi.version;
   if (!isJsonApi) {
     // eslint-disable-next-line no-console

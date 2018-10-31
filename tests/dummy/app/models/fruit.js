@@ -1,8 +1,8 @@
 // BEGIN-SNIPPET fruit-model
 import DS from 'ember-data';
-import { memberAction, collectionAction } from 'ember-api-actions';
+
+import { memberAction, collectionAction, serializeAndPush } from 'ember-api-actions';
 import { assign } from '@ember/polyfills';
-import { isArray } from '@ember/array';
 
 const { attr, Model } = DS;
 

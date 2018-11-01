@@ -87,6 +87,62 @@ myRecord.ripen({ someData: 'abc' }).then(response => {
 });
 ```
 
+### Before and After Hooks
+
+Use `before` and `after` hooks to customize the request and response. The hooks are available for both member actions and collection actions.
+
+**Before**
+
+Say you'd like to use ember-data to serialize your model, passing in only some, additional specific changes. You can do that like so:
+
+
+```js
+eat: memberAction({
+  path: 'eat',
+  before(attributes) {
+    let payload = this.serialize();
+    payload.data.attributes = assign(payload.data.attributes, attributes);
+    return payload;
+  }
+})
+
+// Call it like this:
+model.eat({ is_eaten: true });
+
+// JSON API request payload would look something like:
+{ data: { id: '1', type: 'fruit', attributes: { name: 'apple', is_eaten: true } } }
+```
+
+**After**
+
+The after hook receives the response payload as an argument.
+
+```js
+eat: memberAction({
+ path: 'eat',
+ after(response) {
+   console.log(`Received response for model ${response.data.id}`);
+ }
+});
+```
+
+**SerializeAndPush**
+
+You can use the `after` hook to push into the store. We've included a helper called [`serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.js) to do this.
+
+```js
+import DS from 'ember-data';
+import { memberAction, serializeAndPush } from 'ember-api-actions';
+
+export default DS.Model.extend({
+ eat: memberAction({
+   path: 'eat',
+   after: serializeAndPush
+});
+```
+
+*Warning* this implemention only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.js) for an example.
+
 ## Customization
 
 ember-api-actions generates URLs and ajax configuration via ember-data adapters. It will identify the appropriate adapter, and call the `buildURL` and `ajaxOptions` methods to send a JSON request similar to way conventional ember-data usage works.

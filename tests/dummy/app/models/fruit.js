@@ -12,19 +12,6 @@ function mergeAttributes(attributes) {
   return payload;
 }
 
-// This is an example of how to extract JSON API responses and push
-// them into the store.
-// TODO extract and export as part of this addon
-function serializeAndPush(response) {
-  const recordClass = this.constructor;
-  const modelName = recordClass.modelName;
-  const { store } = this;
-  const serializer = store.serializerFor(modelName);
-  const normalized = isArray(response.data) ? serializer.normalizeArrayResponse(store, recordClass, response) :
-        serializer.normalizeSingleResponse(store, recordClass, response);
-  return this.store.push(normalized);
-}
-
 export default Model.extend({
   name: attr('string'),
   ripen: memberAction({ path: 'doRipen' }),
@@ -39,6 +26,7 @@ export default Model.extend({
   eatAll: collectionAction({
     path: 'doEatAll',
     before: mergeAttributes,
-    after: serializeAndPush })
+    after: serializeAndPush
+  })
 });
 // END-SNIPPET

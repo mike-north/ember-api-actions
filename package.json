@@ -43,6 +43,7 @@
     "ember-cli-qunit": "^4.4.0",
     "ember-cli-shims": "^1.1.0",
     "ember-cli-test-loader": "^2.2.0",
+    "ember-cli-tslint": "^0.1.4",
     "ember-cli-typescript-blueprints": "^2.0.0-beta.1",
     "ember-cli-uglify": "^2.0.0",
     "ember-code-snippet": "^2.1.0",
@@ -60,6 +61,7 @@
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0",
     "travis-deploy-once": "^5.0.7",
+    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.1.5"
   },
   "optionalDependencies": {

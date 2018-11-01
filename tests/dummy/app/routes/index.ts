@@ -1,6 +1,6 @@
-import Ember from 'ember';
-import Route from '@ember/routing/route';
 import { A } from '@ember/array';
+import Route from '@ember/routing/route';
+import Ember from 'ember';
 import Pretender from 'pretender';
 
 const { testing } = Ember;
@@ -90,14 +90,14 @@ export default Route.extend({
   },
 
   _setupPretender() {
-    let server = new Pretender();
+    const server = new Pretender();
     // server.get('/fruits', request => {
     //   return [200, {}, JSON.stringify({
     //     fruits:
     //   })];
     // });
     server.put('/fruits/:id/doRipen', request => {
-      let controller = this.get('controller');
+      const controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
@@ -105,7 +105,7 @@ export default Route.extend({
       return [200, {}, '{"status": "ok"}'];
     });
     server.put('/fruits/ripenEverything', request => {
-      let controller = this.get('controller');
+      const controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
@@ -113,7 +113,7 @@ export default Route.extend({
       return [200, {}, '{"status": "ok"}'];
     });
     server.get('/fruits/:id/info', request => {
-      let controller = this.get('controller');
+      const controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });
@@ -121,7 +121,7 @@ export default Route.extend({
     });
 
     server.get('/fruits/fresh', request => {
-      let controller = this.get('controller');
+      const controller = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });

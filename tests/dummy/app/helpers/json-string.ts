@@ -1,9 +1,9 @@
 import Helper from '@ember/component/helper';
 import Ember from 'ember';
 
-const { HTMLBars } = Ember;
+const { HTMLBars } = Ember as any;
 
-export function jsonString(params /* , hash*/) {
+export function jsonString(params: any[] /* , hash*/) {
   return JSON.stringify(params[0]);
 }
 

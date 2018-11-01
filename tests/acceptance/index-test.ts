@@ -1,11 +1,11 @@
-import { module, test } from 'qunit';
-import { visit, click } from '@ember/test-helpers';
+import { click, visit } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import Pretender from 'pretender';
+import { module, test } from 'qunit';
 
-module('Acceptance | index2', function(hooks) {
+module('Acceptance | index2', hooks => {
   setupApplicationTest(hooks);
-  let server;
+  let server: any;
   hooks.beforeEach(() => {
     server = new Pretender();
   });
@@ -13,31 +13,31 @@ module('Acceptance | index2', function(hooks) {
     server.shutdown();
   });
 
-  test('visiting /', async function(assert) {
+  test('visiting /', async assert => {
     await visit('/');
     assert.expect(8);
 
-    server.put('/fruits/:id/doRipen', request => {
-      let data = JSON.parse(request.requestBody);
+    server.put('/fruits/:id/doRipen', (request: { url: string; requestBody: string }) => {
+      const data = JSON.parse(request.requestBody);
       assert.deepEqual(data, { id: '1', name: 'apple' }, 'member action - request payload is correct');
       assert.equal(request.url, '/fruits/1/doRipen', 'request was made to "doRipen"');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.put('/fruits/ripenEverything', request => {
-      let data = JSON.parse(request.requestBody);
+    server.put('/fruits/ripenEverything', (request: { url: string; requestBody: string }) => {
+      const data = JSON.parse(request.requestBody);
       assert.deepEqual(data, { test: 'ok' }, 'collection action - request payload is correct');
       assert.ok(true, 'request was made to "ripenEverything"');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/:id/info', request => {
+    server.get('/fruits/:id/info', (request: { url: string; requestBody: string }) => {
       assert.equal(request.url, '/fruits/1/info?fruitId=1');
       assert.ok(true, 'request was made to "ripenEverything"');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/fresh', request => {
+    server.get('/fruits/fresh', (request: { url: string; requestBody: string }) => {
       assert.equal(request.url, '/fruits/fresh?month=July');
       assert.ok(true, 'request was made to "ripenEverything"');
       return [200, {}, '{"status": "ok"}'];
@@ -52,14 +52,14 @@ module('Acceptance | index2', function(hooks) {
     await click('.all-fruit .fresh-type-button');
   });
 
-  test('before/after hooks and serializeAndPush helper', async function(assert) {
+  test('before/after hooks and serializeAndPush helper', async assert => {
     await visit('/');
     assert.expect(7);
 
-    server.put('/fruits/:id/doEat', request => {
-      let data = JSON.parse(request.requestBody);
+    server.put('/fruits/:id/doEat', (request: { url: string; requestBody: string }) => {
+      const data = JSON.parse(request.requestBody);
 
-      let expectedData = {
+      const expectedData = {
         data: {
           type: 'fruits',
           attributes: {
@@ -83,11 +83,11 @@ module('Acceptance | index2', function(hooks) {
       };
       return [200, {}, JSON.stringify(response)];
     });
-    
-    server.put('/fruits/doEatAll', request => {
-      let data = JSON.parse(request.requestBody);
 
-      let expectedData = {
+    server.put('/fruits/doEatAll', (request: { url: string; requestBody: string }) => {
+      const data = JSON.parse(request.requestBody);
+
+      const expectedData = {
         data: {
           type: 'fruits',
           attributes: {
@@ -102,25 +102,27 @@ module('Acceptance | index2', function(hooks) {
 
       const response = {
         jsonapi: { version: '1.0' },
-        data: [{
-          id: 1,
-          type: 'fruit',
-          attributes: {
-            name: 'Completely Eaten apple'
+        data: [
+          {
+            id: 1,
+            type: 'fruit',
+            attributes: {
+              name: 'Completely Eaten apple'
+            }
           }
-        }]
+        ]
       };
       return [200, {}, JSON.stringify(response)];
     });
 
-    assert.dom(`[data-test-fruit-name="apple"]`).exists();
-    
+    (assert as any).dom(`[data-test-fruit-name="apple"]`).exists();
+
     await click('#apple .eat-instance-button');
 
-    assert.dom(`[data-test-fruit-name="Eaten apple"]`).exists();
+    (assert as any).dom(`[data-test-fruit-name="Eaten apple"]`).exists();
 
     await click('.all-fruit .eat-all-button');
 
-    assert.dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
+    (assert as any).dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
   });
 });

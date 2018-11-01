@@ -1,6 +1,6 @@
-import Ember from 'ember';
-import Route from '@ember/routing/route';
 import { A } from '@ember/array';
+import Route from '@ember/routing/route';
+import Ember from 'ember';
 import Pretender from 'pretender';
 
 const { testing } = Ember;
@@ -60,11 +60,14 @@ const PAYLOAD = {
 };
 
 export default Route.extend({
+  server: undefined as any,
+  requests: [] as any[],
+  currentModel: undefined as any,
   model() {
-    let arr = [];
+    let arr: any = [];
     this.store.pushPayload('fruit', !this.store.peekAll ? LEGACY_PAYLOAD : PAYLOAD);
     if (!this.store.peekAll) {
-      arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
+      arr = [1, 2, 3, 4].map(id => (this.store as any).getById('fruit', id));
     } else {
       arr = this.store.peekAll('fruit');
     }
@@ -90,38 +93,38 @@ export default Route.extend({
   },
 
   _setupPretender() {
-    let server = new Pretender();
+    const server = new Pretender();
     // server.get('/fruits', request => {
     //   return [200, {}, JSON.stringify({
     //     fruits:
     //   })];
     // });
-    server.put('/fruits/:id/doRipen', request => {
-      let controller = this.get('controller');
+    server.put('/fruits/:id/doRipen', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.put('/fruits/ripenEverything', request => {
-      let controller = this.get('controller');
+    server.put('/fruits/ripenEverything', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.get('/fruits/:id/info', request => {
-      let controller = this.get('controller');
+    server.get('/fruits/:id/info', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/fresh', request => {
-      let controller = this.get('controller');
+    server.get('/fruits/fresh', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });

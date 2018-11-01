@@ -1,23 +1,21 @@
-/* eslint-disable no-unused-vars  */
-import Model from 'ember-data/model';
-import Store from 'ember-data/store';
 import { getOwner } from '@ember/application';
-import EngineInstance from '@ember/engine/instance';
+import DS from 'ember-data';
+import Model from 'ember-data/model';
+import { EmberDataRequestType } from './types';
+
 /**
  * Given a record, obtain the ember-data model class
- * @param {Model} record
- * @return {typeof Model}
+ * @param record
  */
-export function _getModelClass(record) {
-  return /** @type {typeof Model} */ (record.constructor);
+export function _getModelClass<M extends typeof Model>(record: InstanceType<M>): M {
+  return record.constructor as M;
 }
 
 /**
  * Given an ember-data model class, obtain its name
- * @param {typeof Model} clazz
- * @returns {string}
+ * @param clazz
  */
-export function _getModelName(clazz) {
+export function _getModelName(clazz: typeof Model): string {
   return (
     // prettier-ignore
     clazz.modelName  // modern use
@@ -28,29 +26,36 @@ export function _getModelName(clazz) {
 
 /**
  * Given an ember-data-record, obtain the related Store
- * @param {Model} record
- * @return {Store}
+ * @param record
  */
-export function _getStoreFromRecord(record) {
-  /** @type {EngineInstance} */
+export function _getStoreFromRecord(record: Model) {
   const owner = getOwner(record);
   return owner.lookup('service:store');
 }
 
+function snapshotFromRecord(model: Model): DS.Snapshot {
+  return (model as any)._createSnapshot();
+}
+
 /**
  *
- * @param {Model} record
- * @param {string} opPath
- * @param {'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'} urlType
- * @param {boolean} [instance]
+ * @param record
+ * @param opPath
+ * @param urlType
+ * @param instance
  */
-export function buildOperationUrl(record, opPath, urlType, instance = true) {
+export function buildOperationUrl<M extends Model>(
+  record: M,
+  opPath: string,
+  urlType: EmberDataRequestType,
+  instance = true
+) {
   const modelClass = _getModelClass(record);
   const modelName = _getModelName(modelClass);
   const store = _getStoreFromRecord(record);
   const adapter = store.adapterFor(modelName);
   const path = opPath;
-  const snapshot = record._createSnapshot();
+  const snapshot = snapshotFromRecord(record);
   const baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType);
 
   if (!path) {

@@ -874,9 +874,9 @@
     "@types/rsvp" "*"
 
 "@types/ember-qunit@^3.0.3":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.1.tgz#38e534a3259d8d9d3d32bc2b4ef0c5918293b450"
-  integrity sha512-INjRv4Ign8w9kiazNfhq593uVdOJUd1SwArKWzM+7/zud3XyJyM+6+b1cPM+5ClRnqQWe+kH22N/OJN6XAdEZQ==
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.3.tgz#ad8532e735c7a46af764f5cb7d852896e6d28bfd"
+  integrity sha512-dBlWUh7XMHT3dr96P2c5U5hx8dLE4RZmtwKhUeaHycsgJyH4pCX1C462Bk308fWXFN1TWasZtkl+MhtW/mj3RA==
   dependencies:
     "@types/ember" "*"
     "@types/ember-test-helpers" "*"

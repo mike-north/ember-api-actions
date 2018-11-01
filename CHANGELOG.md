@@ -1,3 +1,16 @@
+# [0.2.0](https://github.com/mike-north/ember-api-actions.git/compare/v0.1.9...v0.2.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* after hook should only be fired if the record is NOT destroyed ([9e4149c](https://github.com/mike-north/ember-api-actions.git/commit/9e4149c))
+* cleanup variable names, delete empty file ([b0e2bd9](https://github.com/mike-north/ember-api-actions.git/commit/b0e2bd9))
+
+
+### Features
+
+* Extract serializeAndPush into a util exported by this add-on ([67dbe8a](https://github.com/mike-north/ember-api-actions.git/commit/67dbe8a))
+
 ## [0.1.9](https://github.com/mike-north/ember-api-actions/compare/v0.1.8...v0.1.9) (2018-09-02)
 
 

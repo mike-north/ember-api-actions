@@ -11082,9 +11082,9 @@ traverse@~0.6.6:
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
 travis-deploy-once@^5.0.7:
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-5.0.8.tgz#ba5aee81a20e4c56898f8a3dd9ae07ba8e3bf378"
-  integrity sha512-o6ctY5XZ49/FuHw+7Z66woBqjLCJDiRJsZzZTHSlpCqwl4raDX6Io1bZCbfwaHs4FjKDuYr9ZfWy3phTUx3haw==
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-5.0.9.tgz#c5a2f639e17d8fd542f66d25ade126179d5e8acf"
+  integrity sha512-cyHFErzq0HTEGY29RAq1clqFdt/IkCrlcOmyM1cGoGnEyukrrFi1fpy6JH3Mlf+88XsFwvluqKVWzj2bdz3k8A==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/polyfill" "^7.0.0"

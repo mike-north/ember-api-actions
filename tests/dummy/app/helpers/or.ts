@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 const { HTMLBars } = Ember as any;
 
-export function or([a, b] /* , hash*/) {
+export function or([a, b]: any[] /* , hash*/) {
   return a || b;
 }
 

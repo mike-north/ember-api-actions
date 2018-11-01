@@ -60,11 +60,14 @@ const PAYLOAD = {
 };
 
 export default Route.extend({
+  server: undefined as any,
+  requests: [] as any[],
+  currentModel: undefined as any,
   model() {
-    let arr = [];
+    let arr: any = [];
     this.store.pushPayload('fruit', !this.store.peekAll ? LEGACY_PAYLOAD : PAYLOAD);
     if (!this.store.peekAll) {
-      arr = [1, 2, 3, 4].map(id => this.store.getById('fruit', id));
+      arr = [1, 2, 3, 4].map(id => (this.store as any).getById('fruit', id));
     } else {
       arr = this.store.peekAll('fruit');
     }
@@ -96,32 +99,32 @@ export default Route.extend({
     //     fruits:
     //   })];
     // });
-    server.put('/fruits/:id/doRipen', request => {
-      const controller = this.get('controller');
+    server.put('/fruits/:id/doRipen', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.put('/fruits/ripenEverything', request => {
-      const controller = this.get('controller');
+    server.put('/fruits/ripenEverything', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url,
         data: JSON.parse(request.requestBody)
       });
       return [200, {}, '{"status": "ok"}'];
     });
-    server.get('/fruits/:id/info', request => {
-      const controller = this.get('controller');
+    server.get('/fruits/:id/info', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/fresh', request => {
-      const controller = this.get('controller');
+    server.get('/fruits/fresh', (request: any) => {
+      const controller: any = this.get('controller');
       controller.get('requests').addObject({
         url: request.url
       });

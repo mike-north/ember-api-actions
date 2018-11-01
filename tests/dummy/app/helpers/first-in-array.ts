@@ -2,7 +2,7 @@ import { isArray } from '@ember/array';
 import Helper from '@ember/component/helper';
 import Ember from 'ember';
 
-const { HTMLBars } = Ember;
+const { HTMLBars } = Ember as any;
 
 export function firstInArray(params /* , hash*/) {
   if (isArray(params[0])) {

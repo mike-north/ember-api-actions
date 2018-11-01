@@ -4,7 +4,7 @@ import { module, test } from 'qunit';
 module('Unit | Utility | collection action', function() {
   // Replace this with your real tests.
   test('it works', function(assert) {
-    let result = collectionAction();
+    let result = collectionAction({ path: '/bar' });
     assert.ok(result);
   });
 });

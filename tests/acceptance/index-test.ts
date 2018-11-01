@@ -83,7 +83,7 @@ module('Acceptance | index2', function(hooks) {
       };
       return [200, {}, JSON.stringify(response)];
     });
-    
+
     server.put('/fruits/doEatAll', request => {
       let data = JSON.parse(request.requestBody);
 
@@ -102,25 +102,27 @@ module('Acceptance | index2', function(hooks) {
 
       const response = {
         jsonapi: { version: '1.0' },
-        data: [{
-          id: 1,
-          type: 'fruit',
-          attributes: {
-            name: 'Completely Eaten apple'
+        data: [
+          {
+            id: 1,
+            type: 'fruit',
+            attributes: {
+              name: 'Completely Eaten apple'
+            }
           }
-        }]
+        ]
       };
       return [200, {}, JSON.stringify(response)];
     });
 
-    assert.dom(`[data-test-fruit-name="apple"]`).exists();
-    
+    (assert as any).dom(`[data-test-fruit-name="apple"]`).exists();
+
     await click('#apple .eat-instance-button');
 
-    assert.dom(`[data-test-fruit-name="Eaten apple"]`).exists();
+    (assert as any).dom(`[data-test-fruit-name="Eaten apple"]`).exists();
 
     await click('.all-fruit .eat-all-button');
 
-    assert.dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
+    (assert as any).dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
   });
 });

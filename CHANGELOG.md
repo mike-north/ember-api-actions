@@ -1,3 +1,11 @@
+## [0.2.1](https://github.com/mike-north/ember-api-actions/compare/v0.2.0...v0.2.1) (2018-11-01)
+
+
+### Bug Fixes
+
+* after hook should only be fired if the record is NOT destroyed ([9c91f99](https://github.com/mike-north/ember-api-actions/commit/9c91f99))
+* cleanup variable names, delete empty file ([cd0338f](https://github.com/mike-north/ember-api-actions/commit/cd0338f))
+
 # [0.2.0](https://github.com/mike-north/ember-api-actions.git/compare/v0.1.9...v0.2.0) (2018-10-31)
 
 

@@ -4257,10 +4257,10 @@ ember-cli-typescript-blueprints@^2.0.0-beta.1:
     inflection "^1.12.0"
     silent-error "^1.1.0"
 
-ember-cli-typescript@2.0.0-beta.2:
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-2.0.0-beta.2.tgz#29bd0a7eff45b54e01d2cbc2fba05b3991a9c0d3"
-  integrity sha512-Wxopeo/ShTO7P9ja+CYwXM6+tww2kSMJFHCEFemWjB+tFR0318Pqa7EEYJ/lHAkIjE214B13A/qsWwhIGf3zxw==
+ember-cli-typescript@2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-2.0.0-beta.3.tgz#a27db5942664448c3cf81e1042c3ff6c0e24d5a2"
+  integrity sha512-+pFKwU2lSMlOK/8QyLGf1yL4x+wjLzi40OwqJGGaWysiaG3c2Vuhx7e5NRaHc2ArhhXUDWiQrZfFUjMLSx8U9g==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-transform-typescript" "^7.1.0"

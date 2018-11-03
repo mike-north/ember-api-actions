@@ -28,6 +28,9 @@ export default Controller.extend({
     },
     eatAll(fruit: InstanceType<typeof Fruit>) {
       fruit.eatAll({ was_eaten: true });
+    },
+    juiceAllFruit(fruit: typeof Fruit) {
+      Fruit.juiceAll({ was_eaten: true });
     }
   }
   // END-SNIPPET

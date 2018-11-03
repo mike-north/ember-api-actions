@@ -11,7 +11,7 @@ function mergeAttributes(this: DS.Model, attributes: any) {
   payload.data.attributes = assign(payload.data.attributes || {}, attributes);
   return payload;
 }
-export default Model.extend({
+const Fruit = Model.extend({
   name: attr('string'),
   ripen: memberAction({ path: 'doRipen' }),
   info: memberAction({ path: 'info', type: 'get' }),
@@ -28,4 +28,14 @@ export default Model.extend({
     after: serializeAndPush
   })
 });
+
+Fruit.reopenClass({
+  juiceAll: collectionAction({
+    path: 'doJuiceAll',
+    before: mergeAttributes,
+    after: serializeAndPush
+  })
+});
+
+export default (Fruit as any) as InstanceType<typeof Fruit> & { juiceAll: any };
 // END-SNIPPET

@@ -4,6 +4,11 @@ node_js:
 
 sudo: required
 dist: trusty
+addons:
+  chrome: stable
+before_script:
+  - 'sudo chown root /opt/google/chrome/chrome-sandbox'
+  - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
 
 addons:
   chrome: stable
@@ -15,24 +20,11 @@ env:
   global:
     # See https://git.io/vdao3 for details.
     - JOBS=1
-  matrix:
-    # we recommend new addons test the current and previous LTS
-    # as well as latest stable release (bonus points to beta/canary)
-    - EMBER_TRY_SCENARIO=ember-lts-2.12
-    - EMBER_TRY_SCENARIO=ember-lts-2.16
-    - EMBER_TRY_SCENARIO=ember-release
-    - EMBER_TRY_SCENARIO=ember-beta
-    - EMBER_TRY_SCENARIO=ember-canary
-    - EMBER_TRY_SCENARIO=ember-default
 
 matrix:
   fast_finish: true
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
-
-before_script:
-  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-  - sudo chown root /opt/google/chrome/chrome-sandbox
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -47,6 +39,8 @@ script:
   #  to the addon's original dependency state, skipping "cleanup".
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
 
+
+
 after_success:
   - nvm install 10
   - nvm use 10
@@ -55,3 +49,17 @@ after_success:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+
+stages:
+  - basic test
+  - additional tests
+jobs:
+  fail_fast: true
+  include:
+    - stage: basic test
+      env: EMBER_TRY_SCENARIO=ember-release
+    - stage: additional tests
+      env: EMBER_TRY_SCENARIO=ember-lts-2.12
+    - env: EMBER_TRY_SCENARIO=ember-lts-2.16
+    - env: EMBER_TRY_SCENARIO=ember-beta
+    - env: EMBER_TRY_SCENARIO=ember-canary

@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/mike-north/ember-api-actions/compare/v0.2.3...v0.2.4) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to v7.1.3 ([54c61d4](https://github.com/mike-north/ember-api-actions/commit/54c61d4))
+
 ## [0.2.3](https://github.com/mike-north/ember-api-actions/compare/v0.2.2...v0.2.3) (2018-11-04)
 
 

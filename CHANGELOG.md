@@ -1,3 +1,11 @@
+## [0.2.3](https://github.com/mike-north/ember-api-actions/compare/v0.2.2...v0.2.3) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to v2.0.0-beta.3 ([c16743e](https://github.com/mike-north/ember-api-actions/commit/c16743e))
+* ESLint fixes ([b707c9f](https://github.com/mike-north/ember-api-actions/commit/b707c9f))
+
 ## [0.2.2](https://github.com/mike-north/ember-api-actions/compare/v0.2.1...v0.2.2) (2018-11-01)
 
 

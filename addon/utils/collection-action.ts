@@ -14,45 +14,24 @@ export interface CollectionOperationOptions<IN, OUT> {
 }
 
 export default function collectionOp<IN = any, OUT = any>(options: CollectionOperationOptions<IN, OUT>) {
-  return function runCollectionOp(this: Model | typeof Model, payload: IN): Promise<OUT> {
-    if (this instanceof Model) {
-      const model: Model = this;
-      const recordClass = _getModelClass(model);
-      const modelName = _getModelName(recordClass);
-      const store = _getStoreFromRecord(model);
-      const requestType: HTTPVerb = strictifyHttpVerb(options.type || 'put');
-      const urlType: EmberDataRequestType = options.urlType || 'updateRecord';
-      const adapter = store.adapterFor(modelName);
-      const fullUrl = buildOperationUrl(model, options.path, urlType, false);
-      const data = (options.before && options.before.call(model, payload)) || payload;
-      return adapter
-        .ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data }))
-        .then((response: JSONValue) => {
-          if (options.after && !model.isDestroyed) {
-            return options.after.call(model, response);
-          }
+  return function runCollectionOp(this: Model, payload: IN): Promise<OUT> {
+    const model: Model = this;
+    const recordClass = _getModelClass(model);
+    const modelName = _getModelName(recordClass);
+    const store = _getStoreFromRecord(model);
+    const requestType: HTTPVerb = strictifyHttpVerb(options.type || 'put');
+    const urlType: EmberDataRequestType = options.urlType || 'updateRecord';
+    const adapter = store.adapterFor(modelName);
+    const fullUrl = buildOperationUrl(model, options.path, urlType, false);
+    const data = (options.before && options.before.call(model, payload)) || payload;
+    return adapter
+      .ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data }))
+      .then((response: JSONValue) => {
+        if (options.after && !model.isDestroyed) {
+          return options.after.call(model, response);
+        }
 
-          return response;
-        });
-    } else {
-      const recordClass = this;
-      const modelName = _getModelName(recordClass);
-      debugger;
-      const store = this;
-      const requestType: HTTPVerb = strictifyHttpVerb(options.type || 'put');
-      const urlType: EmberDataRequestType = options.urlType || 'updateRecord';
-      const adapter = store.adapterFor(modelName);
-      const fullUrl = buildOperationUrl(this, options.path, urlType, false);
-      const data = (options.before && options.before.call(this, payload)) || payload;
-      return adapter
-        .ajax(fullUrl, requestType, merge(options.ajaxOptions || {}, { data }))
-        .then((response: JSONValue) => {
-          if (options.after && !this.isDestroyed) {
-            return options.after.call(this, response);
-          }
-
-          return response;
-        });
-    }
+        return response;
+      });
   };
 }

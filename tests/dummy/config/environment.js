@@ -1,19 +1,19 @@
 'use strict';
-// eslint-disable-next-line
+
 module.exports = function(environment) {
   let ENV = {
-    environment,
-    locationType: 'auto',
     modulePrefix: 'dummy',
+    environment,
     rootURL: '/',
+    locationType: 'auto',
     EmberENV: {
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      },
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 

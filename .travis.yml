@@ -21,31 +21,25 @@ env:
     # See https://git.io/vdao3 for details.
     - JOBS=1
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
 
 install:
   - yarn install --no-lockfile --non-interactive --skip-optional
-
+  - yarn global add codecov
 script:
   - yarn lint:ts
   # Usually, it's ok to finish the test scenario without reverting
   #  to the addon's original dependency state, skipping "cleanup".
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
 
-
-
 after_success:
   - nvm install 10
   - nvm use 10
   - yarn install --no-lockfile --non-interactive
   - yarn travis-deploy-once "npm run semantic-release"
+
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
@@ -53,13 +47,40 @@ branches:
 stages:
   - basic test
   - additional tests
+
+before_script:
+  - 'sudo chown root /opt/google/chrome/chrome-sandbox'
+  - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
+
+after_script:
+  - codecov
+
 jobs:
   fail_fast: true
+  allow_failures:
+    - env: EMBER_TRY_SCENARIO=ember-canary
+
   include:
-    - stage: basic test
-      env: EMBER_TRY_SCENARIO=ember-release
-    - stage: additional tests
-      env: EMBER_TRY_SCENARIO=ember-lts-2.12
-    - env: EMBER_TRY_SCENARIO=ember-lts-2.16
+    # runs linting and tests with current locked deps
+
+    - stage: 'Tests'
+      name: 'Tests'
+      install:
+        - yarn install --non-interactive
+      script:
+        - yarn lint:ts
+        - yarn test
+
+    - name: 'Floating Dependencies'
+      script:
+        - yarn test
+
+    # we recommend new addons test the current and previous LTS
+    # as well as latest stable release (bonus points to beta/canary)
+    - stage: 'Additional Tests'
+      env: EMBER_TRY_SCENARIO=ember-lts-2.16
+      env: EMBER_TRY_SCENARIO=ember-lts-2.18
+    - env: EMBER_TRY_SCENARIO=ember-release
     - env: EMBER_TRY_SCENARIO=ember-beta
     - env: EMBER_TRY_SCENARIO=ember-canary
+    - env: EMBER_TRY_SCENARIO=ember-default-with-jquery

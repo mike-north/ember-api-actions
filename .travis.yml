@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 10
+  - 8
 
 sudo: required
 dist: trusty
@@ -9,9 +9,6 @@ addons:
 before_script:
   - 'sudo chown root /opt/google/chrome/chrome-sandbox'
   - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
-
-addons:
-  chrome: stable
 
 cache:
   yarn: true
@@ -32,13 +29,7 @@ script:
   - yarn lint:ts
   # Usually, it's ok to finish the test scenario without reverting
   #  to the addon's original dependency state, skipping "cleanup".
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
-
-after_success:
-  - nvm install 10
-  - nvm use 10
-  - yarn install --no-lockfile --non-interactive
-  - yarn travis-deploy-once "npm run semantic-release"
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO & yarn travis-deploy-once "yarn semantic-release"
 
 branches:
   except:
@@ -67,13 +58,8 @@ jobs:
       name: 'Tests'
       install:
         - yarn install --non-interactive
-      script:
-        - yarn lint:ts
-        - yarn test
 
     - name: 'Floating Dependencies'
-      script:
-        - yarn test
 
     # we recommend new addons test the current and previous LTS
     # as well as latest stable release (bonus points to beta/canary)

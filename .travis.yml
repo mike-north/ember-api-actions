@@ -68,7 +68,6 @@ jobs:
       install:
         - yarn install --non-interactive
       script:
-        - yarn lint:hbs
         - yarn lint:ts
         - yarn test
 

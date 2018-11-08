@@ -7349,7 +7349,12 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
-json-typescript@1.0.1, json-typescript@^1.0.0:
+json-typescript@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/json-typescript/-/json-typescript-1.1.0.tgz#5369013526d516b13bde1ae2bbc541386dd12c72"
+  integrity sha512-6BzXAzBSfO4L3+IdCLISVQUzR4Wq946Xk2u7ChUAnvftyj/Ec1YgRmBOjw9Rw4wpdtvX678HPIYtYaGYr9fb9w==
+
+json-typescript@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-typescript/-/json-typescript-1.0.1.tgz#9d71a17627a20a61dbbf504e33561030f4eefd7f"
   integrity sha512-+PBRanpdVZ/MV8jJ044EuJ1muG3Ic/jLAZYgDE0WPqBbU46D3w3e+yL4ZbxwTfGbR9ff6JZlAGeGxSmumbQl0A==
@@ -7359,10 +7364,10 @@ json5@^0.5.0, json5@^0.5.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
   integrity sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
 
-jsonapi-typescript@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/jsonapi-typescript/-/jsonapi-typescript-0.0.9.tgz#3a1f78233e36935fcb19db80d2755a7f6454a4ad"
-  integrity sha512-0hHNu82g0f/Of1OMkcIAUs3Z8O+178DNbPt5vNOqKDuPk9cRIuH3Q2VhEdwu5vR+jY+LcP0a7k+ilfJ+101iSQ==
+jsonapi-typescript@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/jsonapi-typescript/-/jsonapi-typescript-0.1.0.tgz#72d0a04fa9e3ed41d362813c3b98942631c48f7d"
+  integrity sha512-qf2jo0ZkH8UprnUe6wEoxPOM3gBbiwsx7BB3I4qfUHr57/cLSS3Hqb/YOlXgbuf0/3JV3LZ6dxUOpaDAp9jhNw==
   dependencies:
     json-typescript "^1.0.0"
 

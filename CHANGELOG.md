@@ -1,3 +1,11 @@
+## [0.2.5](https://github.com/mike-north/ember-api-actions/compare/v0.2.4...v0.2.5) (2018-11-08)
+
+
+### Bug Fixes
+
+* code coverage ([cff214c](https://github.com/mike-north/ember-api-actions/commit/cff214c))
+* node8 in CI ([68a6da7](https://github.com/mike-north/ember-api-actions/commit/68a6da7))
+
 ## [0.2.4](https://github.com/mike-north/ember-api-actions/compare/v0.2.3...v0.2.4) (2018-11-04)
 
 

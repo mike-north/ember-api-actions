@@ -3,33 +3,33 @@ import Controller from '@ember/controller';
 import Fruit from '../models/fruit';
 
 export default Controller.extend({
-  requests: [] as any[],
+  requests: [],
   init() {
     this._super(...arguments);
     this.set('requests', A([]));
   },
   // BEGIN-SNIPPET controller
   actions: {
-    ripenFruit(fruit: InstanceType<typeof Fruit>) {
+    ripenFruit(fruit) {
       fruit.ripen(fruit.getProperties(['id', 'name']));
     },
-    fruitInfo(fruit: InstanceType<typeof Fruit>) {
+    fruitInfo(fruit) {
       const { id } = fruit.getProperties(['id', 'name']);
       fruit.info({ fruitId: id });
     },
-    ripenAllFruit(fruit: InstanceType<typeof Fruit>) {
+    ripenAllFruit(fruit) {
       fruit.ripenAll({ test: 'ok' });
     },
-    getAllFreshFruit(fruit: InstanceType<typeof Fruit>) {
+    getAllFreshFruit(fruit) {
       fruit.getFresh({ month: 'July' });
     },
-    eatFruit(fruit: InstanceType<typeof Fruit>) {
+    eatFruit(fruit) {
       fruit.eat({ was_eaten: true });
     },
-    eatAll(fruit: InstanceType<typeof Fruit>) {
+    eatAll(fruit) {
       fruit.eatAll({ was_eaten: true });
     },
-    juiceAllFruit(fruit: typeof Fruit) {
+    juiceAllFruit(fruit) {
       Fruit.juiceAll({ was_eaten: true });
     }
   }

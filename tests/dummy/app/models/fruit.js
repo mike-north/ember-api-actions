@@ -2,12 +2,11 @@
 import { assign } from '@ember/polyfills';
 import { collectionAction, memberAction, serializeAndPush } from 'ember-api-actions';
 import DS from 'ember-data';
-import { SingleResourceDoc } from 'jsonapi-typescript';
 
 const { attr, Model } = DS;
 
-function mergeAttributes(this: DS.Model, attributes: any) {
-  const payload: SingleResourceDoc<'fruit', any> = this.serialize() as any;
+function mergeAttributes(attributes) {
+  const payload = this.serialize();
   payload.data.attributes = assign(payload.data.attributes || {}, attributes);
   return payload;
 }
@@ -37,5 +36,5 @@ Fruit.reopenClass({
   })
 });
 
-export default (Fruit as any) as InstanceType<typeof Fruit> & { juiceAll: any };
+export default Fruit;
 // END-SNIPPET

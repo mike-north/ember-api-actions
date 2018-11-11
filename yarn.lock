@@ -905,10 +905,27 @@
     camelcase "^5.0.0"
     prettier "^1.13.7"
 
+"@glimmer/compiler@^0.36.2":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/compiler/-/compiler-0.36.5.tgz#ea2ac9aa1a5c3ada7f8d93cd295fdc14f1c1ccc4"
+  integrity sha512-C6fs3uejZwxB32c+XSmMvu3r4oesLILETRQcd+LKazY9YdCUy8S4QfnSdCW/gnfEmtB0qgLTxyMiHqMpzT9KHw==
+  dependencies:
+    "@glimmer/interfaces" "^0.36.5"
+    "@glimmer/syntax" "^0.36.5"
+    "@glimmer/util" "^0.36.5"
+    "@glimmer/wire-format" "^0.36.5"
+
 "@glimmer/di@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
   integrity sha1-c7/Upu5BSKgL8JLopdKbysnUzn4=
+
+"@glimmer/interfaces@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.36.5.tgz#b9ef4a6756745dc41927ab01d6c23cdf7ece4158"
+  integrity sha512-IhoGEP0Awe9bTOMcLF9dUgEV3xguI6m2vFer7SHYX1vuugthA6NEJb83hqUe9FqOd1cNxJE8nAsX0JInx8gn+A==
+  dependencies:
+    "@glimmer/wire-format" "^0.36.5"
 
 "@glimmer/resolver@^0.4.1":
   version "0.4.2"
@@ -916,6 +933,28 @@
   integrity sha512-OYOSn2qKPMWRTrInu4W7Ilx2q4+mFfeKS8o8SCWdGN6q/9LnRUvN3vfiAEEfpgoMSvEr8TSGw6/b2WSLWoYAAA==
   dependencies:
     "@glimmer/di" "^0.2.0"
+
+"@glimmer/syntax@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.36.5.tgz#603099a0bf2019dc497e3b858eb6fc84abda805a"
+  integrity sha512-62BcnXtej4oBEMYSCBezSCOvlZ+1gLAJ/zVXwDgTmin56wKUL2bChScw332OeIL+brvcExAlwZ/hB1UoldMgwQ==
+  dependencies:
+    "@glimmer/interfaces" "^0.36.5"
+    "@glimmer/util" "^0.36.5"
+    handlebars "^4.0.6"
+    simple-html-tokenizer "^0.5.6"
+
+"@glimmer/util@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.36.5.tgz#829f393ef0bf791df5b287f104f0fd76e456182c"
+  integrity sha512-RcDsxxuKGnIc6Ro6wZGFMUZ/E8L3Rbcd5E5F2WOSa59RYHel146fhQtctGrpGxQUZwfxMEMs91GJIaKeukd84g==
+
+"@glimmer/wire-format@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.36.5.tgz#6713c95fbdc23c2e4dcc946e16452ded5cc17447"
+  integrity sha512-wt+H4iNsGPkW/b/POP21DmTM4cYYYcDmaI54RkEgtMRoeBP6hyi7Y4awbRPMWal6QKIxFepMUY4vnbq345m00w==
+  dependencies:
+    "@glimmer/util" "^0.36.5"
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -2701,6 +2740,24 @@ broccoli-concat@^3.5.1:
   integrity sha512-3qvGPoxQygYb76EYR2m7Ji7jhCTmJlcAlbyjwJkPJAZmMLcnkCmPzq7nFa1lXW/3HDhktQyuQqGqskXWCCG66g==
   dependencies:
     broccoli-debug "^0.6.4"
+    broccoli-kitchen-sink-helpers "^0.3.1"
+    broccoli-plugin "^1.3.0"
+    ensure-posix-path "^1.0.2"
+    fast-sourcemap-concat "^1.4.0"
+    find-index "^1.1.0"
+    fs-extra "^4.0.3"
+    fs-tree-diff "^0.5.7"
+    lodash.merge "^4.3.1"
+    lodash.omit "^4.1.0"
+    lodash.uniq "^4.2.0"
+    walk-sync "^0.3.2"
+
+broccoli-concat@^3.7.1:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/broccoli-concat/-/broccoli-concat-3.7.3.tgz#0dca01311567ffb13180e6b4eb111824628e4885"
+  integrity sha512-2Ma9h81EJ0PRb9n4sW0i8KZlcnpTQfKxcj87zvi5DFe1fd8CTDEdseHDotK2beuA2l+LbgVPfd8EHaBJKm/Y8g==
+  dependencies:
+    broccoli-debug "^0.6.5"
     broccoli-kitchen-sink-helpers "^0.3.1"
     broccoli-plugin "^1.3.0"
     ensure-posix-path "^1.0.2"
@@ -4585,6 +4642,23 @@ ember-cli-string-utils@^1.0.0, ember-cli-string-utils@^1.1.0:
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
   integrity sha1-ObZ3/CgF9VFzc1N2/O8njqpEUqE=
 
+ember-cli-template-lint@^1.0.0-beta.1:
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-template-lint/-/ember-cli-template-lint-1.0.0-beta.2.tgz#0ebd2f8c1f9ca47f9ee3b42755d66262440c14f6"
+  integrity sha512-i37mJhz+dll7eP/Y3Yh8oLw5aRqfdnIiutqdLsrvTSLb4VphDXbujXCO8XravvZtGeGBVYKXGsjTxobbPXgsgw==
+  dependencies:
+    aot-test-generators "^0.1.0"
+    broccoli-concat "^3.7.1"
+    broccoli-persistent-filter "^1.4.3"
+    chalk "^2.4.1"
+    debug "^3.1.0"
+    ember-cli-version-checker "^2.1.2"
+    ember-template-lint "^1.0.0-beta.5"
+    json-stable-stringify "^1.0.1"
+    md5-hex "^2.0.0"
+    strip-ansi "^4.0.0"
+    walk-sync "^0.3.3"
+
 ember-cli-test-info@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-test-info/-/ember-cli-test-info-1.0.0.tgz#ed4e960f249e97523cf891e4aed2072ce84577b4"
@@ -4933,6 +5007,18 @@ ember-source@3.5.1:
     inflection "^1.12.0"
     jquery "^3.3.1"
     resolve "^1.6.0"
+
+ember-template-lint@^1.0.0-beta.5:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.0.0-beta.6.tgz#a49d6a37beb3fd7bdae17472efc8ec298d739aa9"
+  integrity sha512-QeP0GB0oFLvtZXszCTHILlHO5RdVybkdhFdoXSST7IdJHdSIourYjhtgkVVdpw9SOP2SV4xLLTev/tXfNyNZXQ==
+  dependencies:
+    "@glimmer/compiler" "^0.36.2"
+    chalk "^2.0.0"
+    globby "^8.0.1"
+    minimatch "^3.0.4"
+    resolve "^1.1.3"
+    strip-bom "^3.0.0"
 
 ember-try-config@^3.0.0:
   version "3.0.0"
@@ -6265,7 +6351,7 @@ growly@^1.3.0:
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
-handlebars@^4.0.11:
+handlebars@^4.0.11, handlebars@^4.0.6:
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.12.tgz#2c15c8a96d46da5e266700518ba8cb8d919d5bc5"
   integrity sha512-RhmTekP+FZL+XNhwS1Wf+bTTZpdLougwt5pcgA1tuz6Jcx0fpH/7z0qd71RKnZHBCxIRBHfBOnio4gViPemNzA==
@@ -8310,6 +8396,18 @@ matcher-collection@^1.0.0, matcher-collection@^1.0.4, matcher-collection@^1.0.5:
   integrity sha512-nUCmzKipcJEwYsBVAFh5P+d7JBuhJaW1xs85Hara9xuMLqtCVUrW6DSC0JVIkluxEH2W45nPBM/wjHtBXa/tYA==
   dependencies:
     minimatch "^3.0.2"
+
+md5-hex@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/md5-hex/-/md5-hex-2.0.0.tgz#d0588e9f1c74954492ecd24ac0ac6ce997d92e33"
+  integrity sha1-0FiOnxx0lUSS7NJKwKxs6ZfZLjM=
+  dependencies:
+    md5-o-matic "^0.1.1"
+
+md5-o-matic@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/md5-o-matic/-/md5-o-matic-0.1.1.tgz#822bccd65e117c514fab176b25945d54100a03c3"
+  integrity sha1-givM1l4RfFFPqxdrJZRdVBAKA8M=
 
 mdurl@^1.0.1:
   version "1.0.1"
@@ -10436,7 +10534,7 @@ resolve@1.5.0:
   dependencies:
     path-parse "^1.0.5"
 
-resolve@^1.1.6, resolve@^1.2.0, resolve@^1.3.2, resolve@^1.3.3, resolve@^1.4.0, resolve@^1.5.0, resolve@^1.6.0, resolve@^1.8.1:
+resolve@^1.1.3, resolve@^1.1.6, resolve@^1.2.0, resolve@^1.3.2, resolve@^1.3.3, resolve@^1.4.0, resolve@^1.5.0, resolve@^1.6.0, resolve@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   integrity sha512-AicPrAC7Qu1JxPCZ9ZgCZlY35QgFnNqc+0LtbRNxnVw4TXvjQ72wnuL9JQcEBgXkI9JM8MsT9kaQoHcpCRJOYA==
@@ -10898,6 +10996,11 @@ silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.0:
   integrity sha1-IglwbxyFCp8dENDYQJGLRvJuG8k=
   dependencies:
     debug "^2.2.0"
+
+simple-html-tokenizer@^0.5.6:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.7.tgz#8eca336ecfbe2b3c6166cbb31b2682088de79f40"
+  integrity sha512-APW9iYbkJ5cijjX4Ljhf3VG8SwYPUJT5gZrwci/wieMabQxWFiV5VwsrP5c6GMRvXKEQMGkAB1d9dvW66dTqpg==
 
 slash@^1.0.0:
   version "1.0.0"

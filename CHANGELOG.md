@@ -1,3 +1,10 @@
+## [0.2.6](https://github.com/mike-north/ember-api-actions/compare/v0.2.5...v0.2.6) (2018-11-27)
+
+
+### Bug Fixes
+
+* optionalDependencies -> devDependencies ([e1b0c9e](https://github.com/mike-north/ember-api-actions/commit/e1b0c9e))
+
 ## [0.2.5](https://github.com/mike-north/ember-api-actions/compare/v0.2.4...v0.2.5) (2018-11-08)
 
 

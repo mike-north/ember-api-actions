@@ -970,10 +970,10 @@
   resolved "https://registry.yarnpkg.com/@mike-north/js-lib-renovate-config/-/js-lib-renovate-config-1.0.0.tgz#e00a7264de0767049d3a75c29e36db69b0ac81cf"
   integrity sha512-ixKtfThE8RFJDAFXrypSYPEkPzXB8yTaRjillj5/T5JcF4+pWfrDKhOUb2tytnJLBgNzUjohWwIdxy6yFbWRbQ==
 
-"@mike-north/js-lib-semantic-release-config@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@mike-north/js-lib-semantic-release-config/-/js-lib-semantic-release-config-1.0.0.tgz#8ec3702da90c3d93c0ee71bd3a75c7f8192a56de"
-  integrity sha512-0R4KS60dHVxV1+Fg9y7oTbR/rFMNfrGPyTLD8fA03GpKftsPwaa17hUZPtjiMX91yRW7sicehk0TBGJGabu/Ig==
+"@mike-north/js-lib-semantic-release-config@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@mike-north/js-lib-semantic-release-config/-/js-lib-semantic-release-config-1.0.1.tgz#39a42e84deeebe77c73aff69879582d1418c0505"
+  integrity sha512-vTsYu0l8yTlRrVqWtSOI0MD8oa2MDc+RCW8FKCa+WDPvRGrcbnukva7Ohw81L1RFxEx+7A6I5zKBm7/U6HMXag==
   dependencies:
     "@semantic-release/changelog" "^3.0.0"
     "@semantic-release/error" "^2.2.0"

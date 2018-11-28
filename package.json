@@ -70,7 +70,7 @@
     "jsonapi-typescript": "0.1.0",
     "loader.js": "4.7.0",
     "qunit-dom": "0.8.2",
-    "semantic-release": "15.10.6",
+    "semantic-release": "15.12.3",
     "travis-deploy-once": "5.0.9",
     "tslint-config-prettier": "1.17.0",
     "typescript": "3.1.6"

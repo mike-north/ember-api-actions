@@ -4469,10 +4469,10 @@ ember-cli-broccoli-sane-watcher@^2.1.1:
     rsvp "^3.0.18"
     sane "^4.0.0"
 
-ember-cli-code-coverage@1.0.0-beta.6:
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/ember-cli-code-coverage/-/ember-cli-code-coverage-1.0.0-beta.6.tgz#7da5dc4e2eb7c207b827b6cbdf91a96d0cca0983"
-  integrity sha512-Iiu1Cll3QnnfTxTHOb32YtOEvkktia9xZO2YQDPbCqJo0x/l5SsUH6ve+lxDUUOs1E4/fItP0Fk+WGCKMFnJDw==
+ember-cli-code-coverage@1.0.0-beta.7:
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/ember-cli-code-coverage/-/ember-cli-code-coverage-1.0.0-beta.7.tgz#392a8384689c3c5faea62d1ed82a4c2993df6576"
+  integrity sha512-Psdf2lC/Fh+zYridVs4UJce2864i5sP9XUmH30ySgjWO3M5ETLfY4uI9LLTVrsU5u3CZ/cV3UqE+2nLMmYGBtA==
   dependencies:
     babel-plugin-istanbul "^5.1.0"
     babel-plugin-transform-async-to-generator "^6.24.1"

@@ -73,7 +73,7 @@
     "semantic-release": "15.12.3",
     "travis-deploy-once": "5.0.9",
     "tslint-config-prettier": "1.17.0",
-    "typescript": "3.1.6"
+    "typescript": "3.2.1"
   },
   "keywords": [
     "ember-addon",

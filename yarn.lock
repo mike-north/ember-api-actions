@@ -965,10 +965,10 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-"@mike-north/js-lib-renovate-config@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@mike-north/js-lib-renovate-config/-/js-lib-renovate-config-1.0.0.tgz#e00a7264de0767049d3a75c29e36db69b0ac81cf"
-  integrity sha512-ixKtfThE8RFJDAFXrypSYPEkPzXB8yTaRjillj5/T5JcF4+pWfrDKhOUb2tytnJLBgNzUjohWwIdxy6yFbWRbQ==
+"@mike-north/js-lib-renovate-config@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@mike-north/js-lib-renovate-config/-/js-lib-renovate-config-1.1.1.tgz#1238da82936d97441991d1cb662eb8f3f3cd6bfc"
+  integrity sha512-/2aoGDisjAPaG/p2HJl9SJnrIWGmPBTzBx8IFb6oPuVbe9SOVzFowDQkiMdu87LUN3KArOPlzx5FBXw29ni5ug==
 
 "@mike-north/js-lib-semantic-release-config@1.0.1":
   version "1.0.1"

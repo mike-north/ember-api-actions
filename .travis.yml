@@ -13,6 +13,13 @@ env:
     # See https://git.io/vdao3 for details.
     - JOBS=1
 
+stages:
+  - 'Tests'
+  - 'Additional Tests'
+  - 'Canary Tests'
+  - name: 'Deploy'
+    if: branch = master AND type = push
+
 jobs:
   fail_fast: true
   allow_failures:
@@ -43,10 +50,17 @@ jobs:
     - env: EMBER_TRY_SCENARIO=ember-release
     - env: EMBER_TRY_SCENARIO=ember-beta
     - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
+
     - stage: 'Canary Tests'
       script:
         - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
       env: EMBER_TRY_SCENARIO=ember-canary
+
+    - stage: 'Deploy'
+      name: 'Publish to npm'
+      install:
+        - yarn install --non-interactive
+      script: yarn semantic-release
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -61,7 +75,7 @@ before_script:
   - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
 
 script:
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO && yarn travis-deploy-once "yarn semantic-release"
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
 
 after_script:
   - codecov

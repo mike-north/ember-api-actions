@@ -12,7 +12,6 @@
     "lint:hbs": "ember-template-lint .",
     "start": "ember server",
     "test": "ember test",
-    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
     "prepublishOnly": "ember ts:precompile",
     "postpublish": "ember ts:clean"
@@ -71,7 +70,6 @@
     "loader.js": "4.7.0",
     "qunit-dom": "0.8.2",
     "semantic-release": "15.12.3",
-    "travis-deploy-once": "5.0.9",
     "tslint-config-prettier": "1.17.0",
     "typescript": "3.2.1"
   },

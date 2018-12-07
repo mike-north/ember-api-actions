@@ -62,7 +62,7 @@
     "ember-maybe-import-regenerator": "0.1.6",
     "ember-resolver": "5.0.1",
     "ember-source-channel-url": "1.1.0",
-    "ember-source": "3.5.1",
+    "ember-source": "3.6.0",
     "ember-try": "1.1.0",
     "husky": "1.2.0",
     "json-typescript": "1.1.0",

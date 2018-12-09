@@ -71,7 +71,7 @@
     "qunit-dom": "0.8.2",
     "semantic-release": "15.12.4",
     "tslint-config-prettier": "1.17.0",
-    "typescript": "3.2.1"
+    "typescript": "3.2.2"
   },
   "keywords": [
     "ember-addon",

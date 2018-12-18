@@ -1195,10 +1195,10 @@
     "@types/ember" "*"
     "@types/rsvp" "*"
 
-"@types/ember-qunit@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.3.tgz#ad8532e735c7a46af764f5cb7d852896e6d28bfd"
-  integrity sha512-dBlWUh7XMHT3dr96P2c5U5hx8dLE4RZmtwKhUeaHycsgJyH4pCX1C462Bk308fWXFN1TWasZtkl+MhtW/mj3RA==
+"@types/ember-qunit@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.4.4.tgz#c480b941e554e16d9cb0ea19f80eb37ca50ef541"
+  integrity sha512-BeR+045sYh1hYAHZOuCm8uIzoL367BkvD2YSa+yKEZll+FbB7OPRrv/qNRNNziB4YEgKihj4uKMomzLdCaUGxw==
   dependencies:
     "@types/ember" "*"
     "@types/ember-test-helpers" "*"

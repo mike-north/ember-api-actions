@@ -128,7 +128,7 @@ eat: memberAction({
 
 **SerializeAndPush**
 
-You can use the `after` hook to push into the store. We've included a helper called [`serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.js) to do this.
+You can use the `after` hook to push into the store. We've included a helper called [`serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.ts) to do this.
 
 ```js
 import DS from 'ember-data';
@@ -141,7 +141,7 @@ export default DS.Model.extend({
 });
 ```
 
-*Warning* this implemention only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.js) for an example.
+*Warning* this implemention only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.ts) for an example.
 
 ## Customization
 

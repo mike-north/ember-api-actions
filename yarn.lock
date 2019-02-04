@@ -4146,13 +4146,13 @@ duplexer3@^0.1.4:
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 duplexify@^3.4.2, duplexify@^3.6.0:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.6.1.tgz#b1a7a29c4abfd639585efaecce80d666b1e34125"
-  integrity sha512-vM58DwdnKmty+FSPzT14K9JXb90H+j5emaR4KYbr2KTIz00WHGbWOe5ghQTx233ZCLZtrGDALzKwcjEtSt35mA==
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.7.0.tgz#f4cae6c26675bc37a89ae8eba712de8c48ca23ad"
+  integrity sha512-+PSTXcTZi+Ez+AkJNYzxWvncsmelRzwrAbGF6Y/RNSK9BmnTVEOFVoYSXDHizQUQe3SSerq0YoS3utU7TUfeHg==
   dependencies:
-    end-of-stream "^1.0.0"
-    inherits "^2.0.1"
-    readable-stream "^2.0.0"
+    end-of-stream "^1.4.1"
+    inherits "^2.0.3"
+    readable-stream "^3.1.1"
     stream-shift "^1.0.0"
 
 ecc-jsbn@~0.1.1:
@@ -4841,7 +4841,7 @@ encoding@^0.1.11:
   dependencies:
     iconv-lite "~0.4.13"
 
-end-of-stream@^1.0.0, end-of-stream@^1.1.0:
+end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/end-of-stream/-/end-of-stream-1.4.1.tgz#ed29634d19baba463b6ce6b80a37213eab71ec43"
   integrity sha512-1MkrZNvWTKCaigbn+W15elq2BB/L22nqrSY5DKlo3X6+vclJm8Bb5djXJBmEX6fS3+zCh/F4VBK5Z2KxJt4s2Q==
@@ -5500,12 +5500,12 @@ fixturify@^0.3.4:
     matcher-collection "^1.0.4"
 
 flush-write-stream@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
-  integrity sha512-calZMC10u0FMUqoiunI2AiGIIUtUIvifNwkHhNupZH4cbNnW1Itkoh/Nf5HFYmDrwWPjrUxpkZT0KhuCq0jmGw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.0.tgz#2e89a8bd5eee42f8ec97e43aae81e3d5099c2ddc"
+  integrity sha512-6MHED/cmsyux1G4/Cek2Z776y9t7WCNd3h2h/HW91vFeU7pzMhA8XvAlDhHcanG5IWuIh/xcC7JASY4WQpG6xg==
   dependencies:
-    inherits "^2.0.1"
-    readable-stream "^2.0.4"
+    inherits "^2.0.3"
+    readable-stream "^3.1.1"
 
 follow-redirects@^1.0.0:
   version "1.6.1"
@@ -9799,7 +9799,7 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.6, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   integrity sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
@@ -9811,6 +9811,15 @@ read@1, read@~1.0.1, read@~1.0.7:
     safe-buffer "~5.1.1"
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
+
+readable-stream@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.1.1.tgz#ed6bbc6c5ba58b090039ff18ce670515795aeb06"
+  integrity sha512-DkN66hPyqDhnIQ6Jcsvx9bFjhw214O4poMBcIMgPVpQvNy9a0e0Uhg5SqySyDKAmUlwt8LonTBz1ezOnM8pUdA==
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
 
 readable-stream@~1.0.2:
   version "1.0.34"
@@ -10688,9 +10697,9 @@ sort-object-keys@^1.1.2:
   integrity sha1-06bEjcKsl+a8lDZ2luA/bQnTeVI=
 
 sort-package-json@^1.15.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.18.0.tgz#d9ece79b1e1818dea67451813f9e504481bebd00"
-  integrity sha512-OkUR/WjlMz4IFOOMhYTpVl9rDaL4XIIOabzTXUBQVck04Dh+DyhjCNnMcndwX2dz+u77Q3MUuj1ncyVjVesB7Q==
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.19.0.tgz#3e6819147d75680832890523e753b8992166a442"
+  integrity sha512-SRzbsvOG+g8jTuFYZCvljh+LOsNeCS04bH+MF6qf0Ukva0Eh3Y6Jf7a4GSNEeDHLHM6CWqhZuJo7OLdzycTH1A==
   dependencies:
     detect-indent "^5.0.0"
     sort-object-keys "^1.1.2"
@@ -10989,6 +10998,13 @@ string_decoder@0.10, string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
   integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
+
+string_decoder@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.2.0.tgz#fe86e738b19544afe70469243b2a1ee9240eae8d"
+  integrity sha512-6YqyX6ZWEYguAxgZzHGL7SsCeGx3V2TtOTqZz1xSTSWnqsbWwbptafNyvf/ACquZUXV3DANr5BDIwNYe1mN42w==
+  dependencies:
+    safe-buffer "~5.1.0"
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -11659,7 +11675,7 @@ username@^1.0.1:
   dependencies:
     meow "^3.4.0"
 
-util-deprecate@^1.0.2, util-deprecate@~1.0.1:
+util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=

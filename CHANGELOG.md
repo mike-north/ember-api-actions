@@ -1,3 +1,10 @@
+## [0.2.7](https://github.com/mike-north/ember-api-actions/compare/v0.2.6...v0.2.7) (2019-02-15)
+
+
+### Bug Fixes
+
+* change Ember.merge to Ember.assign ([2859d33](https://github.com/mike-north/ember-api-actions/commit/2859d33))
+
 ## [0.2.6](https://github.com/mike-north/ember-api-actions/compare/v0.2.5...v0.2.6) (2018-11-27)
 
 

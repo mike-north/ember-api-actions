@@ -4423,10 +4423,10 @@ ember-cli-preprocess-registry@^3.1.2:
     process-relative-require "^1.0.0"
     silent-error "^1.0.0"
 
-ember-cli-pretender@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-pretender/-/ember-cli-pretender-3.1.0.tgz#1e98974830f2253b1195d449ed8c72a1cf9008b3"
-  integrity sha512-3nNN6omDPzlfKvXntDjZv+7eEuQ76PfonNYim01jhs7wYPWkHkMlKa5trNtlIHc23BLtF1CJ8rfO0iZMS+rd1g==
+ember-cli-pretender@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-pretender/-/ember-cli-pretender-3.1.1.tgz#289c41683de266fec8bfaf5b7b7f6026aaefc8cf"
+  integrity sha512-RGGj9la0138bgHUxyaGDHCZydmdpW+BFN9v0vMBzNPeXsaexCZotaFTIZDCNcKWPx8jtRHR8AXf318VRGXLJsw==
   dependencies:
     abortcontroller-polyfill "^1.1.9"
     broccoli-funnel "^2.0.1"

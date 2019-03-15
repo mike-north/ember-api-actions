@@ -1,3 +1,83 @@
+## [0.2.7](https://github.com/mike-north/ember-api-actions/compare/v0.2.6...v0.2.7) (2019-02-15)
+
+
+### Bug Fixes
+
+* change Ember.merge to Ember.assign ([2859d33](https://github.com/mike-north/ember-api-actions/commit/2859d33))
+
+## [0.2.6](https://github.com/mike-north/ember-api-actions/compare/v0.2.5...v0.2.6) (2018-11-27)
+
+
+### Bug Fixes
+
+* optionalDependencies -> devDependencies ([e1b0c9e](https://github.com/mike-north/ember-api-actions/commit/e1b0c9e))
+
+## [0.2.5](https://github.com/mike-north/ember-api-actions/compare/v0.2.4...v0.2.5) (2018-11-08)
+
+
+### Bug Fixes
+
+* code coverage ([cff214c](https://github.com/mike-north/ember-api-actions/commit/cff214c))
+* node8 in CI ([68a6da7](https://github.com/mike-north/ember-api-actions/commit/68a6da7))
+
+## [0.2.4](https://github.com/mike-north/ember-api-actions/compare/v0.2.3...v0.2.4) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to v7.1.3 ([54c61d4](https://github.com/mike-north/ember-api-actions/commit/54c61d4))
+
+## [0.2.3](https://github.com/mike-north/ember-api-actions/compare/v0.2.2...v0.2.3) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to v2.0.0-beta.3 ([c16743e](https://github.com/mike-north/ember-api-actions/commit/c16743e))
+* ESLint fixes ([b707c9f](https://github.com/mike-north/ember-api-actions/commit/b707c9f))
+
+## [0.2.2](https://github.com/mike-north/ember-api-actions/compare/v0.2.1...v0.2.2) (2018-11-01)
+
+
+### Bug Fixes
+
+* lint:ts script for tslint ([1a92733](https://github.com/mike-north/ember-api-actions/commit/1a92733))
+* more type safety ([8a8df37](https://github.com/mike-north/ember-api-actions/commit/8a8df37))
+
+## [0.2.1](https://github.com/mike-north/ember-api-actions/compare/v0.2.0...v0.2.1) (2018-11-01)
+
+
+### Bug Fixes
+
+* after hook should only be fired if the record is NOT destroyed ([9c91f99](https://github.com/mike-north/ember-api-actions/commit/9c91f99))
+* cleanup variable names, delete empty file ([cd0338f](https://github.com/mike-north/ember-api-actions/commit/cd0338f))
+
+# [0.2.0](https://github.com/mike-north/ember-api-actions.git/compare/v0.1.9...v0.2.0) (2018-10-31)
+
+
+### Bug Fixes
+
+* after hook should only be fired if the record is NOT destroyed ([9e4149c](https://github.com/mike-north/ember-api-actions.git/commit/9e4149c))
+* cleanup variable names, delete empty file ([b0e2bd9](https://github.com/mike-north/ember-api-actions.git/commit/b0e2bd9))
+
+
+### Features
+
+* Extract serializeAndPush into a util exported by this add-on ([67dbe8a](https://github.com/mike-north/ember-api-actions.git/commit/67dbe8a))
+
+## [0.1.9](https://github.com/mike-north/ember-api-actions/compare/v0.1.8...v0.1.9) (2018-09-02)
+
+
+### Bug Fixes
+
+* bump dependencies ([915f13d](https://github.com/mike-north/ember-api-actions/commit/915f13d))
+* cut npm release only after ember-try cleanup ([d8e261e](https://github.com/mike-north/ember-api-actions/commit/d8e261e))
+* install regenerator for async/await in tests ([ca062d3](https://github.com/mike-north/ember-api-actions/commit/ca062d3))
+* linting ([ce539bf](https://github.com/mike-north/ember-api-actions/commit/ce539bf))
+* readme badges ([e27d3f6](https://github.com/mike-north/ember-api-actions/commit/e27d3f6))
+* semantic-release ([365ed29](https://github.com/mike-north/ember-api-actions/commit/365ed29))
+* semantic-release as optional dependency ([dd36367](https://github.com/mike-north/ember-api-actions/commit/dd36367))
+* update tests to RFC 232 style ([76c5142](https://github.com/mike-north/ember-api-actions/commit/76c5142))
+
 # Change Log
 
 ## [Unreleased](https://github.com/mike-north/ember-api-actions/tree/HEAD)

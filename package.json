@@ -65,7 +65,7 @@
     "ember-source": "3.8.0",
     "ember-try": "1.1.0",
     "husky": "1.2.1",
-    "json-typescript": "1.1.0",
+    "json-typescript": "1.1.1",
     "jsonapi-typescript": "0.1.0",
     "loader.js": "4.7.0",
     "qunit-dom": "0.8.4",

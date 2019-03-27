@@ -7084,7 +7084,12 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
-json-typescript@1.1.0, json-typescript@^1.0.0:
+json-typescript@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/json-typescript/-/json-typescript-1.1.1.tgz#28de4a3ca37b47a57ec383e486fe0e19a4a260df"
+  integrity sha512-w/8xaMYptePPXxsm+6YcxIcifw8fUwOJZwLOlYv3p7yLeTb/RAMwgyw253ktTCCdKQu6r1ttov3QrOzRyhYUjA==
+
+json-typescript@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/json-typescript/-/json-typescript-1.1.0.tgz#5369013526d516b13bde1ae2bbc541386dd12c72"
   integrity sha512-6BzXAzBSfO4L3+IdCLISVQUzR4Wq946Xk2u7ChUAnvftyj/Ec1YgRmBOjw9Rw4wpdtvX678HPIYtYaGYr9fb9w==

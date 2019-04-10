@@ -7074,10 +7074,10 @@ json5@^2.1.0:
   dependencies:
     minimist "^1.2.0"
 
-jsonapi-typescript@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/jsonapi-typescript/-/jsonapi-typescript-0.1.0.tgz#72d0a04fa9e3ed41d362813c3b98942631c48f7d"
-  integrity sha512-qf2jo0ZkH8UprnUe6wEoxPOM3gBbiwsx7BB3I4qfUHr57/cLSS3Hqb/YOlXgbuf0/3JV3LZ6dxUOpaDAp9jhNw==
+jsonapi-typescript@0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/jsonapi-typescript/-/jsonapi-typescript-0.1.3.tgz#f903ca20ae7cce31bdc848667d8197b9471106a4"
+  integrity sha512-uPcPS01GeM+4HIyn18s7l1yD2S3uLZy2TX1UkQffCM0bLb3TMwudXUyVXPHTMZ4vdZT8MqKqN2vjB5PogTAdFQ==
   dependencies:
     json-typescript "^1.0.0"
 

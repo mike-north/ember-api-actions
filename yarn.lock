@@ -3046,22 +3046,22 @@ broccoli-tslinter@^3.0.1:
     chalk "^2.0.1"
     exists-sync "0.0.4"
 
-broccoli-uglify-sourcemap@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/broccoli-uglify-sourcemap/-/broccoli-uglify-sourcemap-2.2.0.tgz#2ff49389bdf342a550c3596750ba2dde95a8f7d4"
-  integrity sha1-L/STib3zQqVQw1lnULot3pWo99Q=
+broccoli-uglify-sourcemap@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/broccoli-uglify-sourcemap/-/broccoli-uglify-sourcemap-3.1.0.tgz#424abcb2c1c70fd1857165c5f191d59a37ee33ff"
+  integrity sha512-8urQlRfoL6TDP65EylZgbqTwYkSMuZkWE+bwYgC+GMhncSb6bCc0zHn4AGaC+1DRaAsEjb8uyhtYnKCil4NRPA==
   dependencies:
     async-promise-queue "^1.0.4"
     broccoli-plugin "^1.2.1"
-    debug "^3.1.0"
+    debug "^4.1.0"
     lodash.defaultsdeep "^4.6.0"
-    matcher-collection "^1.0.5"
+    matcher-collection "^2.0.0"
     mkdirp "^0.5.0"
     source-map-url "^0.4.0"
     symlink-or-copy "^1.0.1"
-    terser "^3.7.5"
-    walk-sync "^0.3.2"
-    workerpool "^2.3.0"
+    terser "^3.17.0"
+    walk-sync "^1.1.3"
+    workerpool "^3.1.2"
 
 broccoli-writer@^0.1.1:
   version "0.1.1"
@@ -4071,7 +4071,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@~4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -4630,12 +4630,12 @@ ember-cli-typescript@^2.0.0-beta.3:
     stagehand "^1.0.0"
     walk-sync "^1.0.0"
 
-ember-cli-uglify@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-uglify/-/ember-cli-uglify-2.1.0.tgz#4a0641fe4768d7ab7d4807aca9924cc77c544184"
-  integrity sha512-lDzdAUfhGx5AMBsgyR54ibENVp/LRQuHNWNaP2SDjkAXDyuYFgW0iXIAfGbxF6+nYaesJ9Tr9AKOfTPlwxZDSg==
+ember-cli-uglify@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-uglify/-/ember-cli-uglify-3.0.0.tgz#8819665b2cc5fe70e3ba9fe7a94645209bc42fd6"
+  integrity sha512-n3QxdBfAgBdb2Cnso82Kt/nxm3ppIjnYWM8uhOEhF1aYxNXfM7AJrc+yiqTCDUR61Db8aCpHfAMvChz3kyme7g==
   dependencies:
-    broccoli-uglify-sourcemap "^2.1.1"
+    broccoli-uglify-sourcemap "^3.1.0"
     lodash.defaultsdeep "^4.6.0"
 
 ember-cli-valid-component-name@^1.0.0:
@@ -6388,7 +6388,7 @@ import-lazy@^2.1.0:
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
   integrity sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM=
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -7359,11 +7359,6 @@ lodash._baseflatten@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -7372,15 +7367,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*, lodash._bindcallback@^3.0.0:
+lodash._bindcallback@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
   integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
 
 lodash._createassigner@^3.0.0:
   version "3.1.1"
@@ -7390,13 +7380,6 @@ lodash._createassigner@^3.0.0:
     lodash._bindcallback "^3.0.0"
     lodash._isiterateecall "^3.0.0"
     lodash.restparam "^3.0.0"
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
 
 lodash._createset@~4.0.0:
   version "4.0.3"
@@ -7424,7 +7407,7 @@ lodash._escapestringchar@~2.3.0:
   resolved "https://registry.yarnpkg.com/lodash._escapestringchar/-/lodash._escapestringchar-2.3.0.tgz#cce73ae60fc6da55d2bf8a0679c23ca2bab149fc"
   integrity sha1-zOc65g/G2lXSv4oGecI8orqxSfw=
 
-lodash._getnative@*, lodash._getnative@^3.0.0:
+lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
   integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
@@ -7674,7 +7657,7 @@ lodash.omit@^4.1.0:
   resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
   integrity sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA=
 
-lodash.restparam@*, lodash.restparam@^3.0.0:
+lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
   integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
@@ -7952,11 +7935,19 @@ marked@^0.6.0:
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.2.tgz#c574be8b545a8b48641456ca1dbe0e37b6dccc1a"
   integrity sha512-LqxwVH3P/rqKX4EKGz7+c2G9r98WeM/SW34ybhgNGhUQNKtf1GmmSkJ6cDGJ/t6tiyae49qRkpyTw2B9HOrgUA==
 
-matcher-collection@^1.0.0, matcher-collection@^1.0.5, matcher-collection@^1.1.1:
+matcher-collection@^1.0.0, matcher-collection@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/matcher-collection/-/matcher-collection-1.1.2.tgz#1076f506f10ca85897b53d14ef54f90a5c426838"
   integrity sha512-YQ/teqaOIIfUHedRam08PB3NK7Mjct6BvzRnJmpGDm8uFXpNr1sbY4yuflI5JcEs6COpYA0FpRQhSDBf1tT95g==
   dependencies:
+    minimatch "^3.0.2"
+
+matcher-collection@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/matcher-collection/-/matcher-collection-2.0.0.tgz#470ae263c793e897b3f1e72c695016b7aea355c4"
+  integrity sha512-wSi4BgQGTFfBN5J+pIaS78rEKk4qIkjrw+NfJYdHsd2cRVIQsbDi3BZtNAXTFA2WHvlbS9kLGtTjv3cPJKuRSw==
+  dependencies:
+    "@types/minimatch" "^3.0.3"
     minimatch "^3.0.2"
 
 md5-hex@^2.0.0:
@@ -9672,7 +9663,7 @@ readable-stream@~1.1.10:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   integrity sha1-n6+jfShr5dksuuve4DDcm19AZ0c=
@@ -10964,7 +10955,7 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
-terser@^3.7.5:
+terser@^3.17.0:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-3.17.0.tgz#f88ffbeda0deb5637f9d24b0da66f4e15ab10cb2"
   integrity sha512-/FQzzPJmCpjAH9Xvk2paiWrFq+5M6aVOf+2KRbwhByISDX/EujxsK+BAvrhb6H+2rtrLCHK9N01wO014vrIwVQ==
@@ -11655,7 +11646,7 @@ workerpool@^2.3.0:
   dependencies:
     object-assign "4.1.1"
 
-workerpool@^3.1.1:
+workerpool@^3.1.1, workerpool@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-3.1.2.tgz#b34e79243647decb174b7481ab5b351dc565c426"
   integrity sha512-WJFA0dGqIK7qj7xPTqciWBH5DlJQzoPjsANvc3Y4hNB0SScT+Emjvt0jPPkDBUjBNngX1q9hHgt1Gfwytu6pug==

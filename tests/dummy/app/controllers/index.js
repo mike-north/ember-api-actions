@@ -15,13 +15,13 @@ export default Controller.extend({
     },
     fruitInfo(fruit) {
       const { id } = fruit.getProperties(['id', 'name']);
-      fruit.info({ fruitId: id });
+      fruit.info({ fruitId: id, harvest: 'yes' });
     },
     ripenAllFruit(fruit) {
       fruit.ripenAll({ test: 'ok' });
     },
     getAllFreshFruit(fruit) {
-      fruit.getFresh({ month: 'July' });
+      fruit.getFresh({ month: 'July', harvest: 'yes' });
     },
     eatFruit(fruit) {
       fruit.eat({ was_eaten: true });

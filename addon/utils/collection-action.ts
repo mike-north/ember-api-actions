@@ -22,7 +22,7 @@ export default function collectionOp<IN = any, OUT = any>(options: CollectionOpe
     const requestType: HTTPVerb = strictifyHttpVerb(options.type || 'put');
     const urlType: EmberDataRequestType = options.urlType || 'updateRecord';
     const adapter = store.adapterFor(modelName);
-    const fullUrl = buildOperationUrl(model, options.path, urlType, false);
+    const fullUrl = buildOperationUrl(model, options.path, urlType, false, payload);
     const data = (options.before && options.before.call(model, payload)) || payload;
     return adapter
       .ajax(fullUrl, requestType, assign(options.ajaxOptions || {}, { data }))

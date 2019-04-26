@@ -21,7 +21,7 @@ export default function instanceOp<IN = any, OUT = any>(options: InstanceOperati
     const { ajaxOptions, path, before, after, type = 'put', urlType = 'updateRecord' } = options;
     const requestType: HTTPVerb = strictifyHttpVerb(type);
     const adapter = store.adapterFor(modelName);
-    const fullUrl = buildOperationUrl(this, path, urlType);
+    const fullUrl = buildOperationUrl(this, path, urlType, true, payload);
     const data = (before && before.call(this, payload)) || payload;
     return adapter.ajax(fullUrl, requestType, assign(ajaxOptions || {}, { data })).then((response: JSONValue) => {
       if (after && !this.isDestroyed) {

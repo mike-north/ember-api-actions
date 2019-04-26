@@ -48,7 +48,8 @@ export function buildOperationUrl<M extends Model>(
   record: M,
   opPath: string,
   urlType: EmberDataRequestType,
-  instance = true
+  instance: boolean,
+  payload: any
 ) {
   const modelClass = _getModelClass(record);
   const modelName = _getModelName(modelClass);
@@ -56,7 +57,7 @@ export function buildOperationUrl<M extends Model>(
   const adapter = store.adapterFor(modelName);
   const path = opPath;
   const snapshot = snapshotFromRecord(record);
-  const baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType);
+  const baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType, payload);
 
   if (!path) {
     return baseUrl;

@@ -6,15 +6,26 @@ import SerializerRegistry from 'ember-data/types/registries/serializer';
 import { CollectionResourceDoc, Document as JSONApiDoc, DocWithData, SingleResourceDoc } from 'jsonapi-typescript';
 import { _getModelClass, _getModelName, _getStoreFromRecord } from './build-url';
 
-function isJsonApi(raw: any): raw is JSONApiDoc {
-  return raw.jsonapi && raw.jsonapi.version;
-}
-function isDocWithData(doc: any): doc is DocWithData {
-  return isJsonApi(doc) && ['object', 'array'].indexOf(typeOf((doc as DocWithData).data)) >= 0;
+function isValidResponse(doc: any): doc is DocWithData {
+  // If the document has this signature we can trust what we're about to receive
+  if (doc.jsonapi && doc.jsonapi.version) {
+    return true
+  }
+  
+  console.debug("Received a repsonse that doesn't have a /jsonapi/version property")
+
+  // Don't even bother if the data propery doesn't exist
+  if (typeof doc.data === 'undefined') {
+    return false
+  }
+
+  console.debug("Received a repsonse that doesn't have a /data property")
+
+  return false
 }
 
 export default function serializeAndPush(this: Model, response: any) {
-  if (!isDocWithData(response)) {
+  if (!isValidResponse(response)) {
     // tslint:disable-next-line:no-console
     console.warn(
       'serializeAndPush may only be used with a JSON API document. Ignoring response. ' +

@@ -15,7 +15,7 @@ function isValidResponse(doc: any): doc is DocWithData {
   console.debug("Received a repsonse that doesn't have a /jsonapi/version property")
 
   // Don't even bother if the data propery doesn't exist
-  return typeof response.data === 'undefined';
+  return typeof response.data !== 'undefined';
 }
 
 export default function serializeAndPush(this: Model, response: any) {

@@ -6,24 +6,20 @@
 /bower_components/
 
 # misc
-/.bowerrc
-/.editorconfig
-/.ember-cli
-/.eslintignore
-/.eslintrc.js
-/.gitignore
-/.template-lintrc.js
-/.travis.yml
-/.watchmanconfig
-/bower.json
+/tests/
+/types/
+/.*
 /config/ember-try.js
 /ember-cli-build.js
+/renovate.json
 /testem.js
-/tests/
+/tsconfig.json
+/tslint.json
 /yarn.lock
+/yarn-error.log
 .gitkeep
+*.tgz
 
 # ember-try
 /.node_modules.ember-try/
-/bower.json.ember-try
 /package.json.ember-try

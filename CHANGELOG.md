@@ -1,3 +1,10 @@
+## [0.2.9](https://github.com/mike-north/ember-api-actions/compare/v0.2.8...v0.2.9) (2020-04-04)
+
+
+### Bug Fixes
+
+* **deps:** ember-cli-typescript ([#409](https://github.com/mike-north/ember-api-actions/issues/409)) ([c493a53](https://github.com/mike-north/ember-api-actions/commit/c493a53))
+
 ## [0.2.8](https://github.com/mike-north/ember-api-actions/compare/v0.2.7...v0.2.8) (2019-04-11)
 
 

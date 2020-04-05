@@ -38,7 +38,6 @@
     "@types/qunit": "2.9.1",
     "@types/rsvp": "4.0.3",
     "broccoli-asset-rev": "3.0.0",
-    "ember-ajax": "5.0.0",
     "ember-cli": "3.17.0",
     "ember-cli-code-coverage": "1.0.0-beta.9",
     "ember-cli-dependency-checker": "3.2.0",

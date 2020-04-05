@@ -4,6 +4,7 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "noEmitOnError": false,
     "noImplicitAny": true,
     "noImplicitThis": true,

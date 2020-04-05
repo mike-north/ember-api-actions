@@ -1,5 +1,3 @@
-import DS from 'ember-data';
+import JSONAPIAdapter from '@ember-data/adapter/json-api';
 
-const { JSONAPIAdapter, RESTAdapter } = DS;
-
-export default (JSONAPIAdapter || RESTAdapter).extend({});
+export default class ApplicationAdapter extends JSONAPIAdapter {}

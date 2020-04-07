@@ -143,6 +143,27 @@ export default DS.Model.extend({
 
 *Warning* this implemention only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.ts) for an example.
 
+### ES Class Support
+
+Decorators are also provided for `memberAction` and `collectionAction` for usage with ES classes rather than the classic Ember classes. The same configuration options are supported:
+
+```javascript
+import Model, { attr } from '@ember-data/model';
+import { memberAction, collectionAction } from 'ember-api-actions/decorators';
+
+export default class FruidModel extends Model {
+  @attr('string') name;
+  // /fruits/123/ripen
+  @memberAction({ path: 'ripen' }) ripen;
+  // /fruits/citrus
+  @collectionAction({
+    path: 'citrus',
+    type: 'post', // HTTP POST request
+    urlType: 'findRecord' // Base of the URL that's generated for the action
+  }) getAllCitrus;
+}
+```
+
 ## Customization
 
 ember-api-actions generates URLs and ajax configuration via ember-data adapters. It will identify the appropriate adapter, and call the `buildURL` and `ajaxOptions` methods to send a JSON request similar to way conventional ember-data usage works.

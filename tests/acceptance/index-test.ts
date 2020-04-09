@@ -1,44 +1,38 @@
 import { click, visit } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
-import Pretender from 'pretender';
 import { module, test } from 'qunit';
+import setupPretender from '../helpers/setup-pretender';
 
 module('Acceptance | index2', hooks => {
   setupApplicationTest(hooks);
-  let server: any;
-  hooks.beforeEach(() => {
-    server = new Pretender();
-  });
-  hooks.afterEach(() => {
-    server.shutdown();
-  });
+  setupPretender(hooks);
 
-  test('visiting /', async assert => {
+  test('visiting /', async function(assert) {
     await visit('/');
     assert.expect(8);
 
-    server.put('/fruits/:id/doRipen', (request: { url: string; requestBody: string }) => {
+    this.server.put('/fruits/:id/doRipen', (request) => {
       const data = JSON.parse(request.requestBody);
       assert.deepEqual(data, { id: '1', name: 'apple' }, 'member action - request payload is correct');
-      assert.equal(request.url, '/fruits/1/doRipen', 'request was made to "doRipen"');
+      assert.equal(request.params.id, '1', 'request made to the right URL');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.put('/fruits/ripenEverything', (request: { url: string; requestBody: string }) => {
+    this.server.put('/fruits/ripenEverything', (request) => {
       const data = JSON.parse(request.requestBody);
       assert.deepEqual(data, { test: 'ok' }, 'collection action - request payload is correct');
       assert.ok(true, 'request was made to "ripenEverything"');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/:id/info', (request: { url: string; requestBody: string }) => {
-      assert.equal(request.url, '/fruits/1/info?fruitId=1');
-      assert.ok(true, 'request was made to "ripenEverything"');
+    this.server.get('/fruits/:id/info', (request) => {
+      assert.equal(request.params.id, '1', 'request made to the right URL');
+      assert.equal(request.queryParams.fruitId, '1', 'request made with the right query params');
       return [200, {}, '{"status": "ok"}'];
     });
 
-    server.get('/fruits/fresh', (request: { url: string; requestBody: string }) => {
-      assert.equal(request.url, '/fruits/fresh?month=July');
+    this.server.get('/fruits/fresh', (request) => {
+      assert.equal(request.queryParams.month, 'July', 'request made with the right query params');
       assert.ok(true, 'request was made to "ripenEverything"');
       return [200, {}, '{"status": "ok"}'];
     });
@@ -52,11 +46,11 @@ module('Acceptance | index2', hooks => {
     await click('.all-fruit .fresh-type-button');
   });
 
-  test('before/after hooks and serializeAndPush helper', async assert => {
+  test('before/after hooks and serializeAndPush helper', async function(assert) {
     await visit('/');
-    assert.expect(7);
+    assert.expect(6);
 
-    server.put('/fruits/:id/doEat', (request: { url: string; requestBody: string }) => {
+    this.server.put('/fruits/:id/doEat', (request) => {
       const data = JSON.parse(request.requestBody);
 
       const expectedData = {
@@ -70,7 +64,7 @@ module('Acceptance | index2', hooks => {
       };
 
       assert.deepEqual(data, expectedData, 'collection action - request payload run through serialize function');
-      assert.equal(request.url, '/fruits/1/doEat', 'request was made to "doEat"');
+      assert.equal(request.params.id, '1', 'request was made to the right URL');
       const response = {
         jsonapi: { version: '1.0' },
         data: {
@@ -84,7 +78,7 @@ module('Acceptance | index2', hooks => {
       return [200, {}, JSON.stringify(response)];
     });
 
-    server.put('/fruits/doEatAll', (request: { url: string; requestBody: string }) => {
+    this.server.put('/fruits/doEatAll', (request) => {
       const data = JSON.parse(request.requestBody);
 
       const expectedData = {
@@ -98,7 +92,6 @@ module('Acceptance | index2', hooks => {
       };
 
       assert.deepEqual(data, expectedData, 'collection action - request payload run through serialize function');
-      assert.equal(request.url, '/fruits/doEatAll', 'request was made to "doEatAll"');
 
       const response = {
         jsonapi: { version: '1.0' },

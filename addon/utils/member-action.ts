@@ -14,21 +14,38 @@ export interface InstanceOperationOptions<IN, OUT> {
 }
 
 export default function instanceOp<IN = any, OUT = any>(options: InstanceOperationOptions<IN, OUT>) {
-  return function runInstanceOp(this: Model, payload: IN): Promise<OUT> {
+  return async function runInstanceOp(this: Model, payload: IN): Promise<OUT> {
+    const {
+      ajaxOptions,
+      path,
+      before,
+      after,
+      type = 'put',
+      urlType = 'updateRecord'
+    } = options;
+
     const recordClass = _getModelClass(this);
     const modelName = _getModelName(recordClass);
     const store = _getStoreFromRecord(this);
-    const { ajaxOptions, path, before, after, type = 'put', urlType = 'updateRecord' } = options;
     const requestType: HTTPVerb = strictifyHttpVerb(type);
     const adapter = store.adapterFor(modelName);
     const fullUrl = buildOperationUrl(this, path, urlType);
-    const data = (before && before.call(this, payload)) || payload;
-    return adapter.ajax(fullUrl, requestType, assign(ajaxOptions || {}, { data })).then((response: JSONValue) => {
-      if (after && !this.isDestroyed) {
-        return after.call(this, response);
-      }
+    const requestOptions = combineOptions(this, payload, before, ajaxOptions);
 
-      return response;
-    });
+    const response: JSONValue = await adapter.ajax(fullUrl, requestType, requestOptions);
+    return handleResponse(this, response, after)
   };
+}
+
+const combineOptions = (model: Model, payload: any, before: any, ajaxOptions: any) => {
+  const data = (before && before.call(model, payload)) || payload;
+  return assign(ajaxOptions || {}, { data });
+}
+
+const handleResponse = (model: Model, response: JSONValue, after: any) => {
+  if (after && !model.isDestroyed) {
+    return after.call(model, response);
+  }
+
+  return response;
 }

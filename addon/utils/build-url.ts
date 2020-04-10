@@ -20,7 +20,7 @@ export function _getModelName(clazz: typeof Model): string {
     // prettier-ignore
     clazz.modelName  // modern use
     // @ts-ignore
-     || clazz.typeKey // legacy fallback
+    || clazz.typeKey // legacy fallback
   );
 }
 
@@ -62,11 +62,13 @@ export function buildOperationUrl<M extends Model>(
     return baseUrl;
   }
 
-  if (baseUrl.charAt(baseUrl.length - 1) === '/') {
-    return `${baseUrl}${path}`;
-  } else {
-    return `${baseUrl}/${path}`;
-  }
+  const separator = isFinishedWithSlash(baseUrl) ? '' : '/';
+
+  return `${baseUrl}${separator}${path}`;
 }
 
 export default buildOperationUrl;
+
+const isFinishedWithSlash = (baseUrl: string) => {
+  return baseUrl.charAt(baseUrl.length - 1) === '/';
+}

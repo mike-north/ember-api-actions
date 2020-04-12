@@ -100,7 +100,7 @@
     "extends": "@mike-north/js-lib-semantic-release-config"
   },
   "volta": {
-    "node": "10.20.0",
+    "node": "10.20.1",
     "yarn": "1.22.4"
   }
 }

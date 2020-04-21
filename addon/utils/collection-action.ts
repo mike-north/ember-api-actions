@@ -14,7 +14,7 @@ export interface CollectionOperationOptions<IN, OUT> {
 }
 
 export default function collectionOp<IN = any, OUT = any>(options: CollectionOperationOptions<IN, OUT>) {
-  return async function runCollectionOp(this: Model, payload: IN): Promise<OUT> {
+  return function runCollectionOp(this: Model, payload: IN): Promise<OUT> {
     const {
       ajaxOptions,
       path,
@@ -32,8 +32,9 @@ export default function collectionOp<IN = any, OUT = any>(options: CollectionOpe
     const fullUrl = buildOperationUrl(this, path, urlType, false);
     const requestOptions = combineOptions(this, payload, before, ajaxOptions);
 
-    const response = await adapter.ajax(fullUrl, requestType, requestOptions);
-    return handleResponse(this, response, after);
+    return adapter
+      .ajax(fullUrl, requestType, requestOptions)
+      .then((response: JSONValue) => handleResponse(this, response, after))
   };
 }
 

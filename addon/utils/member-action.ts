@@ -14,7 +14,7 @@ export interface InstanceOperationOptions<IN, OUT> {
 }
 
 export default function instanceOp<IN = any, OUT = any>(options: InstanceOperationOptions<IN, OUT>) {
-  return async function runInstanceOp(this: Model, payload: IN): Promise<OUT> {
+  return function runInstanceOp(this: Model, payload: IN): Promise<OUT> {
     const {
       ajaxOptions,
       path,
@@ -32,8 +32,9 @@ export default function instanceOp<IN = any, OUT = any>(options: InstanceOperati
     const fullUrl = buildOperationUrl(this, path, urlType);
     const requestOptions = combineOptions(this, payload, before, ajaxOptions);
 
-    const response: JSONValue = await adapter.ajax(fullUrl, requestType, requestOptions);
-    return handleResponse(this, response, after)
+    return adapter
+      .ajax(fullUrl, requestType, requestOptions)
+      .then((response: JSONValue) => handleResponse(this, response, after));
   };
 }
 

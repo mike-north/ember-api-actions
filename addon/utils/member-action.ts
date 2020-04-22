@@ -2,15 +2,15 @@ import { assign } from '@ember/polyfills';
 import Model from 'ember-data/model';
 import { Value as JSONValue } from 'json-typescript';
 import { _getModelClass, _getModelName, _getStoreFromRecord, buildOperationUrl } from './build-url';
-import { EmberDataRequestType, Hook, HTTPVerb, strictifyHttpVerb } from './types';
+import { EmberDataRequestType, Hook, HTTPVerb, responseCallback, strictifyHttpVerb } from './types';
 
 export interface InstanceOperationOptions<IN, OUT> {
   type?: HTTPVerb;
   path: string;
   urlType?: EmberDataRequestType;
   ajaxOptions?: any;
-  before?: Hook<IN, any>;
-  after?: Hook<any, OUT>;
+  before?: responseCallback;
+  after?: responseCallback;
 }
 
 export default function instanceOp<IN = any, OUT = any>(options: InstanceOperationOptions<IN, OUT>) {
@@ -22,7 +22,7 @@ export default function instanceOp<IN = any, OUT = any>(options: InstanceOperati
       after,
       type = 'put',
       urlType = 'updateRecord'
-    } = options;
+    }: InstanceOperationOptions<IN, OUT> = options;
 
     const recordClass = _getModelClass(this);
     const modelName = _getModelName(recordClass);
@@ -38,12 +38,12 @@ export default function instanceOp<IN = any, OUT = any>(options: InstanceOperati
   };
 }
 
-const combineOptions = (model: Model, payload: any, before: any, ajaxOptions: any) => {
+const combineOptions = (model: Model, payload: any, before: responseCallback | undefined, ajaxOptions: any) => {
   const data = (before && before.call(model, payload)) || payload;
   return assign(ajaxOptions || {}, { data });
 }
 
-const handleResponse = (model: Model, response: JSONValue, after: any) => {
+const handleResponse = (model: Model, response: JSONValue, after: responseCallback | undefined) => {
   if (after && !model.isDestroyed) {
     return after.call(model, response);
   }

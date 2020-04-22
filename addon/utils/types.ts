@@ -1,5 +1,5 @@
 import Model from 'ember-data/model';
-
+import { Value as JSONValue } from 'json-typescript';
 export type StrictHTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD';
 export type HTTPVerb =
   | 'GET'
@@ -51,3 +51,5 @@ export type EmberDataRequestType =
   | 'deleteRecord';
 
 export type Hook<IN, OUT> = (this: Model, payload: IN) => OUT;
+
+export type responseCallback = (this: Model, response: JSONValue) => any;

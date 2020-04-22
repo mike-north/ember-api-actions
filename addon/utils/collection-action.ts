@@ -2,7 +2,7 @@ import { assign } from '@ember/polyfills';
 import Model from 'ember-data/model';
 import { Value as JSONValue } from 'json-typescript';
 import { _getModelClass, _getModelName, _getStoreFromRecord, buildOperationUrl } from './build-url';
-import { EmberDataRequestType, Hook, HTTPVerb, strictifyHttpVerb, responseCallback } from './types';
+import { EmberDataRequestType, Hook, HTTPVerb, responseCallback, strictifyHttpVerb } from './types';
 
 export interface CollectionOperationOptions<IN, OUT> {
   type?: HTTPVerb;

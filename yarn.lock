@@ -5493,10 +5493,10 @@ ember-cli-version-checker@^5.1.1:
     semver "^7.3.2"
     silent-error "^1.1.1"
 
-ember-cli@3.20.0:
-  version "3.20.0"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.20.0.tgz#729c62ce0cb2804237155886619acc54c77255dc"
-  integrity sha512-I5mybMo1vmsKRnC7uWuuxldla+45CsJ0TIHIm+qovaKyGBx+TSW8zMoBvnogMSyu8+hDMEqsxLblH9ZSF4hKpg==
+ember-cli@3.20.1:
+  version "3.20.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.20.1.tgz#2501213b1bb1c398bd647d2f00bd390eb05feb3e"
+  integrity sha512-phEldscXy8EB+0XxcemiqHPH5WviIufL4bflB6VdrdkuGMdO51GiPyy+EpqoTvx8kUAtkwNHmOMxJjrxWEtVZg==
   dependencies:
     "@babel/core" "^7.10.2"
     "@babel/plugin-transform-modules-amd" "^7.10.4"
@@ -5718,10 +5718,10 @@ ember-source-channel-url@^1.0.1:
   dependencies:
     got "^8.0.1"
 
-ember-source@3.20.3:
-  version "3.20.3"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.20.3.tgz#fdc0e8d9a402985783a2c53729f75abbb7b2ac95"
-  integrity sha512-Fpz0eVFcL4s74d2mw5D3RFGlhRcljB6N4RyjsuumwYTlg7UMrkDdlHy7A1ZI2tDw2Cz7uE7W2dKzSnCQcZGcVQ==
+ember-source@3.20.5:
+  version "3.20.5"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.20.5.tgz#84f166eb06b7073ef0c51444b768b953d0382463"
+  integrity sha512-GDfkvTgle8YTs9UNZGJEADJDAmRvXlmttlBBdObo9K1UtumJzQM7WjENWd2Blrazir5WBhB6J2ukDARCEolPaw==
   dependencies:
     "@babel/helper-module-imports" "^7.8.3"
     "@babel/plugin-transform-block-scoping" "^7.8.3"

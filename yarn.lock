@@ -2567,10 +2567,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ember-data@3.16.9":
-  version "3.16.9"
-  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.9.tgz#2a4cb335ea31379adc9068dda6a2c87555883162"
-  integrity sha512-m242covZrRbT2ozOS8zM8RsUrm1mAF7EWWLPjKSiblSg9Ba1UsH/bS7Ds0U0vz4j5W2dZgZgprlPtCwa6FwnwA==
+"@types/ember-data@3.16.10":
+  version "3.16.10"
+  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.10.tgz#9271be2b16286ad06fde093493676df1c655685d"
+  integrity sha512-cBe8E3Kn4P1FX4NNfTBpkmORdx0ca1qIuk2wzCXQQ56IWHvJmYVRqaq4eGmSb0qESnbkdlNtEZ5ZLvRjMK/tqw==
   dependencies:
     "@types/ember" "*"
     "@types/ember__object" "*"
@@ -2620,10 +2620,10 @@
     "@types/jquery" "*"
     "@types/rsvp" "*"
 
-"@types/ember@3.16.3":
-  version "3.16.3"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.3.tgz#e2e9c24e56d8161ffcdbfa16d6a1e7e032bb557b"
-  integrity sha512-KkRs2F2dv6CuNfj9GFpJULL+8g+foJNEkOwSIqf5+RxaHjsg9NSVg9phTK4RItbndMyECCtOGOwWQAJ4cQgiiA==
+"@types/ember@3.16.4":
+  version "3.16.4"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.4.tgz#bfccd8ed198ca7bee09878a3423ca6e1a9caac17"
+  integrity sha512-kCZNxuCofZN2sYUltfUmPegqAr1wvZ4b6aH0i8AsG+AsUiaWCDzVfCayMfr4CRUOhUiQ2VA9AOgnZT+JgBvjXQ==
   dependencies:
     "@types/ember__application" "*"
     "@types/ember__array" "*"

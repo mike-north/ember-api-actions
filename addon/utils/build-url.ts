@@ -62,11 +62,24 @@ export function buildOperationUrl<M extends Model>(
     return baseUrl;
   }
 
-  if (baseUrl.charAt(baseUrl.length - 1) === '/') {
-    return `${baseUrl}${path}`;
+  let url;
+  const [baseUrlNoQueries, baseQueries] = baseUrl.split('?');
+  const [pathNoQueries, pathQueries] = path.split('?');
+
+  if (baseUrlNoQueries.charAt(baseUrl.length - 1) === '/') {
+    url = `${baseUrlNoQueries}${pathNoQueries}`;
   } else {
-    return `${baseUrl}/${path}`;
+    url = `${baseUrlNoQueries}/${pathNoQueries}`;
   }
+
+  if (baseQueries || pathQueries) {
+    const baseSearchParams = new URLSearchParams(baseQueries);
+    const pathSearchParams = new URLSearchParams(pathQueries);
+    for (const [k, v] of pathSearchParams) { baseSearchParams.append(k, v) };
+    url = `${url}?${baseSearchParams.toString()}`;
+  }
+
+  return url;
 }
 
 export default buildOperationUrl;

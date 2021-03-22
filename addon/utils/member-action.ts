@@ -14,14 +14,18 @@ export interface InstanceOperationOptions<IN, OUT> {
 }
 
 export default function instanceOp<IN = any, OUT = any>(options: InstanceOperationOptions<IN, OUT>) {
-  return function runInstanceOp(this: Model, payload: IN): Promise<OUT> {
+  return function runInstanceOp(
+    this: Model,
+    payload: IN,
+    instanceOptions:any = {}
+  ): Promise<OUT> {
     const recordClass = _getModelClass(this);
     const modelName = _getModelName(recordClass);
     const store = _getStoreFromRecord(this);
     const { ajaxOptions, path, before, after, type = 'put', urlType = 'updateRecord' } = options;
     const requestType: HTTPVerb = strictifyHttpVerb(type);
     const adapter = store.adapterFor(modelName);
-    const fullUrl = buildOperationUrl(this, path, urlType);
+    const fullUrl = buildOperationUrl(this, path, urlType, instanceOptions.adapterOptions);
     const data = (before && before.call(this, payload)) || payload;
     return adapter.ajax(fullUrl, requestType, assign(ajaxOptions || {}, { data })).then((response: JSONValue) => {
       if (after && !this.isDestroyed) {

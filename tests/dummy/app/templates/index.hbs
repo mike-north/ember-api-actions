@@ -45,6 +45,15 @@
           More Info
         {{/x-btn}}
       </p>
+
+      <p class="vegatable-thing" id={{vegatable.name}}>
+        {{#x-btn
+          class="options-instance-button yellow white-text"
+          click=(action "vegatableOptions" vegatable)
+        }}
+          Options
+        {{/x-btn}}
+      </p>
     {{/each}}
 
     <h4>API action on a collection of resources</h4>

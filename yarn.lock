@@ -1878,10 +1878,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ember-data@3.16.10":
-  version "3.16.10"
-  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.10.tgz#9271be2b16286ad06fde093493676df1c655685d"
-  integrity sha512-cBe8E3Kn4P1FX4NNfTBpkmORdx0ca1qIuk2wzCXQQ56IWHvJmYVRqaq4eGmSb0qESnbkdlNtEZ5ZLvRjMK/tqw==
+"@types/ember-data@3.16.12":
+  version "3.16.12"
+  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.12.tgz#909100acfe0cf7922bfc923b23a94a4e19c1d408"
+  integrity sha512-A9nMCAtBII8PFG/7bTgzQ+P9lcn8AdmSOXAhOFBYTHdqoFjA7GIoeqhjw194NVjrVDV4j5K1tMD1ucKkoyToZA==
   dependencies:
     "@types/ember" "*"
     "@types/ember__object" "*"
@@ -1906,7 +1906,7 @@
     "@types/jquery" "*"
     "@types/rsvp" "*"
 
-"@types/ember@*":
+"@types/ember@*", "@types/ember@3.16.5":
   version "3.16.5"
   resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.5.tgz#c2d6b0f178761c0c2fbc6fc39b4b6958c256d0ac"
   integrity sha512-8BzT1g8r7xQsN2p7qIUZ0AXWEVpJ5LmaRWP3iT79PLyIQfTAYvHSueUl14lrB8renETjwr4+ZvVPKurn9TKxNA==
@@ -1917,31 +1917,6 @@
     "@types/ember__controller" "*"
     "@types/ember__debug" "*"
     "@types/ember__destroyable" "*"
-    "@types/ember__engine" "*"
-    "@types/ember__error" "*"
-    "@types/ember__object" "*"
-    "@types/ember__polyfills" "*"
-    "@types/ember__routing" "*"
-    "@types/ember__runloop" "*"
-    "@types/ember__service" "*"
-    "@types/ember__string" "*"
-    "@types/ember__template" "*"
-    "@types/ember__test" "*"
-    "@types/ember__utils" "*"
-    "@types/htmlbars-inline-precompile" "*"
-    "@types/jquery" "*"
-    "@types/rsvp" "*"
-
-"@types/ember@3.16.4":
-  version "3.16.4"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.4.tgz#bfccd8ed198ca7bee09878a3423ca6e1a9caac17"
-  integrity sha512-kCZNxuCofZN2sYUltfUmPegqAr1wvZ4b6aH0i8AsG+AsUiaWCDzVfCayMfr4CRUOhUiQ2VA9AOgnZT+JgBvjXQ==
-  dependencies:
-    "@types/ember__application" "*"
-    "@types/ember__array" "*"
-    "@types/ember__component" "*"
-    "@types/ember__controller" "*"
-    "@types/ember__debug" "*"
     "@types/ember__engine" "*"
     "@types/ember__error" "*"
     "@types/ember__object" "*"

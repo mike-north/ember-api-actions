@@ -21,7 +21,7 @@
   "engines": {
     "node": "10.* || >= 12.*"
   },
-  "author": "Mike North <michael.l.north@gmail.com> (http://mike.works)",
+  "author": "Mike North <michael.l.north@gmail.com> (https://mike.works)",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
@@ -87,7 +87,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://mike.works/ember-api-actions"
+    "demoURL": "https://mike.works/ember-api-actions"
   },
   "commitlint": {
     "extends": [

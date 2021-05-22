@@ -89,7 +89,7 @@
     "loader.js": "4.7.0",
     "qunit": "2.15.0",
     "qunit-dom": "1.6.0",
-    "semantic-release": "17.2.3",
+    "semantic-release": "17.2.4",
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.2.4"
   },

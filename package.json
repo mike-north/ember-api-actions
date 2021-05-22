@@ -39,7 +39,7 @@
     ]
   },
   "resolutions": {
-    "fs-extra": "^9.0.0"
+    "fs-extra": "^10.0.0"
   },
   "dependencies": {
     "ember-cli-babel": "^7.1.3",

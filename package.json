@@ -82,7 +82,7 @@
     "ember-resolver": "8.0.2",
     "ember-source": "3.27.0",
     "ember-source-channel-url": "3.0.0",
-    "ember-try": "1.2.1",
+    "ember-try": "1.4.0",
     "husky": "4.2.4",
     "json-typescript": "1.1.1",
     "jsonapi-typescript": "0.1.3",

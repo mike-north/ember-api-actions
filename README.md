@@ -154,16 +154,6 @@ Customizing your adapter should customize requests sent out via this library, al
 - [buildURL](http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_buildURL) - for generating an action's URL
 - [ajax](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L836-L859) (private) - to actually make the API request and return a promise
 
-## Compatibility
-
-This addon is known to work with certain combinations of ember.js and ember-data
-
-| Ember.js               | Ember-data                                       |
-| ---------------------- | ------------------------------------------------ |
-| `1.10 <= ember < 1.13` | `1.0.0-beta.16.0 <= ember-data <= 1.0.0-beta.19` |
-| `1.13.x`               | `1.13.x`                                         |
-| `2.0.x`                | `2.0.x`                                          |
-
 ## Installation
 
 - `git clone` this repository

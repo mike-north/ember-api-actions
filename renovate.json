@@ -1,3 +1,6 @@
 {
-  "extends": ["@mike-north/js-lib-renovate-config"]
+  "extends": [
+    "@mike-north/js-lib-renovate-config",
+    ":dependencyDashboard"
+  ]
 }

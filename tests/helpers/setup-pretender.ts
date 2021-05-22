@@ -1,4 +1,4 @@
-import { TestContext } from 'ember-test-helpers';
+import { TestContext } from '@ember/test-helpers';
 import Pretender from 'pretender';
 
 export default function setupPretender(hooks: NestedHooks) {

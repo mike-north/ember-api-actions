@@ -26,12 +26,8 @@
     "test": "ember test",
     "semantic-release": "semantic-release",
     "prepublishOnly": "ember ts:precompile",
-    "postpublish": "ember ts:clean"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "./node_modules/.bin/commitlint -e $HUSKY_GIT_PARAMS"
-    }
+    "postpublish": "ember ts:clean",
+    "prepare": "husky install"
   },
   "commitlint": {
     "extends": [

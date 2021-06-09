@@ -33,10 +33,11 @@ Rails.application.routes.draw do
 
   resources :fruits do
     member do
-      put 'ripen' to: 'fruits#ripen'
+      put 'ripen', to: 'fruits#ripen'
     end
+    
     collection do
-      get 'citrus' to: 'fruits#citrus_index'
+      get 'citrus', to: 'fruits#citrus_index'
     end
   end
 

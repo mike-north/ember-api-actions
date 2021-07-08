@@ -2109,10 +2109,10 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.10.tgz#61cc8469849e5bcdd0c7044122265c39cec10cf4"
   integrity sha512-C7srjHiVG3Ey1nR6d511dtDkCEjxuN9W1HWAEjGq8kpcwmNM6JJkpC0xvabM7BXTG2wDq8Eu33iH9aQKa7IvLQ==
 
-"@types/ember-data@3.16.14":
-  version "3.16.14"
-  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.14.tgz#77bb0f33c4ebe44d36f46132eb5187fa3531f83b"
-  integrity sha512-U+MDramAi0oGSlvmdHtFBlIsgNZGMibkKlidl1Eq3x7FESS+qY6xTRVEORQV/qia6llleYCTDw+dD0eIS6SBKQ==
+"@types/ember-data@3.16.15":
+  version "3.16.15"
+  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.15.tgz#48f29e9cb93c0c587f25ddb8bb5e1d83809ec85c"
+  integrity sha512-6zT2+x+R7HnqEeZpRYMK8MjQB+HKKruPu5nxX6UsW27QlnOaWc37Q5bBbD7xOGZX3DwgMe6uV3OV3dQikUp7GA==
   dependencies:
     "@types/ember" "*"
     "@types/ember__object" "*"
@@ -2394,10 +2394,15 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.6.tgz#df9c3c8b31a247ec315e6996566be3171df4b3b1"
   integrity sha512-0/HnwIfW4ki2D8L8c9GVcG5I72s9jP5GSLVF0VIXDW00kmIpA6O33G7a8n59Tmh7Nz0WUC3rSb7PTY/sdW2JzA==
 
-"@types/qunit@*", "@types/qunit@2.11.1":
+"@types/qunit@*":
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.11.1.tgz#3496d430d2bb0fa4761f00a27511f46020c6b410"
   integrity sha512-vcM5+9O8LZuu5DYseaV4J7ehkYrhkv+aMIuxnF/OqMYlVEdv+odpCH1/5OVztiqxbCqTpQKWuELkMvG7OPycUQ==
+
+"@types/qunit@2.11.2":
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.11.2.tgz#4cb99ae3ea6afe94b9c4cfd3ab715a285729ca9c"
+  integrity sha512-Bt0fz9l8sWxqP+cjoqWQyNVyOPPK+7GPhKIKLLTi7llR0FV+pyd50FXTXafZeZnsFVUgXw4pdupydz75E6vxjQ==
 
 "@types/range-parser@*":
   version "1.2.3"

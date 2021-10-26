@@ -48,7 +48,7 @@
     "@mike-north/js-lib-semantic-release-config": "1.0.1",
     "@types/ember": "3.16.5",
     "@types/ember-data": "3.16.15",
-    "@types/ember-qunit": "3.4.14",
+    "@types/ember-qunit": "3.4.15",
     "@types/ember__test-helpers": "1.7.5",
     "@types/qunit": "2.11.2",
     "@types/rsvp": "4.0.4",

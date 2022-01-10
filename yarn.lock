@@ -983,24 +983,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@commitlint/cli@8.3.5":
-  version "8.3.5"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-8.3.5.tgz#6d93a3a8b2437fa978999d3f6a336bcc70be3fd3"
-  integrity sha512-6+L0vbw55UEdht71pgWOE55SRgb+8OHcEwGDB234VlIBFGK9P2QOBU7MHiYJ5cjdjCQ0rReNrGjOHmJ99jwf0w==
-  dependencies:
-    "@commitlint/format" "^8.3.4"
-    "@commitlint/lint" "^8.3.5"
-    "@commitlint/load" "^8.3.5"
-    "@commitlint/read" "^8.3.4"
-    babel-polyfill "6.26.0"
-    chalk "2.4.2"
-    get-stdin "7.0.0"
-    lodash "4.17.15"
-    meow "5.0.0"
-    resolve-from "5.0.0"
-    resolve-global "1.0.0"
-
-"@commitlint/cli@^8.3.5":
+"@commitlint/cli@8.3.6", "@commitlint/cli@^8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-8.3.6.tgz#4375dc52616ab974201e03df66adeb0e22ae42fc"
   integrity sha512-fg8p9/ZrzhUPIXBGrpzwKu50WT13jYS5OffYlkStPuemuv0GjXu37B8J/zNgu6UhrdBVHbmBR0LriKAzRLG/4g==
@@ -1017,10 +1000,10 @@
     resolve-from "5.0.0"
     resolve-global "1.0.0"
 
-"@commitlint/config-conventional@8.3.4":
-  version "8.3.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-8.3.4.tgz#fed13b3711690663b176c1f6b39c205a565618d2"
-  integrity sha512-w0Yc5+aVAjZgjYqx29igBOnVCj8O22gy3Vo6Fyp7PwoS7+AYS1x3sN7IBq6i7Ae15Mv5P+rEx1pkxXo5zOMe4g==
+"@commitlint/config-conventional@8.3.6":
+  version "8.3.6"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-8.3.6.tgz#9199ab11fbc63ca20039b3da6566b10c4dd77f3b"
+  integrity sha512-sbjDwFoa0on+IUbnBswd1ZTa8bkcDlzgWS/s2HapwNw8CBHBuoJbBDOQBqaYLI4b4O7SHYyArMx3V1FvUXTVsg==
   dependencies:
     conventional-changelog-conventionalcommits "4.2.1"
 
@@ -1036,7 +1019,7 @@
   resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-8.3.6.tgz#8ecdc0dd448ba4795c7a93dcf724707941c6634a"
   integrity sha512-kCcf+33LgFBZcVKzTRX7QZBiznFjzjgpyEXFjGsWgCeOXi1q3KPdwH9HvH22xpFZ4+n4lAuv/kQf5XUQMO2OGQ==
 
-"@commitlint/format@^8.3.4", "@commitlint/format@^8.3.6":
+"@commitlint/format@^8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@commitlint/format/-/format-8.3.6.tgz#7bc9910d42dbda04d136964deb3b9191d7246781"
   integrity sha512-VN9Yq3cJoonLjeoYiTOidsxGM6lwyzcw6ekQCCIzjNbJa+7teTPE2wDSXqhbsF/0XDJUeHcygzgZwv4/lzStTA==
@@ -1050,7 +1033,7 @@
   dependencies:
     semver "6.3.0"
 
-"@commitlint/lint@^8.3.5", "@commitlint/lint@^8.3.6":
+"@commitlint/lint@^8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-8.3.6.tgz#2fddea4ab1d197e430a1927669d1e74bac6384f8"
   integrity sha512-M/tysLho4KdsXJp7J7q/c1WEb3Dh75cm86eb0buci8C/DOIegLq/B3DE/8dhxOzGElUW/iq55MyWttJ/MRwKsg==
@@ -1061,7 +1044,7 @@
     babel-runtime "^6.23.0"
     lodash "4.17.21"
 
-"@commitlint/load@^8.3.5", "@commitlint/load@^8.3.6":
+"@commitlint/load@^8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-8.3.6.tgz#a26dc64c0655d9f4932ecabd81ebe7c2af5259a8"
   integrity sha512-bqqGg89KnfauJ01GrVBgKyWBXYy2UXmLvRGuepyI1HsNVaEIGBz6R+sTvk3K55Str6soF7HRpl6bDCmnEOVJtA==
@@ -1088,7 +1071,7 @@
     conventional-commits-parser "^3.0.0"
     lodash "^4.17.11"
 
-"@commitlint/read@^8.3.4", "@commitlint/read@^8.3.6":
+"@commitlint/read@^8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@commitlint/read/-/read-8.3.6.tgz#48c881dabbf5c50f668fad30aaee709142d3fcb3"
   integrity sha512-ixlvPQO8AGFjE5U4DBwJIZtzIqmGeZKhpNjjuAyTwWfMURpXjv+/pVvq/AY3LvxHJM64DuQp2WqrbwJU6mXvUQ==
@@ -1130,12 +1113,12 @@
   dependencies:
     find-up "^4.0.0"
 
-"@commitlint/travis-cli@8.3.5":
-  version "8.3.5"
-  resolved "https://registry.yarnpkg.com/@commitlint/travis-cli/-/travis-cli-8.3.5.tgz#876207b7d5fe1f5b94f89d32c202dca2234e0725"
-  integrity sha512-E456A36Ya9Zrr0+ONfkPoHNdWnX4zfR6seHjuzTy0393iSHNc9cZ250mGw0SKQiYQu8x1QHrQyWwyRXLb2iASw==
+"@commitlint/travis-cli@8.3.6":
+  version "8.3.6"
+  resolved "https://registry.yarnpkg.com/@commitlint/travis-cli/-/travis-cli-8.3.6.tgz#d57975293f54358f29990785343bdca37c8b6994"
+  integrity sha512-W10VC7/sw118KU0Ev5xARhTrSibUAefAIDCwWsN/ss1IOeGrTSooV+9Dv2q5Zqy1Lc28sAt8Cx3UAaFVrOykIw==
   dependencies:
-    "@commitlint/cli" "^8.3.5"
+    "@commitlint/cli" "^8.3.6"
     babel-runtime "6.26.0"
     execa "0.11.0"
 
@@ -10654,11 +10637,6 @@ lodash.without@~4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
-
-lodash@4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 lodash@4.17.21, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.6.1, lodash@^4.7.0:
   version "4.17.21"

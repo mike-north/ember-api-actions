@@ -2831,10 +2831,10 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
-"@types/ember-data@3.16.16":
-  version "3.16.16"
-  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.16.tgz#351246f4214e865f88957c1fb88c47c8728118a2"
-  integrity sha512-O+KP7aMz4CcSkK3yM5kYpbpYz9kcDvVL1j6MLpBaraooDN+VBfOwCcnP8RQj6+mVjbsePJdWUN7ALCUVXjRgXw==
+"@types/ember-data@3.16.20":
+  version "3.16.20"
+  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.20.tgz#4f43ee9ed9c9ddc6f904f782791b6d9336695269"
+  integrity sha512-w7QBvUKEZKjHc0pmRNV9iu80C2vgD/NzUZb+EcmPizFE1fcg56lcbe2NZ4hm6LVXfdM8b3KNgEbsiAiCvB8dug==
   dependencies:
     "@types/ember" "^3"
     "@types/ember__object" "^3"
@@ -2885,7 +2885,31 @@
     "@types/jquery" "*"
     "@types/rsvp" "*"
 
-"@types/ember@3.16.6", "@types/ember@^3":
+"@types/ember@3.16.7":
+  version "3.16.7"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.7.tgz#3072977a880723f304a24e0e83d358869e72587b"
+  integrity sha512-8/L9qJSgMLlV6yMCahVsErikwOU35aZbP1k37iHmlfp6srGaaTQNskKXTkZ4rjOGEEH+BaVh7+0SWrR5wDWHKA==
+  dependencies:
+    "@types/ember__application" "^3"
+    "@types/ember__array" "^3"
+    "@types/ember__component" "^3"
+    "@types/ember__controller" "^3"
+    "@types/ember__debug" "^3"
+    "@types/ember__engine" "^3"
+    "@types/ember__error" "^3"
+    "@types/ember__object" "^3"
+    "@types/ember__polyfills" "^3"
+    "@types/ember__routing" "^3"
+    "@types/ember__runloop" "^3"
+    "@types/ember__service" "^3"
+    "@types/ember__string" "^2"
+    "@types/ember__template" "^3"
+    "@types/ember__test" "^3"
+    "@types/ember__utils" "^3"
+    "@types/htmlbars-inline-precompile" "*"
+    "@types/rsvp" "*"
+
+"@types/ember@^3":
   version "3.16.6"
   resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.6.tgz#167a1e1641d6d24603e1511aec935359acae3402"
   integrity sha512-S8sw98UUK/sqZS73+D5ESuqV4h6AxSy7Ffe6WFH0Np31BQrMflJv+52Wfj43SS0AfQW4DUuhMaMz6F12ge6VBA==

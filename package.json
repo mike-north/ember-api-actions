@@ -75,7 +75,7 @@
     "ember-source": "4.11.0",
     "ember-source-channel-url": "3.0.0",
     "ember-template-lint": "1.14.0",
-    "ember-try": "1.4.0",
+    "ember-try": "2.0.0",
     "husky": "6.0.0",
     "json-typescript": "1.1.2",
     "jsonapi-typescript": "0.1.3",

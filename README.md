@@ -1,7 +1,7 @@
 # ember-api-actions
 
 [![Build Status](https://travis-ci.org/mike-north/ember-api-actions.svg?branch=master)](https://travis-ci.org/mike-north/ember-api-actions)
-[![npm version](https://badge.fury.io/js/ember-api-actions.svg)](http://badge.fury.io/js/ember-api-actions)
+[![npm version](https://badge.fury.io/js/ember-api-actions.svg)](https://badge.fury.io/js/ember-api-actions)
 [![Code Climate](https://codeclimate.com/github/mike-north/ember-api-actions/badges/gpa.svg)](https://codeclimate.com/github/mike-north/ember-api-actions)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
@@ -33,10 +33,11 @@ Rails.application.routes.draw do
 
   resources :fruits do
     member do
-      put 'ripen' to: 'fruits#ripen'
+      put 'ripen', to: 'fruits#ripen'
     end
+    
     collection do
-      get 'citrus' to: 'fruits#citrus_index'
+      get 'citrus', to: 'fruits#citrus_index'
     end
   end
 
@@ -48,14 +49,10 @@ This is not immediately intuitive with ember-data, and these kinds of API endpoi
 ## Use
 
 ```sh
-# ember-cli >= 0.2.3
 ember install ember-api-actions
-
-# ember-cli < 0.2.3
-ember install:addon ember-api-actions
 ```
 
-You can then add these "actions" (not to be confused with client-side ember.js actions) to your ember-data model
+You can then add these "actions"  to your ember-data model (not to be confused with ember.js component @actions):
 
 **app/models/fruit.js**
 
@@ -78,7 +75,7 @@ export default DS.Model.extend({
 });
 ```
 
-you can then call these functions, and they will initiate API requests and return you the promise
+With them setup, you can then call these functions, and they will initiate API requests and return the promise:
 
 ```js
 // Pass data in, it will be sent in the POST or PUT request payload
@@ -151,7 +148,7 @@ Customizing your adapter should customize requests sent out via this library, al
 
 **ember-api-actions uses the following methods on DS.Adapter**
 
-- [buildURL](http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_buildURL) - for generating an action's URL
+- [buildURL](https://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_buildURL) - for generating an action's URL
 - [ajax](https://github.com/emberjs/data/blob/v1.13.4/packages/ember-data/lib/adapters/rest-adapter.js#L836-L859) (private) - to actually make the API request and return a promise
 
 ## Installation
@@ -178,6 +175,6 @@ errors on deprecation
 
 - `ember build`
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+For more information on using ember-cli, visit [https://cli.emberjs.com/](https://cli.emberjs.com/).
 
 ![Analytics](https://ga-beacon.appspot.com/UA-66610985-1/mike-north/ember-api-actions/readme)

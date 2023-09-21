@@ -1,5 +1,4 @@
 // BEGIN-SNIPPET fruit-model
-import { assign } from '@ember/polyfills';
 import { collectionAction, memberAction, serializeAndPush } from 'ember-api-actions';
 import DS from 'ember-data';
 
@@ -7,7 +6,7 @@ const { attr, Model } = DS;
 
 function mergeAttributes(attributes) {
   const payload = this.serialize();
-  payload.data.attributes = assign(payload.data.attributes || {}, attributes);
+  payload.data.attributes = Object.assign(payload.data.attributes || {}, attributes);
   return payload;
 }
 const Fruit = Model.extend({

@@ -3078,10 +3078,10 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
-"@types/ember-data@3.16.21":
-  version "3.16.21"
-  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.21.tgz#aecb8b360637a56fd3f1f9c28b8edec5ade75052"
-  integrity sha512-yRh5j8/WZPZAsXvehk0+rgoOV6dthwnuTD7R8ZIvfpRKcHoUJYTISYo0OUA/dZuL/fDl91DVgcbir3emVKr8YQ==
+"@types/ember-data@3.16.25":
+  version "3.16.25"
+  resolved "https://registry.yarnpkg.com/@types/ember-data/-/ember-data-3.16.25.tgz#8eb359aab553fcbbb82f89111dd4d3170b724e44"
+  integrity sha512-iFH2iDBO/HL2pMvtDCpP24dorElzBFOEBXDfE0Scn+splbcPJRrvAnSpVqzkoiL913KdLv2xUcWVlBUgIbu/Fg==
   dependencies:
     "@types/ember" "^3"
     "@types/ember__object" "^3"
@@ -3132,10 +3132,10 @@
     "@types/jquery" "*"
     "@types/rsvp" "*"
 
-"@types/ember@3.16.8":
-  version "3.16.8"
-  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.8.tgz#27096df84d3420ef5a385a49bd1680efac734e01"
-  integrity sha512-Wl30X9uvvmAfUZRaCdmbc+EFVBE3dvAo4+PEdvBBrJbKuTci9jv/AW3U+cHwbHamESU+33wIEm5Ia+pwNvE01Q==
+"@types/ember@3.16.14":
+  version "3.16.14"
+  resolved "https://registry.yarnpkg.com/@types/ember/-/ember-3.16.14.tgz#9078407934ac7f7d8e04e35a0b8b7483dcd01b72"
+  integrity sha512-m3fM87W1J75ri9Uu79hzKimiAhxdAF3dZyzmwGrf4OPPQp3yt2L9uHAkwmMIxstk4F1rBWG/SHJOnvlqif23Rw==
   dependencies:
     "@types/ember__application" "^3"
     "@types/ember__array" "^3"
@@ -3153,7 +3153,6 @@
     "@types/ember__template" "^3"
     "@types/ember__test" "^3"
     "@types/ember__utils" "^3"
-    "@types/htmlbars-inline-precompile" "*"
     "@types/rsvp" "*"
 
 "@types/ember@^3":
@@ -3556,10 +3555,15 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@types/rsvp@*", "@types/rsvp@4.0.4":
+"@types/rsvp@*":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@types/rsvp/-/rsvp-4.0.4.tgz#55e93e7054027f1ad4b4ebc1e60e59eb091e2d32"
   integrity sha512-J3Ol++HCC7/hwZhanDvggFYU/GtxHxE/e7cGRWxR04BF7Tt3TqJZ84BkzQgDxmX0uu8IagiyfmfoUlBACh2Ilg==
+
+"@types/rsvp@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@types/rsvp/-/rsvp-4.0.9.tgz#7d9d07c1a2fa82c808eca37757cc6a20272a4b66"
+  integrity sha512-F6vaN5mbxw2MBCu/AD9fSKwrhnto2pE77dyUsi415qz9IP9ni9ZOWXHxnXfsM4NW9UjW+it189jvvqnhv37Z7Q==
 
 "@types/serve-static@*":
   version "1.13.10"

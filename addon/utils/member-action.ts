@@ -1,4 +1,3 @@
-import { assign } from '@ember/polyfills';
 import Model from 'ember-data/model';
 import { Value as JSONValue } from 'json-typescript';
 import { _getModelClass, _getModelName, _getStoreFromRecord, buildOperationUrl } from './build-url';
@@ -23,12 +22,14 @@ export default function instanceOp<IN = any, OUT = any>(options: InstanceOperati
     const adapter = store.adapterFor(modelName);
     const fullUrl = buildOperationUrl(this, path, urlType);
     const data = (before && before.call(this, payload)) || payload;
-    return adapter.ajax(fullUrl, requestType, assign(ajaxOptions || {}, { data })).then((response: JSONValue) => {
-      if (after && !this.isDestroyed) {
-        return after.call(this, response);
-      }
+    return adapter
+      .ajax(fullUrl, requestType, Object.assign(ajaxOptions || {}, { data }))
+      .then((response: JSONValue) => {
+        if (after && !this.isDestroyed) {
+          return after.call(this, response);
+        }
 
-      return response;
-    });
+        return response;
+      });
   };
 }

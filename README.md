@@ -101,7 +101,7 @@ eat: memberAction({
   path: 'eat',
   before(attributes) {
     let payload = this.serialize();
-    payload.data.attributes = assign(payload.data.attributes, attributes);
+    payload.data.attributes = Object.assign(payload.data.attributes, attributes);
     return payload;
   }
 })
@@ -141,7 +141,7 @@ export default DS.Model.extend({
 });
 ```
 
-*Warning* this implemention only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.ts) for an example.
+_Warning_ this implementation only works for JSON API, but it should be easy to write your own `after` hook to handle your use case. Have a look at the [implementation of `serializeAndPush`](https://github.com/mike-north/ember-api-actions/blob/master/addon/utils/serialize-and-push.ts) for an example.
 
 ## Customization
 

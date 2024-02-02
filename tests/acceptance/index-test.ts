@@ -118,4 +118,36 @@ module('Acceptance | index2', hooks => {
 
     (assert as any).dom(`[data-test-fruit-name="Completely Eaten apple"]`).exists();
   });
+
+  test('query params', async function(assert) {
+    await visit('/');
+    assert.expect(9);
+
+    this.server.get('/vegatables/:id/info', (request) => {
+      assert.equal(request.params.id, '1', 'request made to the right URL');
+      assert.equal(request.queryParams.vegatableId, '1', 'request made with the right query params');
+      assert.equal(request.queryParams.vegatable, 'potato', 'request made with the right buildURL query params');
+      return [200, {}, '{"status": "ok"}'];
+    });
+
+    this.server.get('/vegatables/:id/moreInfo', (request) => {
+      assert.equal(request.params.id, '2', 'request made to the right URL');
+      assert.equal(request.queryParams.vegatableId, '2', 'request made with the right query params');
+      assert.equal(request.queryParams.vegatable, 'carrot', 'request made with the right buildURL query params');
+      assert.equal(request.queryParams.more, 'true', 'request made with the right path query params');
+      return [200, {}, '{"status": "ok"}'];
+    });
+
+    this.server.get('/vegatables/allInfo', (request) => {
+      assert.equal(request.queryParams.vegatable, 'potato', 'request made with the right buildURL query params');
+      assert.equal(request.queryParams.less, 'false', 'request made with the right path query params');
+      return [200, {}, '{"status": "ok"}'];
+    });
+
+    await click('#potato .info-instance-button');
+
+    await click('#carrot .more-info-instance-button');
+
+    await click('.all-vegatables .all-info-button');
+  });
 });

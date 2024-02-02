@@ -1,14 +1,16 @@
 <div class="row">
   <div class="col m6 s12">
     <h4>API actions on an individual resource</h4>
-    {{#each model as |fruit|}}
+
+    <h5>Fruit</h5>
+    {{#each model.fruit as |fruit|}}
       <p class="fruit-thing" id={{fruit.name}}>
         {{#x-btn
           class="ripen-instance-button yellow"
           click=(action "ripenFruit" fruit)
         }}
           Ripen
-        {{/x-btn}} 
+        {{/x-btn}}
         {{#x-btn
           class="info-instance-button indigo white-text"
           click=(action "fruitInfo" fruit)
@@ -23,26 +25,59 @@
         {{#x-btn class="eat-instance-button yellow" click=(action "eatFruit" fruit)}}Eat{{/x-btn}}
       </p>
     {{/each}}
+
+    <h5>Vegatable</h5>
+    {{#each model.vegatable as |vegatable|}}
+      <p class="vegatable-thing" id={{vegatable.name}}>
+        {{#x-btn
+          class="info-instance-button indigo white-text"
+          click=(action "vegatableInfo" vegatable)
+        }}
+          Info
+        {{/x-btn}}
+      </p>
+
+      <p class="vegatable-thing" id={{vegatable.name}}>
+        {{#x-btn
+          class="more-info-instance-button yellow white-text"
+          click=(action "vegatableMoreInfo" vegatable)
+        }}
+          More Info
+        {{/x-btn}}
+      </p>
+    {{/each}}
+
     <h4>API action on a collection of resources</h4>
+    <p class="all-vegatables">
+      {{content.vegatable.constructor.modelName}}
+      {{#x-btn
+        class="all-info-button indigo white-text"
+        click=(action "allInfoVegatables"
+        (first-in-array (or content.vegatable model.vegatable)))
+      }}
+        All Info
+      {{/x-btn}}
+    </p>
+
     <p class="all-fruit">
-      {{content.constructor.modelName}}
+      {{content.fruit.constructor.modelName}}
       {{#x-btn
         class="ripen-type-button yellow"
-        click=(action "ripenAllFruit" (first-in-array (or content model)))
+        click=(action "ripenAllFruit" (first-in-array (or content.fruit model.fruit)))
       }}
         Ripen All
       {{/x-btn}}
       {{#x-btn
         class="fresh-type-button indigo white-text"
         click=(action "getAllFreshFruit"
-      (first-in-array (or content model)))
+      (first-in-array (or content.fruit model.fruit)))
       }}
         Get Fresh
       {{/x-btn}}
       {{#x-btn
         class="fresh-type-button indigo white-text"
         click=(action "juiceAllFruit"
-      (first-in-array (or content model)))
+      (first-in-array (or content.fruit model.fruit)))
       }}
         Juice Everything
       {{/x-btn}}
@@ -50,7 +85,7 @@
       {{#x-btn
         class="eat-all-button indigo white-text"
         click=(action "eatAll"
-      (first-in-array (or content model)))
+      (first-in-array (or content.fruit model.fruit)))
       }}
         Eat all
       {{/x-btn}}

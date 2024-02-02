@@ -31,6 +31,15 @@ export default Controller.extend({
     },
     juiceAllFruit(fruit) {
       Fruit.juiceAll({ was_eaten: true });
+    },
+    vegatableInfo(vegatable) {
+      vegatable.info({ vegatableId: vegatable.id });
+    },
+    vegatableMoreInfo(vegatable) {
+      vegatable.moreInfo({ vegatableId: vegatable.id });
+    },
+    allInfoVegatables(vegatable) {
+      vegatable.allInfo();
     }
   }
   // END-SNIPPET

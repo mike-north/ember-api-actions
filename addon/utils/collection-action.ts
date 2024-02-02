@@ -14,7 +14,7 @@ export interface CollectionOperationOptions<IN, OUT> {
 }
 
 export default function collectionOp<IN = any, OUT = any>(options: CollectionOperationOptions<IN, OUT>) {
-  return function runCollectionOp(this: Model, payload: IN): Promise<OUT> {
+  return function runCollectionOp(this: Model, payload: IN, adapterOptions = {}): Promise<OUT> {
     const model: Model = this;
     const recordClass = _getModelClass(model);
     const modelName = _getModelName(recordClass);
@@ -22,7 +22,7 @@ export default function collectionOp<IN = any, OUT = any>(options: CollectionOpe
     const requestType: HTTPVerb = strictifyHttpVerb(options.type || 'put');
     const urlType: EmberDataRequestType = options.urlType || 'updateRecord';
     const adapter = store.adapterFor(modelName);
-    const fullUrl = buildOperationUrl(model, options.path, urlType, false);
+    const fullUrl = buildOperationUrl(model, options.path, urlType, adapterOptions, false);
     const data = (options.before && options.before.call(model, payload)) || payload;
     return adapter
       .ajax(fullUrl, requestType, assign(options.ajaxOptions || {}, { data }))

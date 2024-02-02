@@ -97,7 +97,7 @@
     "extends": "@mike-north/js-lib-semantic-release-config"
   },
   "volta": {
-    "node": "12.22.2",
+    "node": "12.22.12",
     "yarn": "1.22.10"
   }
 }

@@ -48,6 +48,7 @@ export function buildOperationUrl<M extends Model>(
   record: M,
   opPath: string,
   urlType: EmberDataRequestType,
+  adapterOptions: any,
   instance = true
 ) {
   const modelClass = _getModelClass(record);
@@ -56,17 +57,31 @@ export function buildOperationUrl<M extends Model>(
   const adapter = store.adapterFor(modelName);
   const path = opPath;
   const snapshot = snapshotFromRecord(record);
+  snapshot.adapterOptions = adapterOptions;
   const baseUrl = adapter.buildURL(modelName, instance ? record.get('id') : null, snapshot, urlType);
 
   if (!path) {
     return baseUrl;
   }
 
-  if (baseUrl.charAt(baseUrl.length - 1) === '/') {
-    return `${baseUrl}${path}`;
+  let url;
+  const [baseUrlNoQueries, baseQueries] = baseUrl.split('?');
+  const [pathNoQueries, pathQueries] = path.split('?');
+
+  if (baseUrlNoQueries.charAt(baseUrl.length - 1) === '/') {
+    url = `${baseUrlNoQueries}${pathNoQueries}`;
   } else {
-    return `${baseUrl}/${path}`;
+    url = `${baseUrlNoQueries}/${pathNoQueries}`;
   }
+
+  if (baseQueries || pathQueries) {
+    const baseSearchParams = new URLSearchParams(baseQueries);
+    const pathSearchParams = new URLSearchParams(pathQueries);
+    for (const [k, v] of pathSearchParams) { baseSearchParams.append(k, v) };
+    url = `${url}?${baseSearchParams.toString()}`;
+  }
+
+  return url;
 }
 
 export default buildOperationUrl;
